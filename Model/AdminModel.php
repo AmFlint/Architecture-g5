@@ -11,7 +11,14 @@ class AdminModel extends Model
     public function getMagazines()
     {
         $qb = new QueryBuilder();
-        $row = $qb->table('actualites')->select(array('id', 'title'))->getAll();
+        $row = $qb->table('magazines')->select(array('id', 'title'))->getAll();
+        return $row;
+    }
+
+    public function getMagazine($id)
+    {
+        $qb = new QueryBuilder();
+        $row = $qb->table('magazines')->select(array('id', 'title', 'synopsis', 'content_full', 'image'))->where('id', $id)->get();
         return $row;
     }
 }
