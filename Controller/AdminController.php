@@ -16,10 +16,16 @@ use PDO;
 
 class AdminController extends Controller
 {
+    private $model;
+    public function __construct()
+    {
+        parent::__construct();
+        $this->model = new AdminModel();
+    }
+
     public function listingAction()
     {
-        $model = new AdminModel();
-        $actualites = $model->getMagazines();
+        $actualites = $this->model->getMagazines();
         $lol = [["test" => "salut"], ["test" => "prenom"]];
         echo  self::$twig[0]->render(
             "admin.html.twig",
@@ -31,8 +37,7 @@ class AdminController extends Controller
 
     public function showMagazineAction($id)
     {
-        $model = new AdminModel();
-        $magazine = $model->getMagazine($id);
+        $magazine = $this->model->getMagazine($id);
         echo  self::$twig[0]->render(
             "single_magazine.html.twig",
             [
@@ -43,8 +48,7 @@ class AdminController extends Controller
 
     public function showFormAction($id)
     {
-        $model = new AdminModel();
-        $magazine = $model->getMagazine($id);
+        $magazine = $this->model->getMagazine($id);
         echo  self::$twig[0]->render(
             "form_edit_magazine.html.twig",
             [
@@ -55,7 +59,13 @@ class AdminController extends Controller
 
     public function editMagazineAction($id)
     {
-        $model = new AdminModel();
-        $revue = $model->setMagazines();
+        $revue = $this->model->setMagazines();
     }
+
+    public function deleteMagazineAction($id)
+    {
+        $this->model->deleteMagazine($id);
+    }
+
+
 }

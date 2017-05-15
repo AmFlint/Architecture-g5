@@ -37,5 +37,10 @@
     "path": "/contact",
     "controller": "Default",
     "action": "contact"
+  },
+  "delete": {
+    "path": "/admin/:id/delete",
+    "controller": "Admin",
+    "action": "deleteMagazine"
   }
 }
