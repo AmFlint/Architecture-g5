@@ -9,11 +9,24 @@
 namespace Controller;
 
 
-class AdminController
+use classes\Controller;
+use Model\AdminModel;
+use Model\DefaultModel;
+use PDO;
+
+class AdminController extends Controller
 {
     public function listingAction()
     {
-        echo 'backoffice admin';
+        $model = new AdminModel();
+        $actualites = $model->getMagazines();
+        $lol = [["test" => "salut"], ["test" => "prenom"]];
+        echo  self::$twig[0]->render(
+            "admin.html.twig",
+            [
+                "magazines" => $actualites
+            ]
+        );
     }
 
     public function showMagazineAction($id)

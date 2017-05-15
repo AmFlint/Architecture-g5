@@ -17,7 +17,8 @@
     "psr-4": {
       "Controller\\": "Controller/",
       "classes\\": "core/classes/",
-      "routing\\": "core/routing/"
+      "routing\\": "core/routing/",
+      "Model\\": "Model/"
     }
   }
 }
