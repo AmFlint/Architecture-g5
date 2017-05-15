@@ -25,7 +25,11 @@ class AdminModel extends Model
 
     public function getMagazine($id)
     {
-        $row = $this->qb->table('magazines')->select(array('id', 'title', 'synopsis', 'image', 'link', 'date'))->where('id', $id)->get();
+        $row = $this->qb
+            ->table('magazines')
+            ->select(array('id', 'title', 'synopsis', 'image', 'secondary_image', 'link', 'date', 'location_id', 'secondary_location'))
+            ->where('id', $id)
+            ->get();
         return $row;
     }
 
@@ -39,5 +43,28 @@ class AdminModel extends Model
     {
         $this->qb->where('id', $id)->table('magazines')->delete();
         header('Location: /admin');
+    }
+
+    public function getPartners($id, $secondary)
+    {
+        $row = $this->qb
+            ->select(array('id', 'name'))
+            ->table('partenaires')
+            ->where('location_id', $id)
+            ->where('location_id', $secondary, ' OR ')
+            ->get();
+        return $row;
+    }
+
+    public function getActualPartners($id)
+    {
+        $row = $this->qb
+            ->select(array('partenaires.id', 'partenaires.name'), array('partner_id', 'partner_name'))
+            ->table('partenaires')
+            ->join('partenariat', 'inner')
+            ->on('partenaires.id','partenariat.partenaire_id')
+            ->where('partenariat.magazine_id', $id)
+            ->get();
+        return $row;
     }
 }

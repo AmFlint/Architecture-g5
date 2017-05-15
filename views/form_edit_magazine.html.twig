@@ -24,3 +24,19 @@
     <input type="hidden" name="id" value="{{ magazine.id }}">
 	<input type="submit">
 </form>
+
+<p>Partenaires actuels</p>
+
+<ul>
+	{% for partenaires in actual_partenaires %}
+		<li>{{ partenaires.partner_name }}</li>
+	{% endfor %}
+</ul>
+
+
+<p>Partenaires disponibles</p>
+<ul>
+    {% for partner in list_partenaires %}
+        <li>{{ partner.name }}</li>
+    {% endfor %}
+</ul>
