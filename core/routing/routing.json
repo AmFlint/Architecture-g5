@@ -5,6 +5,12 @@
     "method": "GET",
     "action": "listing"
   },
+  "formulaire_add": {
+    "path": "/admin/add",
+    "controller": "Admin",
+    "action": "showAddMagazine",
+    "method": "GET"
+  },
   "magazine": {
     "path": "/admin/:id",
     "method": "GET",
@@ -42,5 +48,11 @@
     "path": "/admin/:id/delete",
     "controller": "Admin",
     "action": "deleteMagazine"
+  },
+  "add": {
+    "path": "/admin/add",
+    "controller": "Admin",
+    "action": "addMagazine",
+    "method": "POST"
   }
 }
