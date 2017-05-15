@@ -1,6 +1,6 @@
 <h1>Ceci est le form edit de {{ magazine.title }}</h1>
 
-<form action="" method="post">
+<form action="" method="post"  enctype="multipart/form-data">
     <label for="title">
     	<p>Titre</p>
     	<input type="text" value="{{ magazine.title }}" name="title">
@@ -11,7 +11,8 @@
 	</label>
     <label for="image">
     	<p>Image</p>
-    	<input type="text" value="{{ magazine.image }}" name="image">
+    	<input type="file" value="" name="image">
+        <input type="hidden" value="{{ magazine.image }}" name="lastimage">
 	</label>
     <label for="date">
     	<p>Date</p>
