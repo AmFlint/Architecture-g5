@@ -25,7 +25,12 @@ class DefaultController extends Controller
 
     public function contactAction()
     {
-        echo 'on est sur la page contact';
+        echo  self::$twig[0]->render(
+            "form_contact.html.twig",
+            [
+
+            ]
+        );
     }
 
     public function testAction($id, $test)
