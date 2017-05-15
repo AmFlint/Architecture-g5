@@ -3,7 +3,7 @@
 // Defining Host const
 define("DB_HOST","localhost");
 // Defining Database Name const
-define("DB_NAME", "");
+define("DB_NAME", "architecture");
 // Defining Database User const
 define("DB_USER", "root");
 // Defining DB Password const

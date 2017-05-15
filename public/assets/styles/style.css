@@ -16,7 +16,6 @@
 
 body {
 	max-width: 1240px;
-	background: #000;
 }
 
 
@@ -24,6 +23,11 @@ body {
 /*----- HEADER---------------*/
 header {
 
+}
+
+h1 {
+	background: indianred;
+	color: white;
 }
 
 /*----- MAIN---------------*/
