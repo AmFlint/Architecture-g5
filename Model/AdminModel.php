@@ -40,4 +40,10 @@ class AdminModel extends Model
         $this->qb->where('id', $id)->table('magazines')->delete();
         header('Location: /admin');
     }
+
+    public function addMagazine()
+    {
+        $this->qb->addColumns(array('title', 'synopsis', 'image', 'link', 'date'))->values(array($_POST['title'], $_POST['synopsis'], $_POST['image'], $_POST['link'], $_POST['date']))->table('magazines')->add();
+        header('Location: /admin');
+    }
 }

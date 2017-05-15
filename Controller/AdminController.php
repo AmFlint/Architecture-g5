@@ -67,5 +67,21 @@ class AdminController extends Controller
         $this->model->deleteMagazine($id);
     }
 
+    public function showAddMagazineAction()
+    {
+        echo  self::$twig[0]->render(
+            "form_add_magazine.html.twig",
+            [
+
+            ]
+        );
+    }
+
+    public function addMagazineAction()
+    {
+        $this->model->addMagazine();
+    }
+
+
 
 }
