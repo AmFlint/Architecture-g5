@@ -129,12 +129,9 @@ final class QueryBuilder
     public function join($table, $type)
     {
         if (trim($this->joint) != '') { // if function "on()" called before join
-            $transfer = $this->joint; // save content in $transfer
+            $this->joint .= ', ';
         }
         $this->joint = ' ' . strtoupper($type) . ' JOIN `' . $table . '` ';
-        if (isset($transfer) && $transfer != '') {
-            $this->joint .= $transfer;
-        }
         return $this;
     }
 
