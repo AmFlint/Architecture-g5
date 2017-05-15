@@ -1,0 +1,32 @@
+<?php
+
+namespace classes;
+
+
+abstract class Controller
+{
+    protected static $twig = [];
+
+    public function __construct()
+    {
+        self::init();
+    }
+
+    public static function error404()
+    {
+        self::init();
+        header('HTTP/1.0 404 Not Found');
+        echo self::$twig[0]->render(
+            "404.html.twig"
+        );
+    }
+
+    protected static function init()
+    {
+        $loader = new \Twig_Loader_Filesystem(APP_VIEWS_DIR);
+        $twig = new \Twig_Environment($loader, array(
+            'cache' => false,
+        ));
+        self::$twig[0] = $twig;
+    }
+}
