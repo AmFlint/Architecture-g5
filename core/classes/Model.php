@@ -2,7 +2,7 @@
 
 namespace classes;
 
-
+use PDO;
 abstract class Model
 {
     private $db;
