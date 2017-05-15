@@ -42,7 +42,8 @@
   "contact": {
     "path": "/contact",
     "controller": "Default",
-    "action": "contact"
+    "action": "contact",
+    "method": "GET"
   },
   "delete": {
     "path": "/admin/:id/delete",
