@@ -1,5 +1,26 @@
 <h1>Ceci est le form edit de {{ magazine.title }}</h1>
 
 <form action="" method="post">
-
+    <label for="title">
+    	<p>Titre</p>
+    	<input type="text" value="{{ magazine.title }}" name="title">
+	</label>
+    <label for="synopsis">
+    	<p>Description</p>
+    	<input type="text" value="{{ magazine.synopsis }}" name="synopsis">
+	</label>
+    <label for="image">
+    	<p>Image</p>
+    	<input type="text" value="{{ magazine.image }}" name="image">
+	</label>
+    <label for="date">
+    	<p>Date</p>
+    	<input type="text" value="{{ magazine.date }}" name="date">
+	</label>
+    <label for="link">
+    	<p>URL</p>
+    	<input type="text" value="{{ magazine.link }}" name="link">
+	</label>
+    <input type="hidden" name="id" value="{{ magazine.id }}">
+	<input type="submit">
 </form>

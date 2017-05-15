@@ -55,6 +55,7 @@ class AdminController extends Controller
 
     public function editMagazineAction($id)
     {
-        
+        $model = new AdminModel();
+        $revue = $model->setMagazines();
     }
 }
