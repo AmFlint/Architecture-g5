@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.cf:before,
+.cf:after {
+	display: table;
+	content: ' ';
+}
+.cf:after {
+	clear: both;
+}
+
+body {
+	max-width: 1240px;
+}
+
+
+
+/*----- HEADER---------------*/
+header {
+
+}
+
+h1 {
+	background: indianred;
+	color: white;
+}
+
+/*----- MAIN---------------*/
+main {
+
+}
+
+/*----- FOOTER---------------*/
+footer {
+	
+}
+
+/*----- BREAKPOINT Tablettes---------------*/
+@media screen and ( max-width: 768px) {
+	body {
+		background: #444;
+	}
+}
+
+/*----- BREAKPOINT Smartphones---------------*/
+@media screen and ( max-width: 400px) {
+	body {
+		background: #888;
+	}
+}

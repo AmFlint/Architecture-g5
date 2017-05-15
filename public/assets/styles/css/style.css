@@ -11,9 +11,10 @@
   clear: both; }
 
 body {
-  
-}
+  max-width: 1240px;
+  background: #000; }
 
+/*----- HEADER---------------*/
 /*----- MAIN---------------*/
 /*----- FOOTER---------------*/
 /*----- BREAKPOINT Tablettes---------------*/
