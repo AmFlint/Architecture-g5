@@ -1,9 +1,15 @@
 {
-  "test" : {
-    "path": "/lol",
-    "controller": "Default",
+  "admin" : {
+    "path": "/admin/",
+    "controller": "Admin",
     "method": "GET",
-    "action": "foo"
+    "action": "listing"
+  },
+  "magazine": {
+    "path": "/admin/:id",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "showMagazine"
   },
   "check": {
     "path": "/articles/:id/:test",
@@ -14,5 +20,10 @@
     "path": "/",
     "controller": "Default",
     "action": "chick"
+  },
+  "contact": {
+    "path": "/contact",
+    "controller": "Default",
+    "action": "contact"
   }
 }
