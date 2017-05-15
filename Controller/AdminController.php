@@ -49,10 +49,14 @@ class AdminController extends Controller
     public function showFormAction($id)
     {
         $magazine = $this->model->getMagazine($id);
+        $partenaires = $this->model->getPartners($magazine[0]['location_id'],$magazine[0]['secondary_location']);
+        $partenaires_actuels = $this->model->getActualPartners($id);
         echo  self::$twig[0]->render(
             "form_edit_magazine.html.twig",
             [
-                "magazine" => $magazine[0]
+                "magazine" => $magazine[0],
+                "list_partenaires" => $partenaires,
+                "actual_partenaires" => $partenaires_actuels
             ]
         );
     }

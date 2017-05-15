@@ -114,13 +114,16 @@ final class QueryBuilder
      * @param string $operation
      * @return $this
      */
-    public function where($param, $value, $operation = "=")
+    public function where($param, $value, $operator = " AND ", $operation = "=")
     {
         if (empty($this->condition)){
             $this->condition = " WHERE 1";
         }
         $to_bind = implode('', explode('.', $param));
-        $this->condition .= ' AND ' . $param . ''. ' ' . $operation . ' ' . ':' . $to_bind;
+        if (in_array($to_bind, $this->array_parameters)) {
+            $to_bind .= 'secret';
+        }
+        $this->condition .= $operator . $param . ''. ' ' . $operation . ' ' . ':' . $to_bind;
         array_push($this->values, $value);
         array_push($this->array_parameters, $to_bind);
         return $this;
@@ -129,12 +132,9 @@ final class QueryBuilder
     public function join($table, $type)
     {
         if (trim($this->joint) != '') { // if function "on()" called before join
-            $transfer = $this->joint; // save content in $transfer
+            $this->joint .= ', ';
         }
         $this->joint = ' ' . strtoupper($type) . ' JOIN `' . $table . '` ';
-        if (isset($transfer) && $transfer != '') {
-            $this->joint .= $transfer;
-        }
         return $this;
     }
 

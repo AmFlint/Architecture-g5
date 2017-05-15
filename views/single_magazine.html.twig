@@ -4,4 +4,8 @@
 
 <img src="/assets/img-content/{{ magazine.image }}" alt="">
 
+{% if magazine.secondary_image %}
+    <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+{% endif %}
+
 <a href="/admin/{{ magazine.id }}/edit">Editer l'article</a>
