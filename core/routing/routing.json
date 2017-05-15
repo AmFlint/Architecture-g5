@@ -11,6 +11,12 @@
     "controller": "Admin",
     "action": "showMagazine"
   },
+  "edit_magazine_form": {
+    "path": "/admin/:id/edit",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "showForm"
+  },
   "check": {
     "path": "/articles/:id/:test",
     "controller": "Default",

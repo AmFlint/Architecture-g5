@@ -31,6 +31,25 @@ class AdminController extends Controller
 
     public function showMagazineAction($id)
     {
-        echo "c'est le magazine " . $id;
+        $model = new AdminModel();
+        $magazine = $model->getMagazine($id);
+        echo  self::$twig[0]->render(
+            "single_magazine.html.twig",
+            [
+                "magazine" => $magazine[0]
+            ]
+        );
+    }
+
+    public function showFormAction($id)
+    {
+        $model = new AdminModel();
+        $magazine = $model->getMagazine($id);
+        echo  self::$twig[0]->render(
+            "form_edit_magazine.html.twig",
+            [
+                "magazine" => $magazine[0]
+            ]
+        );
     }
 }
