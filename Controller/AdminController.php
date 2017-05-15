@@ -52,4 +52,9 @@ class AdminController extends Controller
             ]
         );
     }
+
+    public function editMagazineAction($id)
+    {
+        
+    }
 }
