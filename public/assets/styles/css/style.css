@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: ' '; }
+
+.cf:after {
+  clear: both; }
+
+body {
+  max-width: 1240px;
+  background: #000; }
+
+/*----- HEADER---------------*/
+/*----- MAIN---------------*/
+/*----- FOOTER---------------*/
+/*----- BREAKPOINT Tablettes---------------*/
+@media screen and (max-width: 768px) {
+  body {
+    background: #444; } }
+/*----- BREAKPOINT Smartphones---------------*/
+@media screen and (max-width: 400px) {
+  body {
+    background: #888; } }
+
+/*# sourceMappingURL=style.css.map */
