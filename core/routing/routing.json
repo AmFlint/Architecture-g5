@@ -17,6 +17,12 @@
     "controller": "Admin",
     "action": "showForm"
   },
+  "edit_magazine": {
+    "path": "/admin/:id/edit",
+    "method": "POST",
+    "controller": "Admin",
+    "action": "editMagazine"
+  },
   "check": {
     "path": "/articles/:id/:test",
     "controller": "Default",
