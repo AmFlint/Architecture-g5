@@ -76,11 +76,26 @@ class DefaultController extends Controller
     public function showOfferAction()
     {
         $offer = $this->model->getOffer();
-        echo  self::$twig[0]->render(
+        echo self::$twig[0]->render(
             "appel_offre.html.twig",
             [
                 'offer' => $offer[0]
             ]
         );
+    }
+
+    public function  commandeFormAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            echo  self::$twig[0]->render(
+                "form_commande.html.twig",
+                [
+                ]
+            );
+        }
+        else {
+            $_POST['commande_id'] = 2;
+            $this->model->subscribe();
+        }
     }
 }

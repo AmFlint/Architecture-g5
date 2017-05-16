@@ -117,13 +117,13 @@
     "method": "POST"
   },
   "abonnementGET": {
-    "path": "/subscribe",
+    "path": "/abonnement",
     "controller": "Default",
     "action": "subscribeForm",
     "method": "GET"
   },
   "abonnementPOST": {
-    "path": "/subscribe",
+    "path": "/abonnement",
     "controller": "Default",
     "action": "subscribeForm",
     "method": "POST"
@@ -133,5 +133,17 @@
     "controller": "Default",
     "action": "showOffer",
     "method": "GET"
+  },
+  "commandeGET": {
+    "path": "/commande",
+    "controller": "Default",
+    "action": "commandeForm",
+    "method": "GET"
+  },
+  "commandePOST": {
+    "path": "/commande",
+    "controller": "Default",
+    "action": "commandeForm",
+    "method": "POST"
   }
 }
