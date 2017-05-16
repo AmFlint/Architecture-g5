@@ -23,11 +23,32 @@
   clear: both; }
 
 body {
-    font-family: Coves;
+    font-family: Coves, 'sans-serif';
 }
+.table {
+    display:table;
+    width: 100%;
+    text-align: center;
+}
+
+.table-row:nth-child(even) {
+    background: lightgray;
+}
+
+.table img {
+    display: block;
+    max-width:100%;
+}
+
+.table-head {
+    font-weight: 700;
+}
+.table-row { display:table-row; }
+.table-cell { display:table-cell; }
 
 table {
     text-align: center;
+    width: 100%;
 }
 
 header a {
@@ -63,63 +84,29 @@ nav a {
     color: #fff;
 }
 
+.btn-danger {
+    background: #c9302c;
+    color: #fff;
+    border-color: #c12e2a;
+}
+
+.btn-default {
+    color: #fff;
+    background: #025aa5;
+    border-color: #01549b;
+}
+
 main {
-    width: 80%;
+    width: 83%;
 }
 
 a {
     text-decoration: none;
 }
 
-.article {
-  width: 90%;
-  margin: 5% auto -2% auto;
-  background: white;
-  padding: 2%;
-  line-height: 33px;
-  border-radius: 6px;
-  font-size: 22px;
-  font-weight: 200;
-  position: relative;
-}
-
-.article h2 {
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.6rem;
-  padding: 2% 0;
-  width: 90%;
-}
-
-.article span {
-  font-family: 'Open sans', sans-serif;
-  opacity: 0.4;
-  padding: 0;
-  font-size: 0.8rem;
-}
-
-.article p {
-  font-family: 'Open sans', sans-serif;
-  padding: 2% 0 2% 5%;
-  margin: 1rem auto;
-}
-
-.article address {
-  font-family: 'Open sans', sans-serif;
-  opacity: 0.4;
-  font-size: 0.8rem;
-}
-
-.article i img {
-  width: 22px;
-  position: absolute;
-  top: 13%;
-  right: 7%;
-}
-
-.article div {
-  padding: 0 6%;
-  font-size: 1rem;
-  font-weight: 500;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /*----- MAIN---------------*/

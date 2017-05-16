@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <title>{% block title %}Page Admin{% endblock %}</title>
     <link rel="stylesheet" href="/assets/styles/style.css">
+    <style>
+        .table-cell{
+            vertical-align: middle;
+        }
+
+        .table img {
+            display: block;
+            width:100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -18,6 +29,7 @@
         <a href="/admin/actualites/add" class="is_child">Nouvelle Actualité</a>
         <a href="/admin/contact">Messages</a>
         <a href="/admin/partenaires">Partenaires</a>
+        <a href="/admin/commandes">Commandes</a>
     </nav>
 </aside>
 <main>
