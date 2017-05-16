@@ -97,9 +97,67 @@ class AdminController extends Controller
 
     public function addMagazineAction()
     {
-        $this->model->addMagazine();
+        if ($_POST['localisation_secondaire'] != '' && is_string($_POST['localisation_secondaire'])) {
+            if ($this->model->exists('location', 'location', $_POST['localisation_secondaire'])) {
+                $localisation_secondaire = $this->model->getLocId($_POST['localisation_secondaire'])[0]['id'];
+            } else {
+                $localisation_secondaire = $this->model->addLocation($_POST['localisation_secondaire']);
+            }
+        } else {
+            $localisation_secondaire = 6;
+        }
+
+        if ($this->model->exists('location', 'location', $_POST['localisation'])) {
+            $localisation = $this->model->getLocId($_POST['localisation'])[0]['id'];
+        } else {
+            $localisation = $this->model->addLocation($_POST['localisation']);
+        }
+
+        $this->model->addMagazine($localisation, $localisation_secondaire);
     }
 
+    public function showMessagesAction()
+    {
+        $messages = $this->model->getMessages();
+        echo  self::$twig[0]->render(
+            "admin_contact.html.twig",
+            [
+                "messages" => $messages
+            ]
+        );
+    }
 
+    public function showSingleMessageAction($id)
+    {
+        $message = $this->model->getMessage();
+        echo  self::$twig[0]->render(
+            "admin_single_message.html.twig",
+            [
+                "message" => $message[0]
+            ]
+        );
+    }
+
+    public function showActualitesAction()
+    {
+        $actualites = $this->model->getActu();
+        echo  self::$twig[0]->render(
+            "admin_actualites_listing.html.twig",
+            [
+                "actualites" => $actualites
+            ]
+        );
+    }
+
+    public function showActualiteSingleAction($id)
+    {
+        $actualite = $this->model->getActuSingle($id);
+        echo  self::$twig[0]->render(
+            "admin_actualite_single.html.twig",
+            [
+                "actualite" => $actualite[0]
+            ]
+        );
+    }
 
 }
