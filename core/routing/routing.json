@@ -11,6 +11,12 @@
     "action": "showMessages",
     "method": "GET"
   },
+  "admin_partenaires": {
+    "path": "/admin/partenaires",
+    "controller": "Admin",
+    "action": "showPartners",
+    "method": "GET"
+  },
   "admin_actualies": {
     "path": "/admin/actualites",
     "controller": "Admin",
@@ -52,6 +58,30 @@
     "method": "POST",
     "controller": "Admin",
     "action": "editMagazine"
+  },
+  "partenaire_set_visible": {
+    "path": "/admin/partenaires/:id/visible",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "setVisible"
+  },
+  "partenaires_delete": {
+    "path": "/admin/partenaires/:id/delete",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "deletePartner"
+  },
+  "partenaires_edit_form": {
+    "path": "/admin/partenaires/:id",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "editFormPartner"
+  },
+  "partenaires_edit": {
+    "path": "/admin/partenaires/:id",
+    "method": "POST",
+    "controller": "Admin",
+    "action": "editPartner"
   },
   "check": {
     "path": "/articles/:id/:test",
@@ -97,5 +127,11 @@
     "controller": "Default",
     "action": "subscribeForm",
     "method": "POST"
+  },
+  "appel_d_offre": {
+    "path": "/appel-d-offre",
+    "controller": "Default",
+    "action": "showOffer",
+    "method": "GET"
   }
 }

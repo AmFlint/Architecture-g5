@@ -72,4 +72,15 @@ class DefaultController extends Controller
             $this->model->subscribe();
         }
     }
+
+    public function showOfferAction()
+    {
+        $offer = $this->model->getOffer();
+        echo  self::$twig[0]->render(
+            "appel_offre.html.twig",
+            [
+                'offer' => $offer[0]
+            ]
+        );
+    }
 }

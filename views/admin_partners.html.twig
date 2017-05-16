@@ -1,0 +1,34 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Lien Iframe</th>
+            <th>Localisation</th>
+            <th>Visible Appel Offre</th>
+            <th>Action</th>
+        </thead>
+        {% for partner in partners %}
+           <tr>
+               <td>{{ partner.id }}</td>
+               <td>{{ partner.name }}</td>
+               <td>{{ partner.link }}</td>
+               <td>{{ partner.location }}</td>
+               <td>
+                   {% if partner.visible_front == 1 %}
+                        Oui
+                   {% else %}
+                        Non
+                   {% endif %}
+               </td>
+               <td>
+                   <a href="/admin/partenaires/{{ partner.id }}/visible">Front page</a>
+                   <a href="/admin/partenaires/{{ partner.id }}">Editer</a>
+                   <a href="/admin/partenaires/{{ partner.id }}/delete">Supprimer</a>
+               </td>
+           </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

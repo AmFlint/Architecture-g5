@@ -1,6 +1,18 @@
 * {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Coves";
+    url('font/Coves_Bold.otf');
+}
 
 .cf:before,
 .cf:after {
@@ -11,11 +23,33 @@
   clear: both; }
 
 body {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1220px;
+    font-family: Coves;
 }
 
+table {
+    text-align: center;
+}
+
+header a {
+    color: black;
+}
+
+aside {
+    background: #1a1a1a;
+    float: left;
+    width: 20%;
+}
+
+nav a {
+    padding: 10px 0 10px 20px;
+    display: block;
+    width: 100%;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
 
 .article {
   width: 90%;
