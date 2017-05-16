@@ -85,5 +85,17 @@
     "controller": "Admin",
     "action": "addMagazine",
     "method": "POST"
+  },
+  "abonnementGET": {
+    "path": "/subscribe",
+    "controller": "Default",
+    "action": "subscribeForm",
+    "method": "GET"
+  },
+  "abonnementPOST": {
+    "path": "/subscribe",
+    "controller": "Default",
+    "action": "subscribeForm",
+    "method": "POST"
   }
 }
