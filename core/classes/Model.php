@@ -5,7 +5,8 @@ namespace classes;
 use PDO;
 abstract class Model
 {
-    private $db;
+    public $db;
+    protected $qb;
 
     public function __construct()
     {
@@ -15,5 +16,16 @@ abstract class Model
             die($exception->getMessage());
         }
         $this->db->exec("SET NAMES UTF8");
+
+        $this->qb = new QueryBuilder();
+    }
+
+    public function exists($table, $champ, $param)
+    {
+        $count = $this->qb
+            ->table($table)
+            ->where($champ, $param)
+            ->count();
+        return (bool) $count;
     }
 }

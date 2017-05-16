@@ -8,12 +8,9 @@ use classes\QueryBuilder;
 
 class AdminModel extends Model
 {
-    private $qb;
     public function __construct()
     {
         parent::__construct();
-        $this->qb = new QueryBuilder();
-
     }
 
     private function upload()
@@ -67,8 +64,23 @@ class AdminModel extends Model
     {
         $row = $this->qb
             ->table('magazines')
-            ->select(array('id', 'title', 'synopsis', 'image', 'secondary_image', 'link', 'date', 'location_id', 'secondary_location'))
-            ->where('id', $id)
+            ->select(array(
+                'magazines.id',
+                'magazines.title',
+                'magazines.synopsis',
+                'magazines.image',
+                'magazines.secondary_image',
+                'magazines.link',
+                'magazines.date',
+                'magazines.location_id',
+                'magazines.secondary_location',
+                'l1.location as location',
+                'l2.location as secondary_location'))
+            ->join('location as l1', 'inner')
+            ->on('magazines.location_id', 'l1.id')
+            ->join('location as l2', 'inner')
+            ->on('magazines.secondary_location', 'l2.id')
+            ->where('magazines.id', $id)
             ->get();
         return $row;
     }
@@ -115,8 +127,47 @@ class AdminModel extends Model
 
     public function addMagazine()
     {
-        $fichier = $this->upload();
-        $this->qb->addColumns(array('title', 'synopsis', 'image', 'link', 'date'))->values(array($_POST['title'], $_POST['synopsis'], $fichier, $_POST['link'], $_POST['date']))->table('magazines')->add();
+        $fichier = $this->upload(); // Upload first image, returns path (example.jpg)
+
+        $this->qb
+            ->addColumns(array(
+                'title',
+                'synopsis',
+                'image',
+                'link',
+                'date',
+                'secondary_image',
+                'secondary_location',
+                'location_id'
+                ))
+            ->values(array(
+                $_POST['title'],
+                $_POST['synopsis'],
+                $fichier,
+                $_POST['link'],
+                $_POST['date']))
+            ->table('magazines')
+            ->add();
         header('Location: /admin');
+    }
+
+    public function getLocId($localisation)
+    {
+        $row = $this->qb
+            ->select(array('id'))
+            ->table('location')
+            ->where('location', $localisation)
+            ->get();
+        return $row;
+    }
+
+    public function addLocation($localisation)
+    {
+        $this->qb
+            ->addColumns(array('location'))
+            ->table('location')
+            ->values(array($localisation))
+            ->add();
+        return $this->qb->db->lastInsertId();
     }
 }

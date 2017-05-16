@@ -16,7 +16,6 @@ use PDO;
 
 class AdminController extends Controller
 {
-    private $model;
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +25,6 @@ class AdminController extends Controller
     public function listingAction()
     {
         $actualites = $this->model->getMagazines();
-        $lol = [["test" => "salut"], ["test" => "prenom"]];
         echo  self::$twig[0]->render(
             "admin.html.twig",
             [
@@ -63,7 +61,13 @@ class AdminController extends Controller
 
     public function editMagazineAction($id)
     {
-        $revue = $this->model->setMagazines();
+        if ($this->model->exists('location', 'location', $_POST['localisation'])) {
+            $localisation = $this->model->getLocId($_POST['localisation']);
+        } else {
+            $localisation = $this->model->addLocation($_POST['localisation']);
+        }
+
+//        $revue = $this->model->setMagazines();
     }
 
     public function deleteMagazineAction($id)
