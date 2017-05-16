@@ -1,4 +1,6 @@
+{% extends "layout_admin.html.twig" %}
 
+{% block body %}
 <p>{{ message.id }}</p>
 <p>{{ message.raison_sociale }}</p>
 <p>{{ message.nom }}</p>
@@ -6,3 +8,4 @@
 <p>{{ message.mail }}</p>
 <p>{{ message.service }}</p>
 <p>{{ message.message }}</p>
+{% endblock %}

@@ -1,3 +1,6 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
 <h1>Ceci est le form edit de {{ magazine.title }}</h1>
 
 <form action="" method="post"  enctype="multipart/form-data">
@@ -64,3 +67,5 @@
         <li>{{ partner.name }}</li>
     {% endfor %}
 </ul>
+
+{% endblock %}
