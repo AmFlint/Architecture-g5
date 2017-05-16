@@ -28,4 +28,44 @@ class DefaultModel extends Model
         header('Location: /');
     }
 
+    public function subscribe()
+    {
+        $this->qb
+            ->addColumns(array(
+                'raison_sociale',
+                'activite',
+                'nom',
+                'prenom',
+                'fonction',
+                'adresse',
+                'code_postal',
+                'ville',
+                'pays',
+                'telephone',
+                'fax',
+                'mail',
+                'zone_geographique',
+                'revue',
+                'quantite',
+                'commande_id'))
+            ->values(array(
+                $_POST['raison_sociale'],
+                $_POST['activite'],
+                $_POST['nom'],
+                $_POST['prenom'],
+                $_POST['code_postal'],
+                $_POST['ville'],
+                $_POST['pays'],
+                $_POST['telephone'],
+                $_POST['fax'],
+                $_POST['mail'],
+                $_POST['zone_geographique'],
+                $_POST['revue'],
+                $_POST['quantite'],
+                $_POST['commande_id']))
+            ->table('commande')
+            ->add();
+        header('Location: /contact');
+    }
+
 }
