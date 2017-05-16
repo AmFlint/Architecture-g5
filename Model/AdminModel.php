@@ -85,15 +85,34 @@ class AdminModel extends Model
         return $row;
     }
 
-    public function setMagazines()
+    public function setMagazines($localisation, $localisation_secondaire)
     {
         if ($_FILES['image']['tmp_name'] != '') {
             $fichier = $this->upload();
         } else {
             $fichier = $_POST['lastimage'];
         }
-        $this->qb->updateColumns(array('title', 'synopsis', 'image', 'link', 'date'))->values(array($_POST['title'], $_POST['synopsis'], $fichier, $_POST['link'], $_POST['date']))->where('id', $_POST['id'])->table('magazines')->update();
-        header('Location: /admin');
+        $this->qb
+            ->updateColumns(array(
+                'title',
+                'synopsis',
+                'image',
+                'link',
+                'date',
+                'location_id',
+                'secondary_location'))
+            ->values(array(
+                $_POST['title'],
+                $_POST['synopsis'],
+                $fichier,
+                $_POST['link'],
+                $_POST['date'],
+                $localisation,
+                $localisation_secondaire))
+            ->where('id', $_POST['id'])
+            ->table('magazines')
+            ->update();
+        header('Location: /admin/'.$_POST['id'].'/edit');
     }
 
     public function deleteMagazine($id)

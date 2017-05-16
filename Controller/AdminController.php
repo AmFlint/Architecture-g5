@@ -61,13 +61,23 @@ class AdminController extends Controller
 
     public function editMagazineAction($id)
     {
+        if ($_POST['localisation_secondaire'] != '' && is_string($_POST['localisation_secondaire'])) {
+            if ($this->model->exists('location', 'location', $_POST['localisation_secondaire'])) {
+                $localisation_secondaire = $this->model->getLocId($_POST['localisation_secondaire'])[0]['id'];
+            } else {
+                $localisation_secondaire = $this->model->addLocation($_POST['localisation_secondaire']);
+            }
+        } else {
+            $localisation_secondaire = 6;
+        }
+
         if ($this->model->exists('location', 'location', $_POST['localisation'])) {
-            $localisation = $this->model->getLocId($_POST['localisation']);
+            $localisation = $this->model->getLocId($_POST['localisation'])[0]['id'];
         } else {
             $localisation = $this->model->addLocation($_POST['localisation']);
         }
 
-//        $revue = $this->model->setMagazines();
+        $this->model->setMagazines($localisation, $localisation_secondaire);
     }
 
     public function deleteMagazineAction($id)

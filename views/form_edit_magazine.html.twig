@@ -32,11 +32,20 @@
     </label>
     <label for="">
         <p>Localisation Secondaire</p>
-        <input type="text" value="{{ magazine.secondary_location }}" name="localisation_secondaire">
+        {% if magazine.secondary_location == 'empty' %}
+            <input type="text" value="" name="localisation_secondaire">
+        {% else %}
+            <input type="text" name="localisation_secondaire" value="{{ magazine.secondary_location }}">
+        {% endif %}
     </label>
     <input type="hidden" name="id" value="{{ magazine.id }}">
 	<input type="submit">
 </form>
+
+<div>
+    <img src="/assets/img-content/{{ magazine.image }}" alt="">
+    <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+</div>
 
 <p>Partenaires actuels</p>
 <ul>
