@@ -69,4 +69,17 @@ class DefaultModel extends Model
             ->add();
         header('Location: /');
     }
+
+    public function getOffer()
+    {
+        $row = $this->qb
+            ->select([
+                'name',
+                'link'
+            ])
+            ->table('partenaires')
+            ->where('visible_front', 1)
+            ->get();
+        return $row;
+    }
 }

@@ -160,4 +160,46 @@ class AdminController extends Controller
         );
     }
 
+    public function showPartnersAction()
+    {
+        $partners = $this->model->getAllPartners();
+        echo  self::$twig[0]->render(
+            "admin_partners.html.twig",
+            [
+                "partners" => $partners
+            ]
+        );
+    }
+
+    public function setVisibleAction($id)
+    {
+        $this->model->setVisible($id);
+    }
+
+    public function deletePartnerAction($id)
+    {
+        $this->model->deletePartner($id);
+    }
+
+    public function editFormPartnerAction($id)
+    {
+        $partner = $this->model->getPartner($id);
+        echo  self::$twig[0]->render(
+            "admin_partners_edit.html.twig",
+            [
+                "partner" => $partner[0]
+            ]
+        );
+    }
+
+    public function editPartnerAction($id)
+    {
+        if ($this->model->exists('location', 'location', $_POST['localisation'])) {
+            $localisation = $this->model->getLocId($_POST['localisation'])[0]['id'];
+        } else {
+            $localisation = $this->model->addLocation($_POST['localisation']);
+        }
+        $this->model->updatePartner($id, $localisation);
+    }
+
 }

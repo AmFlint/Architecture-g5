@@ -266,4 +266,88 @@ class AdminModel extends Model
             ->get();
         return $row;
     }
+
+    public function getAllPartners()
+    {
+        $row = $this->qb
+            ->select([
+                'partenaires.id',
+                'partenaires.name',
+                'partenaires.link',
+                'partenaires.location_id',
+                'partenaires.visible_front',
+                'location.location'
+            ])
+            ->table('partenaires')
+            ->join('location', 'inner')
+            ->on('location.id', 'partenaires.location_id')
+            ->getAll();
+        return $row;
+    }
+
+    public function setVisible($id)
+    {
+        $this->qb
+            ->updateColumns(['visible_front'])
+            ->values([0])
+            ->table('partenaires')
+            ->where('visible_front', 1)
+            ->update();
+
+        $this->qb
+            ->updateColumns(['visible_front'])
+            ->values([1])
+            ->where('id', $id)
+            ->table('partenaires')
+            ->update();
+
+        header('Location: /admin/partenaires');
+    }
+
+    public function deletePartner($id)
+    {
+        $this->qb
+            ->table('partenaires')
+            ->where('id', $id)
+            ->delete();
+        header('Location: /admin/partenaires');
+    }
+
+    public function getPartner($id)
+    {
+        $row = $this->qb
+            ->select([
+                'partenaires.id',
+                'partenaires.name',
+                'partenaires.link',
+                'partenaires.location_id',
+                'partenaires.visible_front',
+                'location.location'
+            ])
+            ->table('partenaires')
+            ->join('location', 'inner')
+            ->on('location.id', 'partenaires.location_id')
+            ->where('partenaires.id', $id)
+            ->get();
+        return $row;
+    }
+
+    public function updatePartner($id, $localisation)
+    {
+        $this->qb
+            ->updateColumns(array(
+                'name',
+                'link',
+                'location_id',
+            ))
+            ->values(array(
+                $_POST['nom'],
+                $_POST['link'],
+                $localisation))
+            ->where('id', $id)
+            ->table('partenaires')
+            ->update();
+        header('Location: /admin/partenaires/'.$id);
+    }
+
 }
