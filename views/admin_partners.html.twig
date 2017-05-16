@@ -31,4 +31,32 @@
            </tr>
         {% endfor %}
     </table>
+    <div class="table">
+        <div class="table-row table-head">
+            <div class="table-cell">ID</div>
+            <div class="table-cell">Nom</div>
+            <div class="table-cell">Lien Iframe</div>
+            <div class="table-cell">Localisation</div>
+            <div class="table-cell">Visible Appel d'offre</div>
+            <div class="table-cell">Action</div>
+        </div>
+        {% for magazine in magazines %}
+            <a href="/admin/{{ magazine.id }}" class="table-row">
+                <div class="table-cell">{{ partner.id }}</div>
+                <div class="table-cell">{{ partner.name }}</div>
+                <div class="table-cell">{{ partner.link }}</div>
+                <div class="table-cell">
+                    {% if partner.visible_front == 1 %}
+                        Oui
+                    {% else %}
+                        Non
+                    {% endif %}
+                </div>
+                <div class="table-cell">
+                    <a href="/admin/partenaires/{{ partner.id }}/visible" class="btn-default">Front Page</a>
+                    <a href="/admin/partenaires/{{ partner.id }}/delete" class="btn-danger">Supprimer</a>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}

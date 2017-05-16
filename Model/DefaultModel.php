@@ -47,7 +47,8 @@ class DefaultModel extends Model
                 'zone_geographique',
                 'revue',
                 'quantite',
-                'commande_id'))
+                'commande_id',
+                'date_add'))
             ->values(array(
                 $_POST['raison_sociale'],
                 $_POST['activite'],
@@ -64,7 +65,8 @@ class DefaultModel extends Model
                 $_POST['zone_geographique'],
                 $_POST['revue'],
                 $_POST['quantite'],
-                $_POST['commande_id']))
+                $_POST['commande_id'],
+                date('Y-m-d')))
             ->table('commande')
             ->add();
         header('Location: /');

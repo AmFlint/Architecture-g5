@@ -11,6 +11,8 @@ final class QueryBuilder
      * @var
      */
     public $parameters;
+
+    public $order;
     /**
      * @var
      */
@@ -231,7 +233,7 @@ final class QueryBuilder
     private function setQuery($crud = "select")
     {
         if ($crud == "select") {
-            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition . $this->limit . $this->offset;
+            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition . $this->limit . $this->offset . $this->order;
         } else if ($crud == "add") {
             $this->query =  'INSERT INTO ' . $this->table . $this->columns;
         } else if ($crud == 'update') {
@@ -259,6 +261,12 @@ final class QueryBuilder
         for ($i = 0; $i < $count; $i++) {
             $this->stmt->bindValue(':'.$this->array_parameters[$i], htmlentities($this->values[$i]));
         }
+    }
+
+    public function orderBy($attribut, $sens)
+    {
+        $this->order = ' ORDER BY ' . $attribut . ' ' . $sens;
+        return $this;
     }
 
     /**

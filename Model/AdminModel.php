@@ -52,7 +52,20 @@ class AdminModel extends Model
 
     public function getMagazines()
     {
-        $row = $this->qb->table('magazines')->select(array('id', 'title'))->getAll();
+        $row = $this->qb
+            ->table('magazines')
+            ->select([
+                'magazines.id',
+                'magazines.title',
+                'magazines.synopsis',
+                'magazines.image',
+                'magazines.link',
+                'magazines.date',
+                'location.location'
+            ])
+            ->join('location', 'inner')
+            ->on('location.id', 'magazines.location_id')
+            ->getAll();
         return $row;
     }
 
@@ -355,6 +368,7 @@ class AdminModel extends Model
         $row = $this->qb
             ->table('commande')
             ->select(array(
+                'commande.id',
                 'commande.raison_sociale',
                 'commande.activite',
                 'commande.nom',
@@ -371,10 +385,11 @@ class AdminModel extends Model
                 'commande.revue',
                 'commande.quantite',
                 'commande.commande_id',
+                'commande.date_add AS date',
                 'type_commande.type'))
             ->join('type_commande', 'inner')
             ->on('type_commande.id', 'commande.commande_id')
-            ->where('type_commande.type','commande')
+            ->orderBy('commande.date_add', 'DESC')
             ->getAll();
         return $row;
     }
