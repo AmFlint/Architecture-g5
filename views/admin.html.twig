@@ -1,6 +1,7 @@
-<head>
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+
 <h1>Tu es sur le panel admin</h1>
 <ul>
 {% for magazine in magazines  %}
@@ -9,3 +10,4 @@
 {% endfor %}
     <a href="/admin/add">Ajout d'un Magazine</a>
 </ul>
+{% endblock %}

@@ -34,17 +34,37 @@ header a {
     color: black;
 }
 
+body {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header {
+    width: 100%;
+}
+
+.is_child {
+    padding-left: 15%;
+}
+
+.is_child:before {
+
+}
+
 aside {
     background: #1a1a1a;
-    float: left;
-    width: 20%;
+    width: 15%;
 }
 
 nav a {
-    padding: 10px 0 10px 20px;
+    padding: 10px 0 10px 5%;
     display: block;
     width: 100%;
     color: #fff;
+}
+
+main {
+    width: 80%;
 }
 
 a {

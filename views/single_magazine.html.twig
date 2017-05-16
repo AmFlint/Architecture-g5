@@ -1,3 +1,6 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
 <h1>C'est l'article {{ magazine.title }}</h1>
 
 <p>{{ magazine.content_full }}</p>
@@ -9,3 +12,4 @@
 {% endif %}
 
 <a href="/admin/{{ magazine.id }}/edit">Editer l'article</a>
+{% endblock %}
