@@ -72,4 +72,19 @@ class DefaultController extends Controller
             $this->model->subscribe();
         }
     }
+
+    public function  commandeFormAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            echo  self::$twig[0]->render(
+                "form_commande.html.twig",
+                [
+                ]
+            );
+        }
+        else {
+            $_POST['commande_id'] = 2;
+            $this->model->subscribe();
+        }
+    }
 }

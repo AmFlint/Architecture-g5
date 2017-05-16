@@ -53,6 +53,8 @@ class DefaultModel extends Model
                 $_POST['activite'],
                 $_POST['nom'],
                 $_POST['prenom'],
+                $_POST['fonction'],
+                $_POST['adresse'],
                 $_POST['code_postal'],
                 $_POST['ville'],
                 $_POST['pays'],
@@ -65,7 +67,6 @@ class DefaultModel extends Model
                 $_POST['commande_id']))
             ->table('commande')
             ->add();
-        header('Location: /contact');
+        header('Location: /');
     }
-
 }
