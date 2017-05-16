@@ -350,4 +350,32 @@ class AdminModel extends Model
         header('Location: /admin/partenaires/'.$id);
     }
 
+    public function getCommandes()
+    {
+        $row = $this->qb
+            ->table('commande')
+            ->select(array(
+                'commande.raison_sociale',
+                'commande.activite',
+                'commande.nom',
+                'commande.prenom',
+                'commande.fonction',
+                'commande.adresse',
+                'commande.code_postal',
+                'commande.ville',
+                'commande.pays',
+                'commande.telephone',
+                'commande.fax',
+                'commande.mail',
+                'commande.zone_geographique',
+                'commande.revue',
+                'commande.quantite',
+                'commande.commande_id',
+                'type_commande.type'))
+            ->join('type_commande', 'inner')
+            ->on('type_commande.id', 'commande.commande_id')
+            ->where('type_commande.type','commande')
+            ->getAll();
+        return $row;
+    }
 }
