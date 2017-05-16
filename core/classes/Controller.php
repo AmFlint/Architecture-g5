@@ -5,6 +5,7 @@ namespace classes;
 
 abstract class Controller
 {
+    protected $model;
     protected static $twig = [];
 
     public function __construct()

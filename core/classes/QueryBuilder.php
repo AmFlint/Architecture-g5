@@ -26,7 +26,7 @@ final class QueryBuilder
     /**
      * @var PDO
      */
-    private $db;
+    public $db;
     /**
      * @var
      */
@@ -132,15 +132,21 @@ final class QueryBuilder
     public function join($table, $type)
     {
         if (trim($this->joint) != '') { // if function "on()" called before join
-            $this->joint .= ', ';
+            $this->joint .= ' ';
         }
-        $this->joint = ' ' . strtoupper($type) . ' JOIN `' . $table . '` ';
+        $this->joint .= ' ' . strtoupper($type) . ' JOIN ' . $table . ' ';
         return $this;
     }
 
     public function on(string $parameter1, string $parameter2)
     {
         $this->joint .= 'ON ' . $parameter1 . ' = ' . $parameter2;
+        return $this;
+    }
+
+    public function andOr($parameter1, $parameter2, $condition)
+    {
+        $this->joint .= ' ' . $condition . ' ' . $parameter1 . ' = ' . $parameter2;
         return $this;
     }
 

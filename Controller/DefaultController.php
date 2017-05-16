@@ -4,6 +4,7 @@ namespace Controller;
 
 use classes\Controller;
 use classes\QueryBuilder;
+use Model\DefaultModel;
 
 class DefaultController extends Controller
 {
@@ -11,6 +12,7 @@ class DefaultController extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->model = new DefaultModel();
     }
 
     public function fooAction()
@@ -20,7 +22,8 @@ class DefaultController extends Controller
 
     public function chickAction()
     {
-        echo "wouw";
+        $count = $this->model->exists('location', 'location', 'Belgique');
+        echo $count;
     }
 
     public function contactAction()
@@ -31,6 +34,11 @@ class DefaultController extends Controller
 
             ]
         );
+    }
+
+    public function addContactAction()
+    {
+        $this->model->addContact();
     }
 
     public function testAction($id, $test)

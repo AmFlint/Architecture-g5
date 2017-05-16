@@ -14,6 +14,10 @@
     	<input type="file" value="" name="image">
         <input type="hidden" value="{{ magazine.image }}" name="lastimage">
 	</label>
+    <label for="">
+        <p>Image Secondaire</p>
+        <input type="text" value="{{ magazine.secondary_image }}">
+    </label>
     <label for="date">
     	<p>Date</p>
     	<input type="text" value="{{ magazine.date }}" name="date">
@@ -22,12 +26,19 @@
     	<p>URL</p>
     	<input type="text" value="{{ magazine.link }}" name="link">
 	</label>
+    <label for="">
+        <p>Localisation</p>
+        <input type="text" value="{{ magazine.location }}" name="localisation">
+    </label>
+    <label for="">
+        <p>Localisation Secondaire</p>
+        <input type="text" value="{{ magazine.secondary_location }}" name="localisation_secondaire">
+    </label>
     <input type="hidden" name="id" value="{{ magazine.id }}">
 	<input type="submit">
 </form>
 
 <p>Partenaires actuels</p>
-
 <ul>
 	{% for partenaires in actual_partenaires %}
 		<li>{{ partenaires.partner_name }}</li>

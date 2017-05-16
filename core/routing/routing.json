@@ -45,6 +45,12 @@
     "action": "contact",
     "method": "GET"
   },
+  "add_contact": {
+    "path": "/contact",
+    "controller": "Default",
+    "action": "addContact",
+    "method": "POST"
+  },
   "delete": {
     "path": "/admin/:id/delete",
     "controller": "Admin",
