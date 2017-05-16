@@ -16,7 +16,8 @@
 	</label>
     <label for="">
         <p>Image Secondaire</p>
-        <input type="text" value="{{ magazine.secondary_image }}">
+        <input type="file" name="secondary_image">
+        <input type="hidden" value="{{ magazine.secondary_image }}" name="lastimage_secondary">
     </label>
     <label for="date">
     	<p>Date</p>
@@ -44,7 +45,9 @@
 
 <div>
     <img src="/assets/img-content/{{ magazine.image }}" alt="">
-    <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+    {% if magazine.secondary_image %}
+        <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+    {% endif %}
 </div>
 
 <p>Partenaires actuels</p>

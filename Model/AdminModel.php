@@ -13,25 +13,21 @@ class AdminModel extends Model
         parent::__construct();
     }
 
-    private function upload()
+    private function upload($image)
     {
         // Définition du dossier de destination
         $dossier = 'assets/img-content/';
 // Définition du nom du fichier uploadé dans la variable fichier
-        $fichier = basename($_FILES['image']['name']);
+        $fichier = basename($_FILES[$image]['name']);
 // Création de la variable pour la taille max en octets
         $taille_maxi = 100000;
 // Evaluation de la taille du fichier uploadé
-        $taille_fichier = filesize($_FILES['image']['tmp_name']);
+        $taille_fichier = filesize($_FILES[$image]['tmp_name']);
 // On définie les extensions autorisée par le système (images)
         $extensions_ok = array('.png', '.jpg', '.jpeg');
 // On va chercher l'extension du fichier uploadé dans edit-form.php
-        $extension_fichier = strrchr($_FILES['image']['name'], '.');
-        if($taille_fichier > $taille_maxi)
-        {
-            // Variable erreur avec le message à afficher en cas d'erreur
-            $erreur = "Le fichier est trop lourd";
-        }
+        $extension_fichier = strrchr($_FILES[$image]['name'], '.');
+
 // On vérie maintenant l'extension du fichier
         if(!in_array($extension_fichier, $extensions_ok))
         {
@@ -47,7 +43,7 @@ class AdminModel extends Model
                 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
             // On déplace l'image uploadée du dossier temporaire vers le dossier img-content à la racine du site
-            move_uploaded_file($_FILES['image']['tmp_name'], $dossier . $fichier);
+            move_uploaded_file($_FILES[$image]['tmp_name'], $dossier . $fichier);
         } else {
             echo $erreur;
         }
@@ -88,15 +84,23 @@ class AdminModel extends Model
     public function setMagazines($localisation, $localisation_secondaire)
     {
         if ($_FILES['image']['tmp_name'] != '') {
-            $fichier = $this->upload();
+            $fichier = $this->upload('image');
         } else {
             $fichier = $_POST['lastimage'];
         }
+
+        if ($_FILES['secondary_image']['tmp_name'] != '') {
+            $secondary_image = $this->upload('secondary_image');
+        } else {
+            $secondary_image = $_POST['lastimage_secondary'];
+        }
+
         $this->qb
             ->updateColumns(array(
                 'title',
                 'synopsis',
                 'image',
+                "secondary_image",
                 'link',
                 'date',
                 'location_id',
@@ -105,6 +109,7 @@ class AdminModel extends Model
                 $_POST['title'],
                 $_POST['synopsis'],
                 $fichier,
+                $secondary_image,
                 $_POST['link'],
                 $_POST['date'],
                 $localisation,
@@ -144,30 +149,39 @@ class AdminModel extends Model
         return $row;
     }
 
-    public function addMagazine()
+    public function addMagazine($localisation, $localisation_secondaire)
     {
-        $fichier = $this->upload(); // Upload first image, returns path (example.jpg)
+        $fichier = $this->upload('image'); // Upload first image, returns path (example.jpg)
+
+        if ($_FILES['image_secondaire']['tmp_name'] != '') {
+            $secondary_image = $this->upload('image_secondaire');
+        } else {
+            $secondary_image = '';
+        }
 
         $this->qb
             ->addColumns(array(
                 'title',
                 'synopsis',
                 'image',
+                'secondary_image',
                 'link',
                 'date',
-                'secondary_image',
-                'secondary_location',
-                'location_id'
+                'location_id',
+                'secondary_location'
                 ))
             ->values(array(
                 $_POST['title'],
                 $_POST['synopsis'],
                 $fichier,
+                $secondary_image,
                 $_POST['link'],
-                $_POST['date']))
+                $_POST['date'],
+                $localisation,
+                $localisation_secondaire))
             ->table('magazines')
             ->add();
-        header('Location: /admin');
+        header('Location: /admin/'.$this->qb->db->lastInsertId().'/edit');
     }
 
     public function getLocId($localisation)
@@ -188,5 +202,68 @@ class AdminModel extends Model
             ->values(array($localisation))
             ->add();
         return $this->qb->db->lastInsertId();
+    }
+
+    public function getMessages()
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'raison_sociale',
+                'nom',
+                'telephone',
+                'mail',
+                'service',
+                'message'))
+            ->table('contact')
+            ->getAll();
+        return $row;
+    }
+
+    public function getMessage()
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'raison_sociale',
+                'nom',
+                'telephone',
+                'mail',
+                'service',
+                'message'))
+            ->table('contact')
+            ->get();
+        return $row;
+    }
+
+    public function getActu()
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date'))
+            ->table('actualites')
+            ->getAll();
+        return $row;
+    }
+
+    public function getActuSingle($id)
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date'))
+            ->table('actualites')
+            ->where('id', $id)
+            ->get();
+        return $row;
     }
 }

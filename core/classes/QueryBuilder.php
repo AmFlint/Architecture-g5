@@ -257,7 +257,7 @@ final class QueryBuilder
     {
         $count = count($this->values);
         for ($i = 0; $i < $count; $i++) {
-            $this->stmt->bindValue(':'.$this->array_parameters[$i], $this->values[$i]);
+            $this->stmt->bindValue(':'.$this->array_parameters[$i], htmlentities($this->values[$i]));
         }
     }
 

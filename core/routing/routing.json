@@ -5,6 +5,30 @@
     "method": "GET",
     "action": "listing"
   },
+  "admin_contact": {
+    "path": "/admin/contact",
+    "controller": "Admin",
+    "action": "showMessages",
+    "method": "GET"
+  },
+  "admin_actualies": {
+    "path": "/admin/actualites",
+    "controller": "Admin",
+    "action": "showActualites",
+    "method": "GET"
+  },
+  "admin_actualite_single": {
+    "path": "/admin/actualites/:id",
+    "controller": "Admin",
+    "action": "showActualiteSingle",
+    "method": "GET"
+  },
+  "admin_single_contact": {
+    "path": "/admin/contact/:id",
+    "controller": "Admin",
+    "action": "showSingleMessage",
+    "method": "GET"
+  },
   "formulaire_add": {
     "path": "/admin/add",
     "controller": "Admin",

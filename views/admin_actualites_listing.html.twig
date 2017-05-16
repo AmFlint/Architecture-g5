@@ -1,0 +1,5 @@
+{% for actu in actualites %}
+    <div>
+        <a href="/admin/actualites/{{ actu.id }}">{{ actu.title }}</a>
+    </div>
+{% endfor %}
