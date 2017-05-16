@@ -1,0 +1,14 @@
+
+$header-color: #fff;
+$font-family: 'coves';
+$font-size: 12px;
+
+
+$max-tab: 750px;
+$max-mob:450px;
+@import 'partials/_reset.scss';
+@import 'partials/_clearfix.scss';
+@import 'partials/_common.scss';
+@import 'partials/header.scss';
+@import 'partials/_accueil.scss';
+@import 'partials/footer.scss';
