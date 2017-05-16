@@ -24,11 +24,11 @@ class AdminController extends Controller
 
     public function listingAction()
     {
-        $actualites = $this->model->getMagazines();
+        $magazines = $this->model->getMagazines();
         echo  self::$twig[0]->render(
             "admin.html.twig",
             [
-                "magazines" => $actualites
+                "magazines" => $magazines
             ]
         );
     }
@@ -200,6 +200,17 @@ class AdminController extends Controller
             $localisation = $this->model->addLocation($_POST['localisation']);
         }
         $this->model->updatePartner($id, $localisation);
+    }
+
+    public function showCommandesAction()
+    {
+        $totalcommandes = $this->model->getCommandes();
+        echo  self::$twig[0]->render(
+            "list_commande.html.twig",
+            [
+                "commandes" => $totalcommandes
+            ]
+        );
     }
 
 }

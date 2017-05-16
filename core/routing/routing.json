@@ -5,6 +5,12 @@
     "method": "GET",
     "action": "listing"
   },
+  "admin_listing_commandes" : {
+    "path": "/admin/listing",
+    "controller": "Admin",
+    "method": "GET",
+    "action": "showCommandes"
+  },
   "admin_contact": {
     "path": "/admin/contact",
     "controller": "Admin",
@@ -129,6 +135,7 @@
     "method": "POST"
   },
   "appel_d_offre": {
+    "path": "/appel-d-offre",
     "path": "/appel-d-offre",
     "controller": "Default",
     "action": "showOffer",
