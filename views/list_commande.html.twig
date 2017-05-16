@@ -1,0 +1,45 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+    <table>
+        <thead>
+        <td>raison_sociale </td>
+        <td>activite </td>
+        <td>nom </td>
+        <td>prenom </td>
+        <td>fonction </td>
+        <td>adresse </td>
+        <td>code_postale </td>
+        <td>ville </td>
+        <td>pays </td>
+        <td>telephone </td>
+        <td>fax </td>
+        <td>mail </td>
+        <td>zone_geographique </td>
+        <td>revue </td>
+        <td>quantite </td>
+        <td>type </td>
+        </thead>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.raison_sociale }}</td>
+                <td>{{ commande.activite }}</td>
+                <td>{{ commande.nom }}</td>
+                <td>{{ commande.prenom }}</td>
+                <td>{{ commande.fonction }}</td>
+                <td>{{ commande.adresse }}</td>
+                <td>{{ commande.code_postal }}</td>
+                <td>{{ commande.ville }}</td>
+                <td>{{ commande.pays }}</td>
+                <td>{{ commande.telephone }}</td>
+                <td>{{ commande.fax }}</td>
+                <td>{{ commande.mail }}</td>
+                <td>{{ commande.zone_geographique }}</td>
+                <td>{{ commande.revue }}</td>
+                <td>{{ commande.quantite }}</td>
+                <td>{{ commande.type }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
