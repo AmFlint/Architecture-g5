@@ -176,5 +176,17 @@
     "controller": "Default",
     "action": "commandeForm",
     "method": "POST"
+  },
+  "toutes_revues": {
+    "path": "/toutes-les-revues",
+    "controller": "Default",
+    "action": "showAllMagazines",
+    "method": "GET"
+  },
+  "api_revues": {
+    "path": "/api/revue/:location",
+    "controller": "API",
+    "action": "GetMagazinesFromLocation",
+    "method": "GET"
   }
 }

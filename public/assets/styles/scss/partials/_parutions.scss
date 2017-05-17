@@ -1,5 +1,8 @@
 .view_all {
   max-width: 550px;
+  @media only screen and (max-width: $max-tab) {
+    max-width: 100%;
+  }
 }
 
 .parutions_title {
@@ -8,6 +11,14 @@
   padding-left: 50px;
   border-left: 6px solid #15D1E7;
   margin-left: 200px; // fictif
+  @media only screen and (max-width: $max-tab) {
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    font-size: 60px;
+  }
+
 }
 
 .view_all a {
@@ -31,13 +42,24 @@
   &:hover:after {
     width: 200px;
   }
+
+  @media only screen and (max-width: $max-tab) {
+    color: #1a1a1a;
+    margin-top: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    &:after {
+      width: 0;
+    }
+  }
 }
 
 .listing_mags {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 .listing_mags article {
@@ -111,3 +133,52 @@ article figure {
     color: #fff;
   }
 }
+
+.toutes_parutions_body h2 {
+  text-align: right;
+}
+
+.toutes_parutions_body aside {
+  float: right;
+  width: 20%;
+  @media only screen and (max-width: $max-tab) {
+    width: 100%;
+    float: none;
+  }
+
+}
+
+.toutes_parutions {
+  float: left;
+  width: 55%;
+  @media only screen and (max-width: $max-tab) {
+    width: 100%;
+    float: none;
+  }
+
+  article {
+    width: 30%;
+    @media only screen and (max-width: $max-tab) {
+      width: 48%;
+    }
+    @media only screen and (max-width: $max-mob) {
+      width: 100%;
+    }
+  }
+}
+
+aside ul li {
+  list-style: none;
+  text-align: right;
+  margin: 10px 0;
+  color: #A4A4A4;
+  cursor: pointer;
+
+  @media only screen and (max-width: $max-tab) {
+    display: inline-block;
+  }
+}
+
+
+
+
