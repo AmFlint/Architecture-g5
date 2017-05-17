@@ -216,12 +216,27 @@ class AdminController extends Controller
     public function showSingleCommandeAction($id)
     {
         $commande = $this->model->getCommande($id);
-        echo  self::$twig[0]->render(
+        echo self::$twig[0]->render(
             "admin_single_commande.html.twig",
             [
                 "commande" => $commande[0]
             ]
         );
+    }
+
+    public function addActualitesAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            echo  self::$twig[0]->render(
+                "admin_actualites_add.html.twig",
+                [
+                ]
+            );
+        }
+        else {
+            $this->model->addActualites();
+        }
+
     }
 
 }

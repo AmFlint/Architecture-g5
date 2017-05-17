@@ -1,0 +1,49 @@
+/*----- FONTS---------------*/
+
+@font-face {
+    font-family: 'covesbold';
+    src: url('../fonts/coves_bold-webfont.woff2') format('woff2'), url('../fonts/coves_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'coveslight';
+    src: url('../fonts/coves_light-webfont.woff2') format('woff2'), url('../fonts/coves_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*----- COMMON -------- */
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+    @media only screen and (max-width: $max-mob) {
+        text-align: right;
+    }
+}
+
+body {
+    font-family: $font-family;
+    background: url('../../img-content/background.png');
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.colornav {
+    background: #fff;
+    -webkit-transition: 0.3s;
+    transition: 0.5s;
+}

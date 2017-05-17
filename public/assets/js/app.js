@@ -1,3 +1,4 @@
+
 var mail = document.querySelector('input[type=email]'),
     submit = document.querySelector('input[type=submit]'),
     inputs = document.querySelectorAll('input'),
