@@ -213,4 +213,19 @@ class AdminController extends Controller
         );
     }
 
+    public function addActualitesAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            echo  self::$twig[0]->render(
+                "admin_actualites_add.html.twig",
+                [
+                ]
+            );
+        }
+        else {
+            $this->model->addActualites();
+        }
+
+    }
+
 }

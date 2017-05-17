@@ -393,4 +393,25 @@ class AdminModel extends Model
             ->getAll();
         return $row;
     }
+
+    public function addActualites()
+    {
+        $this->qb
+            ->addColumns(array(
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date'))
+            ->table('actualites')
+            ->values(array(
+                $_POST['title'],
+                $_POST['slug'],
+                $_POST['content_short'],
+                $_POST['content_full'],
+                date('Y_m_d')
+            ))
+            ->add();
+        header('Location: /admin/actualites');
+    }
 }

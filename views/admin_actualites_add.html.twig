@@ -1,0 +1,23 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+    <form action="" method="post">
+        <p>
+            <label for="title">Titre</label>
+            <input type="text" name="title">
+        </p>
+        <p>
+            <label for="slug">Chemin</label>
+            <input type="text" name="slug">
+        </p>
+        <p>
+            <label for="content_short">Description courte</label>
+            <input type="text" name="content_short">
+        </p>
+        <p>
+            <label for="content_full">Description Longue</label>
+            <textarea name="content_full" id="" cols="30" rows="10"></textarea>
+        </p>
+        <input type="submit">
+    </form>
+{% endblock %}

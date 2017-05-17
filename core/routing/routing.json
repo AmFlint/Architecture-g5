@@ -29,6 +29,18 @@
     "action": "showActualites",
     "method": "GET"
   },
+  "admin_actualies_addGET": {
+    "path": "/admin/actualites/add",
+    "controller": "Admin",
+    "action": "addActualites",
+    "method": "GET"
+  },
+  "admin_actualies_addPOST": {
+    "path": "/admin/actualites/add",
+    "controller": "Admin",
+    "action": "addActualites",
+    "method": "POST"
+  },
   "admin_actualite_single": {
     "path": "/admin/actualites/:id",
     "controller": "Admin",
