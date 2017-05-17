@@ -1,5 +1,39 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
-    {{ commande.id }}
+    <h2>Bon de Commande</h2>
+    <article>
+        <div class="contentCommande">
+            <div class="profilCommande">
+                <p>{{ commande.raison_sociale }}</p>
+                <p>{{ commande.activite }}</p>
+                <p>{{ commande.prenom }}</p>
+                <p>{{ commande.nom }}</p>
+                <p>{{ commande.fonction }}</p>
+            </div>
+            <p>Commande effectué le {{ commande.date_add }}</p>
+        </div>
+        <div class="headerContentCommande">
+            <div class="localCommande">
+                <p class="title">Adresse :</p>
+                <p>{{ commande.adresse }}</p>
+                <p>{{ commande.code_postal }}</p>
+                <p>{{ commande.ville }}</p>
+                <p>{{ commande.pays }}</p>
+                <p>{{ commande.zone_geographique }}</p>
+            </div>
+            <div class="contactCommande">
+                <p class="title">Coordonnées :</p>
+                <p>telephone : <span>{{ commande.telephone }}</span></p>
+                <p>fax : <span>{{ commande.fax }}</span></p>
+                <p>mail : <span>{{ commande.mail }}</span></p>
+            </div>
+           <div class="factureFlex">
+               <p class="title">Facturation :</p>
+               <p>Nombres de revue(s) commandée(s) :<span>{{ commande.revue }}</span></p>
+               <p>Prix HT : <span>430 €</span></p>
+               <p>Prix TTC : <span>450 €</span></p>
+           </div>
+        </div>
+    </article>
 {% endblock %}
