@@ -1,6 +1,7 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
+    <h1>Listes des Commandes</h1>
     <div class="table">
         <div class="table-row table-head">
             <div class="table-cell">Nom</div>
@@ -14,7 +15,7 @@
             <div class="table-cell">Date</div>
         </div>
         {% for commande in commandes %}
-            <a href="/admin/commandes/{{ commande.id }}" class="table-row">
+            <a href="{{ constant('ROOT_URL') }}admin/commandes/{{ commande.id }}" class="table-row">
                 <div class="table-cell">{{ commande.nom }}</div>
                 <div class="table-cell">{{ commande.ville }}</div>
                 <div class="table-cell">{{ commande.pays }}</div>

@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout_front.html.twig" %}
+{% block style %}
+    <style>
+        .recent-parution .visible {
+            display: block;
+        }
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Larchitecture</title>
-    <link rel="stylesheet" href="assets/styles/css/index.css">
-    <link rel="stylesheet" href="assets/styles/css/jquery.fullpage.min.css">
+        [class*="cover-"] {
+            display: none;
+        }
 
-</head>
+        .couvertures div {
+            position: relative;
+            transition: opacity .5s;
+        }
 
+<<<<<<< HEAD:views/index.html
 <body>
     <div class="full-img">
         <header>
@@ -48,6 +52,31 @@
              </div>
         </header>
      
+=======
+        .cover-infos {
+            display: none;
+        }
+
+        .buttons_carousel {
+            position: absolute;
+            width: 100%;
+            padding: 150px 20px;
+        }
+        .prev {
+            float: left;
+        }
+
+        .next {
+            float: right;
+        }
+
+    </style>
+{% endblock %}
+{% block full_img %}
+    <div class="full-img">
+{% endblock %}
+ {% block post_header %}
+>>>>>>> befd579738c0b86a5b8b706ecc4b03e7ec404176:views/front_index.html.twig
             <section class="carrousel-actu">
                 <div class="first-actu">
                     <h2><a href="#">Aren’Ice, le temple des loisirs de glace conçu par Chabanne et Partenaires</a></h2>
@@ -69,62 +98,57 @@
                 </div>
             </section>
     </div>
-
-<main>
+{% endblock %}
+{% block body %}
     <section class="recent-parution">
         <h2>Nos dernières parutions</h2>
         <div class="couvertures">
-            <div class="cover-one">
-                <a href="#"><img src="assets/img-content/couv-1.png"></a>
-            </div>
-            <div class="cover-two">
-                <a href="#"><img src="assets/img-content/couv-2-right.png"></a>
-            </div>
-            <div class="cover-three">
-                <a href="#"><img src="assets/img-content/couv-3-right.png"></a>
-            </div>
-            <div class="cover-four">
-                <a href="#"><img src="assets/img-content/couv-4-right.png"></a>
-            </div>
-            <div class="cover-five">
-                <a href="#"><img src="assets/img-content/couv-5-right.png"></a>
-            </div>
-            <div class="cover-six">
-                <a href="#"><img src="assets/img-content/couv-2-left.png"></a>
-            </div>
-            <div class="cover-seven">
-                <a href="#"><img src="assets/img-content/couv-3-left.png"></a>
-            </div>
-            <div class="cover-eight">
-                <a href="#"><img src="assets/img-content/couv-4-left.png"></a>
-            </div>
-            <div class="cover-nine">
-                <a href="#"><img src="assets/img-content/couv-5-left.png"></a>
-            </div>
+            {% set i = 0 %}
+            {% for magazine in magazines %}
+                {% if i == 0 %}
+                <div class="cover-{{ classes[i] }} visible">
+                {% else %}
+                <div class="cover-{{ classes[i] }}">
+                {% endif %}
+                    <a href="#"><img src="/assets/img-content/{{ magazine.image }}"></a>
+                </div>
+                {% set i = i + 1 %}
+            {% endfor %}
         </div>
-        <div class="cover-infos">
-            <div class="infos-left">
-                <p>Guadeloupe</p>
-                <p>ÉDITION <span class="edition">2016</span></p>
+        {% set i = 0 %}
+        {% for magazine in magazines %}
+            {% if i == 0 %}
+            <div class="cover-infos visible">
+            {% else %}
+            <div class="cover-infos">
+            {% endif %}
+                <div class="infos-left">
+                    <p>{{ magazine.location }}</p>
+                    <p>ÉDITION <span class="edition">{{ magazine.date }}</span></p>
+                </div>
+                <div class="infos-right">
+                    <p>Rencontre avec...</p>
+                    <p>Fabien Doré</p>
+                    <p>DORÉ & MARTON</p>
+                    <p>Périne Huguet</p>
+                    <p>ATELIER 13</p>
+                </div>
+                <div class="button-command">
+                    <a href="#" title="">Commander</a>
+                </div>
             </div>
-            <div class="infos-right">
-                <p>Rencontre avec...</p>
-                <p>Fabien Doré</p>
-                <p>DORÉ & MARTON</p>
-                <p>Périne Huguet</p>
-                <p>ATELIER 13</p>
-            </div>
-            <div class="button-command">
-                <a href="#" title="">Commander</a>
-            </div>
-
+            {% set i = i + 1 %}
+        {% endfor %}
+        <div class="buttons_carousel">
+            <button class="prev">prev</button>
+            <button class="next">next</button>
         </div>
     </section>
     <section class="about clearfix">
         <div class="introduction">
             <div class="who-1">
                 <h2>Qui sommes-nous ?</h2>
-                <img src="assets/img-content/about-1.png">
+                <img src="/assets/img-content/about-1.png">
             </div>
             <div class="text">
                 <p>Depuis 1990, la revue "L'Architecture de votre région" propose un panorama détaillé de l'architecture d'une région, d'un territoire ou d'un pays.</p>
@@ -137,7 +161,7 @@
 
         <div class="approach">
             <div class="approach-1">
-                    <img src="assets/img-content/about-2.png">
+                    <img src="/assets/img-content/about-2.png">
                     <h2>une approche régionale</h2>
                 </div>
             <div class="text">
@@ -148,7 +172,7 @@
 
         <div class="presence">
             <div class="presence-1">
-                <img src="assets/img-content/about-3.png">
+                <img src="/assets/img-content/about-3.png">
                 <h2>une présence, régionale, nationale et internationale</h2>
             </div>
             <div class="text">
@@ -159,6 +183,7 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD:views/index.html
     </main>
     <footer>
         <div class="mentions">
@@ -181,3 +206,9 @@
 <script src="assets/js/nav.js"></script>
 
 </html>
+=======
+    {% endblock %}
+{% block scripts %}
+    <script src="/assets/js/script.js"></script>
+{% endblock %}
+>>>>>>> befd579738c0b86a5b8b706ecc4b03e7ec404176:views/front_index.html.twig

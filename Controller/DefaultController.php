@@ -98,4 +98,17 @@ class DefaultController extends Controller
             $this->model->subscribe();
         }
     }
+
+    public function homeAction()
+    {
+        $magazines = $this->model->getFrontMagazines();
+        $classes = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+        echo  self::$twig[0]->render(
+            "front_index.html.twig",
+            [
+                'magazines' => $magazines,
+                'classes'   => $classes
+            ]
+        );
+    }
 }

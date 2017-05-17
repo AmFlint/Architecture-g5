@@ -1,6 +1,8 @@
+/******** SECTION COMMANDER *******/
+
 section.command-form,
 .price {
-    margin-top: 5%;
+    margin: 5% 0;
     padding: 2%;
     background: $white;
     box-shadow: 2px 0 rgba(0, 0, 0, 0.11);
@@ -9,10 +11,14 @@ section.command-form,
 
 section.command-form {
     float: left;
-    width: 55%;
-    @media only screen and (max-width: $max-tab) {
+    width: 65%;
+    padding-bottom: 7%;
+    @media only screen and (max-width: 900px) {
         width: 100%;
         margin-top: 8%;
+    }
+    @media only screen and (max-width: $max-tab) {
+        margin-top: 18%;
     }
     label {
         display: block;
@@ -25,47 +31,73 @@ section.command-form {
             border: none;
         }
     }
+    div.button-form {
+        text-align: center;
+        margin-top: 10%;
+        .button-send {
+            text-align: center;
+            padding: 10px 100px;
+            background: #15D1E7;
+            clear: both;
+            color: #fff;
+            border-radius: 30px;
+        }
+    }
 }
 
 section.price {
-    float: right;
-    width: 40%;
-    @media only screen and (max-width: $max-tab) {
-        width: 50%;
-        margin: 6% 0;
-    }
-    @media only screen and (max-width: $max-mob) {
-        width: 100%;
-        margin: 8% 0;
-    }
-    td {
-        padding: 2%;
-        &:first-child {
-            font-weight: bold;
+    clear: both;
+    width: 100%;
+    table {
+        width:100%;
+        td {
+            padding: 2%;
+            width: 22%;
+            border: 1px solid #000;
+            @media only screen and (max-width: $max-mob) {
+                padding: 1%;
+            }
+            &:first-child {
+                font-weight: bold;
+                width: 15%;
+            }
+        }
+        th {
+            border: 1px solid black;
+        }
+        @media only screen and (max-width: $max-mob) {
+            width: 0;
         }
     }
     .tab {
-        margin-bottom: 45px;
-        a {
+        span {
             font-weight: bold;
+            margin-right:5%;
             color: #000;
-            margin: 0 40px 30px;
         }
+    }
+    .swiss {
+        display: none;
     }
 }
 
 .img-commande {
+    @media only screen and (max-width: 900px) {
+        text-align: center;
+        ;
+    }
     img {
-        float: right;
-        margin: 2% 0;
+        float: left;
+        margin: 4% 0;
         width: 35%;
-        @media only screen and (max-width: $max-tab) {
+        @media only screen and (max-width: 900px) {
             width: 50%;
-            margin: 6% 0;
+            float: none;
+            ;
         }
         @media only screen and (max-width: $max-mob) {
             width: 100%;
-            margin: 4% 0;
+            ;
         }
     }
 }

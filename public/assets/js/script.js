@@ -25,9 +25,6 @@ for (let i = 0; i < lis.length; i++) {
 }
 
 
-/**** changement nav ******/
-
-
 /**** changement infos sur les parutions ******/
 
 var mag = document.querySelectorAll('.couvertures div');
@@ -72,16 +69,32 @@ for (var i = 0; i < mag.length; i++) {
 
 var burger = document.querySelector('.burger');
 var menu = document.querySelector('.menu-burger');
-var ul = document.querySelector('.menu-burger ul');
 var cross = document.querySelector('.cross');
 
 burger.addEventListener('click', function() {
     menu.classList.toggle('active');
-    ul.style.transform = 'translateX(0)';
 });
 
 cross.addEventListener('click', function() {
     menu.classList.add('active');
+});
+
+
+/**** filtres page commande ****/
+
+var euros = document.querySelector('.euro');
+var swiss = document.querySelector('.swiss');
+var filtre = document.querySelectorAll('.tab span');
+
+filtre[0].addEventListener('click', function() {
+    euros.style.display = 'block';
+    swiss.style.display = 'none';
+
+});
+filtre[1].addEventListener('click', function() {
+    euros.style.display = 'none';
+    swiss.style.display = 'block';
+
 });
 
 /***** carrousel ******/

@@ -4,46 +4,53 @@
 <h1>Ceci est le form edit de {{ magazine.title }}</h1>
 
 <form action="" method="post"  enctype="multipart/form-data">
-    <label for="title">
-    	<p>Titre</p>
+    <div class="title">
+    	<label>Titre</label>
     	<input type="text" value="{{ magazine.title }}" name="title">
-	</label>
-    <label for="synopsis">
-    	<p>Description</p>
-    	<input type="text" value="{{ magazine.synopsis }}" name="synopsis">
-	</label>
-    <label for="image">
-    	<p>Image</p>
-    	<input type="file" value="" name="image">
-        <input type="hidden" value="{{ magazine.image }}" name="lastimage">
-	</label>
-    <label for="">
-        <p>Image Secondaire</p>
-        <input type="file" name="secondary_image">
-        <input type="hidden" value="{{ magazine.secondary_image }}" name="lastimage_secondary">
-    </label>
-    <label for="date">
-    	<p>Date</p>
-    	<input type="text" value="{{ magazine.date }}" name="date">
-	</label>
-    <label for="link">
-    	<p>URL</p>
-    	<input type="text" value="{{ magazine.link }}" name="link">
-	</label>
-    <label for="">
-        <p>Localisation</p>
-        <input type="text" value="{{ magazine.location }}" name="localisation">
-    </label>
-    <label for="">
-        <p>Localisation Secondaire</p>
-        {% if magazine.secondary_location == 'empty' %}
-            <input type="text" value="" name="localisation_secondaire">
-        {% else %}
-            <input type="text" name="localisation_secondaire" value="{{ magazine.secondary_location }}">
-        {% endif %}
-    </label>
+	</div>
+    <div class="synopsis">
+    	<p>Synopsis</p>
+    	<textarea type="text" name="synopsis">{{ magazine.synopsis }}</textarea>
+	</div>
+    <div class="images">
+        <div class="image_primary">
+            <label for="">Image Primaire</label>
+    	    <input type="file" value="" name="image">
+            <input type="hidden" value="{{ magazine.image }}" name="lastimage">
+        </div>
+        <div class="image_secondary">
+            <label for="">Image Secondaire</label>
+            <input type="file" name="secondary_image">
+            <input type="hidden" value="{{ magazine.secondary_image }}" name="lastimage_secondary">
+        </div>
+    </div>
+    <div class="test">
+        <div class="date">
+            <label for="">Année de Parution</label>
+            <input type="text" value="{{ magazine.date }}" name="date">
+        </div>
+    </div>
+    <div class="link">
+        <label for="">Lien PDF</label>
+        <input type="text" value="{{ magazine.link }}" name="link">
+    </div>
+    <div class="location">
+        <div class="localisation_primaire">
+            <label for="">Localisation</label>
+            <input type="text" name="localisation" value="{{ magazine.location }}">
+        </div>
+        <div class="localisation_secondaire">
+            <label for="">Localisation secondaire (si nécessaire)</label>
+            {% if magazine.secondary_location == 'empty' %}
+                <input type="text" value="" name="localisation_secondaire">
+            {% else %}
+                <input type="text" name="localisation_secondaire" value="{{ magazine.secondary_location }}">
+            {% endif %}
+
+        </div>
+    </div>
     <input type="hidden" name="id" value="{{ magazine.id }}">
-	<input type="submit">
+	<input type="submit" class="btn btn-default">
 </form>
 
 <div>

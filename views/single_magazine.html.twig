@@ -1,15 +1,39 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
-<h1>C'est l'article {{ magazine.title }}</h1>
+<h1><span>Titre :</span> {{ magazine.title }}</h1>
+<div class="main">
+    <div class="synopsis">
+        <p class="label_message">Synopsis :</p>
+        <p>{{ magazine.synopsis }}</p>
+    </div>
 
-<p>{{ magazine.content_full }}</p>
+    <div class="images">
+        <div class="image_mag">
+            <p>Image</p>
+            <img src="/assets/img-content/{{ magazine.image }}" alt="">
+        </div>
+        <div class="image_mag">
+            {% if magazine.secondary_image %}
+                <p>Image Secondaire</p>
+                <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+            {% endif %}
+        </div>
 
-<img src="/assets/img-content/{{ magazine.image }}" alt="">
+    </div>
+    <div class="location">
+        <p><span>Localisation primaire :</span> {{ magazine.location }}</p>
+        {% if magazine.secondary_location %}
+            <p><span>Localisation secondaire :</span> {{ magazine.secondary_location }}</p>
+        {% endif %}
+    </div>
 
-{% if magazine.secondary_image %}
-    <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
-{% endif %}
+    <div class="link_date">
+        <p>Publié courant {{ magazine.date }}</p>
+        <span>Lien vers le PDF du magazine : </span>
+        <a href="{{ magazine.link }}">{{ magazine.link }}</a>
+    </div>
 
-<a href="/admin/{{ magazine.id }}/edit">Editer l'article</a>
+    <a href="{{ constant('ROOT_URL') }}admin/{{ magazine.id }}/edit" class="submit btn btn-success">Editer l'article</a>
+</div>
 {% endblock %}

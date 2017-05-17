@@ -22,7 +22,7 @@
 .cf:after {
   clear: both; }
 
-p,a,span{
+p,a,span,h1,h2,h3 {
     font-family: Arial;
 }
 
@@ -101,6 +101,7 @@ nav a.home {
     border-color: #01549b;
 }
 
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -133,6 +134,7 @@ a {
 }
 
 h1 {
+    font-family: Arial;
     text-align: center;
     margin-bottom: 20px;
 }

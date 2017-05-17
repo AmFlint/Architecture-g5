@@ -11,7 +11,7 @@ header {
         }
         .colornav {
             background: #fff;
-            width: 100%;
+            width:100%;
             -webkit-transition: 0.3s;
             transition: 0.5s;
             @media only screen and (max-width: $max-tab) {
@@ -54,10 +54,11 @@ header {
     }
     .burger {
         display: none;
-        margin-top: -35px;
         @media only screen and (max-width: $max-tab) {
             display: block;
+            margin-top: -50px;
         }
+
         .burger-slice {
             width: 35px;
             height: 3px;
@@ -83,10 +84,10 @@ header {
         position: absolute;
         text-align: center;
         top: 0;
-        height: 100%;
+        height: auto;
         border-bottom: 3px solid #15D1E7;
         li {
-            margin-top: 10%;
+            margin-top: 5%;
             &:first-child {
                 margin-top: 30px;
             }

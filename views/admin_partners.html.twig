@@ -11,7 +11,7 @@
             <div class="table-cell">Action</div>
         </div>
         {% for partner in partners %}
-            <a href="/admin/partenaires/{{ partner.id }}" class="table-row">
+            <a href="{{ constant('ROOT_URL') }}admin/partenaires/{{ partner.id }}" class="table-row">
                 <div class="table-cell">{{ partner.name }}</div>
                 <div class="table-cell">{{ partner.link }}</div>
                 <div class="table-cell">{{ partner.location }}</div>
@@ -23,8 +23,8 @@
                     {% endif %}
                 </div>
                 <div class="table-cell">
-                    <a href="/admin/partenaires/{{ partner.id }}/visible" class="btn btn-default">Front Page</a>
-                    <a href="/admin/partenaires/{{ partner.id }}/delete" class="btn btn-danger">Supprimer</a>
+                    <a href="{{ constant('ROOT_URL') }}admin/partenaires/{{ partner.id }}/visible" class="btn btn-default">Front Page</a>
+                    <a href="{{ constant('ROOT_URL') }}admin/partenaires/{{ partner.id }}/delete" class="btn btn-danger">Supprimer</a>
                 </div>
             </a>
         {% endfor %}
