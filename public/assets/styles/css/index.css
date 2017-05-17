@@ -35,15 +35,10 @@ h1 {
       text-align: center; } }
 
 body {
-  font-family: "coves";
-  background: url("../../img-content/background.png"); }
+  font-family: "coves"; }
 
 a {
   text-decoration: none; }
-
-h2 {
-  text-align: center;
-  padding-top: 3%; }
 
 main {
   width: 90%;
@@ -405,35 +400,23 @@ div.presence {
     border-left: 6px solid #15D1E7;
     height: 350px; }
 
-/*----- FOOTER---------------*/
-footer {
-  clear: both;
-  background: #000;
-  margin-top: 50px;
-  display: flex;
-  padding: 5% 5%;
-  justify-content: space-around;
-  bottom: 0;
-  width: 100%; }
-  footer h3,
-  footer p {
-    color: #fff; }
-  footer .mentions {
-    width: 50%; }
-    footer .mentions h3 {
-      margin-bottom: 10px; }
-    footer .mentions p {
-      margin: 5px; }
-  footer .footer-logo img {
-    width: 100%; }
-
 /******** SECTION COMMANDER *******/
+.title-abonnement {
+  text-align: center;
+  padding: 3%; }
+  @media only screen and (max-width: 750px) {
+    .title-abonnement {
+      padding-top: 8%; } }
+  @media only screen and (max-width: 450px) {
+    .title-abonnement {
+      padding-top: 14%; } }
+
 section.command-form,
 .price {
-  margin: 5% 0;
+  margin: 1% 0;
   padding: 2%;
   background: #fff;
-  box-shadow: 2px 0 rgba(0, 0, 0, 0.11);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11);
   border-bottom: 4px solid #15D1E7; }
 
 section.command-form {
@@ -446,14 +429,14 @@ section.command-form {
       margin-top: 8%; } }
   @media only screen and (max-width: 750px) {
     section.command-form {
-      margin-top: 18%; } }
+      margin-top: 10%; } }
   section.command-form label {
     display: block;
     margin-top: 5%; }
     section.command-form label input {
       float: right;
       width: 63%;
-      height: 18px;
+      height: 25px;
       background: #D8D8D8;
       border: none; }
   section.command-form div.button-form {
@@ -499,7 +482,7 @@ section.price {
     text-align: center; } }
 .img-commande img {
   float: left;
-  margin: 4% 0;
+  margin: 1% 0;
   width: 35%; }
   @media only screen and (max-width: 900px) {
     .img-commande img {
@@ -508,5 +491,64 @@ section.price {
   @media only screen and (max-width: 450px) {
     .img-commande img {
       width: 100%; } }
+
+.title-contact {
+  text-align: center;
+  padding: 3%; }
+  @media only screen and (max-width: 750px) {
+    .title-contact {
+      padding-top: 13%; } }
+  @media only screen and (max-width: 450px) {
+    .title-contact {
+      padding-top: 14%; } }
+
+section.contact-form {
+  padding-bottom: 2%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2%;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11); }
+  section.contact-form label {
+    display: block;
+    margin-top: 5%; }
+    section.contact-form label input {
+      float: right;
+      width: 63%;
+      height: 25px;
+      background: #D8D8D8;
+      border: none; }
+  section.contact-form div.button-form {
+    text-align: center;
+    margin-top: 8%;
+    padding-bottom: 3%; }
+    section.contact-form div.button-form .button-send {
+      text-align: center;
+      padding: 10px 100px;
+      background: #15D1E7;
+      clear: both;
+      color: #fff;
+      border-radius: 30px; }
+
+/*----- FOOTER---------------*/
+footer {
+  clear: both;
+  background: #000;
+  margin-top: 50px;
+  display: flex;
+  padding: 5% 5%;
+  justify-content: space-around;
+  bottom: 0;
+  width: 100%; }
+  footer h3,
+  footer p {
+    color: #fff; }
+  footer .mentions {
+    width: 50%; }
+    footer .mentions h3 {
+      margin-bottom: 10px; }
+    footer .mentions p {
+      margin: 5px; }
+  footer .footer-logo img {
+    width: 100%; }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,11 +1,21 @@
 /******** SECTION COMMANDER *******/
 
+.title-abonnement {
+    text-align:center;
+    padding:3%;
+     @media only screen and (max-width: $max-tab) {
+        padding-top: 8%;
+    }
+    @media only screen and (max-width: $max-mob) {
+        padding-top: 14%;
+    }
+}
 section.command-form,
 .price {
-    margin: 5% 0;
+    margin: 1% 0;
     padding: 2%;
     background: $white;
-    box-shadow: 2px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11);
     border-bottom: 4px solid #15D1E7;
 }
 
@@ -18,7 +28,7 @@ section.command-form {
         margin-top: 8%;
     }
     @media only screen and (max-width: $max-tab) {
-        margin-top: 18%;
+        margin-top: 10%;
     }
     label {
         display: block;
@@ -26,7 +36,7 @@ section.command-form {
         input {
             float: right;
             width: 63%;
-            height: 18px;
+            height: 25px;
             background: #D8D8D8;
             border: none;
         }
@@ -88,7 +98,7 @@ section.price {
     }
     img {
         float: left;
-        margin: 4% 0;
+        margin: 1% 0;
         width: 35%;
         @media only screen and (max-width: 900px) {
             width: 50%;
