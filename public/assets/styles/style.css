@@ -22,6 +22,10 @@
 .cf:after {
   clear: both; }
 
+p,a,span{
+    font-family: Arial;
+}
+
 body {
     font-family: Coves, 'sans-serif';
 }
@@ -51,17 +55,9 @@ table {
     width: 100%;
 }
 
-header a {
-    color: black;
-}
-
 body {
     display: flex;
     flex-flow: row wrap;
-}
-
-header {
-    width: 100%;
 }
 
 .is_child {
@@ -74,7 +70,11 @@ header {
 
 aside {
     background: #1a1a1a;
-    width: 15%;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 nav a {
@@ -82,6 +82,11 @@ nav a {
     display: block;
     width: 100%;
     color: #fff;
+}
+
+nav a.home {
+    color: #9b59b6;
+    background: #ddd;
 }
 
 .btn-danger {
@@ -117,7 +122,10 @@ nav a {
 }
 
 main {
-    width: 83%;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 a {
