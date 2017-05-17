@@ -1,0 +1,50 @@
+{% extends 'layout_front.html.twig' %}
+
+{% block body_nav %}
+    <body class="toutes_parutions_body">
+{% endblock %}
+
+{% block body %}
+<div class="view_all clearfix">
+    <h1 class="parutions_title">toutes nos parutions</h1>
+    <a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions">Voir les dernières parutions</a>
+</div>
+
+    <aside>
+        <h2>Par Ville</h2>
+        <ul>
+            {% for location in locations %}
+                <li>{{ location.location }}</li>
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <section class="toutes_parutions listing_mags">
+    {% for magazine in magazines %}
+        <article>
+            <a href="{{ constant('ROOT_URL') }}revue/{{ magazine.id }}">
+                <figure>
+                    <img src="assets/img-content/{{ magazine.image }}" alt="">
+                    <div class="hover">
+                        <img src="assets/img-layout/plus.svg" alt="">
+                    </div>
+                </figure>
+                <p>{{ magazine.location }}</p>
+                {% if magazine.secondary_location != 'empty' %}
+                    <p>{{ magazine.secondary_location }}</p>
+                {% endif %}
+                <div class="button-command">
+                    <a href="{{ constant('ROOT_URL') }}revue/{{ magazine.id }}">Voir la revue</a>
+                </div>
+            </a>
+        </article>
+    {% endfor %}
+
+    </section>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/js/get_api_magazines.js"></script>
+{% endblock %}

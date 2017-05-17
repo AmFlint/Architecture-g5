@@ -122,4 +122,17 @@ class DefaultController extends Controller
             ]
         );
     }
+
+    public function showAllMagazinesAction()
+    {
+        $magazines = $this->model->getAllMagazines();
+        $locations = $this->model->getAllLocations();
+        echo  self::$twig[0]->render(
+            "front_toutes_parutions.html.twig",
+            [
+                'magazines' => $magazines,
+                'locations' => $locations
+            ]
+        );
+    }
 }

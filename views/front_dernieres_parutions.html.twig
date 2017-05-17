@@ -6,7 +6,7 @@
 {% block body %}
     <div class="view_all clearfix">
         <h1 class="parutions_title">nos dernières parutions</h1>
-        <a href="">Voir toutes les parutions</a>
+        <a href="{{ constant('ROOT_URL') }}toutes-les-revues">Voir toutes les parutions</a>
     </div>
     <section class="listing_mags">
         {% for magazine in magazines %}
@@ -23,7 +23,7 @@
                         <p>{{ magazine.secondary_location }}</p>
                     {% endif %}
                     <div class="button-command">
-                        <a href="">Voir la revue</a>
+                        <a href="{{ constant('ROOT_URL') }}revue/{{ magazine.id }}">Voir la revue</a>
                     </div>
                 </a>
             </article>
