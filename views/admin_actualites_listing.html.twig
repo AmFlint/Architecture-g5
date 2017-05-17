@@ -3,7 +3,7 @@
 {% block body %}
 {% for actu in actualites %}
     <div>
-        <a href="/admin/actualites/{{ actu.id }}">{{ actu.title }}</a>
+        <a href="{{ constant('ROOT_URL') }}admin/actualites/{{ actu.id }}">{{ actu.title }}</a>
     </div>
 {% endfor %}
 {% endblock %}

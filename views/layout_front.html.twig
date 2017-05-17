@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Page Admin{% endblock %}</title>
+    <link rel="stylesheet" href="/assets/styles/css/index.css">
+    <link rel="stylesheet" href="/assets/styles/css/jquery.fullpage.min.css">
+    {% block style %}{% endblock %}
+</head>
+<body>
+{% block full_img %}{% endblock %}
+<header>
+    <nav class="main-nav">
+        <span class="bar"></span>
+        <ul>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}">Accueil</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}admin">Revues</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}commande">Commandes</a></li>
+            <li>
+                <a href="{{ constant('ROOT_URL') }}">
+                    {% block img_header %}
+                    <img src="/assets/img-layout/logo.svg" class="logo">
+                    {% endblock %}
+                </a>
+            </li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}appel-d-offre">Appel d'offre</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}actualites">Actualités</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}contact">Contact</a></li>
+        </ul>
+
+        <h1>Toute l’actualité de l’architecture et de la construction</h1>
+    </nav>
+    <div class="burger">
+        <div class="burger-slice"></div>
+        <div class="burger-slice"></div>
+        <div class="burger-slice"></div>
+    </div>
+
+    <div class="menu-burger active">
+        <ul>
+            <li><a href="">Accueil</a></li>
+            <li><a href="#">Revues</a></li>
+            <li><a href="#">Commandes</a></li>
+            <li><a href="#">Appel d'offre</a></li>
+            <li><a href="#">Actualités</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><img src="/assets/img-layout/multiply.svg" class="cross">
+        </ul>
+    </div>
+</header>
+{% block post_header %}{% endblock %}
+
+<main>
+    {% block body %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="mentions">
+        <h3>Mentions légales</h3>
+        <p>Groupe SOFRE&COM</p>
+        <p>Société Française d’Édition et de Communication</p>
+        <p>9/11 rue Jacquard</p>
+        <p>93315 Le Pré Saint Gervais cedex</p>
+        <p>France</p>
+    </div>
+    <div class="footer-logo">
+        <img src="/assets/img-layout/logo.svg">
+
+    </div>
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

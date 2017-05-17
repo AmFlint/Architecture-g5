@@ -130,13 +130,13 @@ class AdminModel extends Model
             ->where('id', $_POST['id'])
             ->table('magazines')
             ->update();
-        header('Location: /admin/'.$_POST['id'].'/edit');
+        header('Location: ' . ROOT_URL . 'admin/'.$_POST['id'].'/edit');
     }
 
     public function deleteMagazine($id)
     {
         $this->qb->where('id', $id)->table('magazines')->delete();
-        header('Location: /admin');
+        header('Location: ' . ROOT_URL . 'admin');
     }
 
     public function getPartners($id, $secondary)
@@ -194,7 +194,7 @@ class AdminModel extends Model
                 $localisation_secondaire))
             ->table('magazines')
             ->add();
-        header('Location: /admin/'.$this->qb->db->lastInsertId().'/edit');
+        header('Location: ' . ROOT_URL . 'admin/'.$this->qb->db->lastInsertId().'/edit');
     }
 
     public function getLocId($localisation)
@@ -320,7 +320,7 @@ class AdminModel extends Model
             ->table('partenaires')
             ->update();
 
-        header('Location: /admin/partenaires');
+        header('Location: ' . ROOT_URL . 'admin/partenaires');
     }
 
     public function deletePartner($id)
@@ -329,7 +329,7 @@ class AdminModel extends Model
             ->table('partenaires')
             ->where('id', $id)
             ->delete();
-        header('Location: /admin/partenaires');
+        header('Location: ' . ROOT_URL . 'admin/partenaires');
     }
 
     public function getPartner($id)
@@ -366,7 +366,7 @@ class AdminModel extends Model
             ->where('id', $id)
             ->table('partenaires')
             ->update();
-        header('Location: /admin/partenaires/'.$id);
+        header('Location: ' . ROOT_URL . 'admin/partenaires/'.$id);
     }
 
     public function getCommandes()
@@ -447,6 +447,6 @@ class AdminModel extends Model
                 date('Y_m_d')
             ))
             ->add();
-        header('Location: /admin/actualites');
+        header('Location: ' . ROOT_URL . 'admin/actualites');
     }
 }

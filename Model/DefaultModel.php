@@ -29,7 +29,7 @@ class DefaultModel extends Model
                 date('Y-m-d')))
             ->table('contact')
             ->add();
-        header('Location: /');
+        header('Location: ' . ROOT_URL . '');
     }
 
     public function subscribe()
@@ -73,7 +73,7 @@ class DefaultModel extends Model
                 date('Y-m-d')))
             ->table('commande')
             ->add();
-        header('Location: /');
+        header('Location: ' . ROOT_URL . '');
     }
 
     public function getOffer()
@@ -85,6 +85,24 @@ class DefaultModel extends Model
             ])
             ->table('partenaires')
             ->where('visible_front', 1)
+            ->get();
+        return $row;
+    }
+
+    public function getFrontMagazines()
+    {
+        $row = $this->qb
+            ->select([
+                'magazines.id',
+                'magazines.title',
+                'magazines.image',
+                'location.location',
+                'magazines.date'
+            ])
+            ->limit(8)
+            ->join('location', 'inner')
+            ->on('location.id', 'magazines.location_id')
+            ->table('magazines')
             ->get();
         return $row;
     }

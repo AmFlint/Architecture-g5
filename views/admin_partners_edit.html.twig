@@ -1,7 +1,7 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
-    <a href="/admin/partenaires">Revenir aux Partenaires</a>
+    <a href="{{ constant('ROOT_URL') }}admin/partenaires">Revenir aux Partenaires</a>
 <h1>Ceci est le form edit de {{ partner.name }}</h1>
 
 <form action="" method="post"  enctype="multipart/form-data">

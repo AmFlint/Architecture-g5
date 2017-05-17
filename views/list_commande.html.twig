@@ -14,7 +14,7 @@
             <div class="table-cell">Date</div>
         </div>
         {% for commande in commandes %}
-            <a href="/admin/commandes/{{ commande.id }}" class="table-row">
+            <a href="{{ constant('ROOT_URL') }}admin/commandes/{{ commande.id }}" class="table-row">
                 <div class="table-cell">{{ commande.nom }}</div>
                 <div class="table-cell">{{ commande.ville }}</div>
                 <div class="table-cell">{{ commande.pays }}</div>
