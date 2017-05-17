@@ -15,6 +15,9 @@ header {
             background: #fff;
             -webkit-transition: 0.3s;
             transition: 0.5s;
+            @media only screen and (max-width: $max-tab) {
+                display: none;
+            }
         }
         .bar {
             width: 80px;
@@ -24,6 +27,9 @@ header {
             left: 2%;
             transition: 0.5s;
             position: absolute;
+            @media only screen and (max-width: $max-tab) {
+                display: none;
+            }
         }
         ul {
             display: flex;
@@ -52,6 +58,7 @@ header {
     }
     .burger {
         display: none;
+        margin-top: -35px;
         @media only screen and (max-width: $max-tab) {
             display: block;
         }
@@ -69,8 +76,42 @@ header {
                 background: #15D1E7;
             }
             &:first-child {
-                margin-top: -25px;
+                margin-top: 0;
             }
         }
     }
+}
+
+.menu-burger {
+    @media only screen and (min-width: $max-mob) {}
+    ul {
+        background: #fff;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        border-bottom: 3px solid #15D1E7;
+        li {
+            margin-top: 10%;
+            &:first-child {
+                margin-top: 30px;
+            }
+            a {
+                color: #000;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+        img {
+            width: 2%;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+    }
+}
+
+.active {
+    display: none;
 }

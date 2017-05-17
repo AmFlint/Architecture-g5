@@ -256,6 +256,9 @@ section.about {
             right: 40px;
             border-right: 6px solid #15D1E7;
             height: 170px;
+            @media only screen and (max-width: $max-tab) {
+                width: 38%;
+            }
         }
         @media only screen and (max-width: $max-tab) {
             display: block;
