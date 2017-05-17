@@ -1,0 +1,42 @@
+.title-contact {
+    text-align:center;
+    padding:3%;
+     @media only screen and (max-width: $max-tab) {
+        padding-top: 13%;
+    }
+    @media only screen and (max-width: $max-mob) {
+        padding-top: 14%;
+    }
+}
+
+section.contact-form {
+    padding-bottom: 2%;
+    width:90%;
+    margin:0 auto;
+    padding:2%;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11);  
+    label {
+        display: block;
+        margin-top: 5%;
+        input {
+            float: right;
+            width: 63%;
+            height: 25px;
+            background: #D8D8D8;
+            border: none;
+        }
+    }
+    div.button-form {
+        text-align: center;
+        margin-top: 8%;
+        padding-bottom:3%;
+        .button-send {
+            text-align: center;
+            padding: 10px 100px;
+            background: #15D1E7;
+            clear: both;
+            color: #fff;
+            border-radius: 30px;
+        }
+    }
+}

@@ -2,6 +2,32 @@
 {% block body_nav %}
 <body class="home">
 {% endblock %}
+{% block style %}
+    <style>
+        .recent-parution .visible {
+            display: block;
+        }
+
+        [class*="cover-"] {
+            display: none;
+        }
+
+        .couvertures div {
+            position: relative;
+            transition: opacity .5s;
+        }
+        .cover-infos {
+            display: none;
+        }
+
+        .buttons_carousel {
+            position: absolute;
+            width: 100%;
+            padding: 150px 20px;
+        }
+
+    </style>
+{% endblock %}
 {% block full_img %}
     <div class="full-img">
 {% endblock %}
@@ -126,7 +152,7 @@
             </div>
         </div>
     </section>
-    {% endblock %}
+{% endblock %}
 {% block scripts %}
     <script src="assets/js/index.js"></script>
     <script src="assets/js/nav.js"></script>
