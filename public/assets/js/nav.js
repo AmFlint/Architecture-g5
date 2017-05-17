@@ -30,23 +30,9 @@ var lis = document.querySelectorAll('.li-active');
 
 for (let i = 0; i < lis.length; i++) {
 
-    lis[0].addEventListener('mouseover', function () {
-        tab.style.left = '2%';
-    });
-    lis[1].addEventListener('mouseover', function () {
-        tab.style.left = '12%';
-    });
-    lis[2].addEventListener('mouseover', function () {
-        tab.style.left = '23%';
-    });
-    lis[3].addEventListener('mouseover', function () {
-        tab.style.left = '67%';
-    });
-    lis[4].addEventListener('mouseover', function () {
-        tab.style.left = '80%';
-    });
-    lis[5].addEventListener('mouseover', function () {
-        tab.style.left = '91%';
+    lis[i].addEventListener('mouseover', function () {
+        tab.style.left = this.offsetLeft - 4 + "px";
+        tab.style.width = lis[i].offsetWidth + 10 + "px";
     });
 }
 

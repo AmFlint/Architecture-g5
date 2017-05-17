@@ -1,5 +1,9 @@
 /*----- HEADER---------------*/
 
+.home .main-nav {
+    position: fixed;
+}
+
 header {
     max-width: 100%;
     .main-nav {
@@ -35,6 +39,7 @@ header {
             justify-content: space-around;
             list-style-type: none;
             img {
+                width: 90%;
                 @media only screen and (max-width: $max-tab) {
                     width: 90%;
                     padding-left: 20%;
@@ -56,7 +61,7 @@ header {
         display: none;
         @media only screen and (max-width: $max-tab) {
             display: block;
-            margin-top: -50px;
+            transform: translateY(80%);
         }
 
         .burger-slice {

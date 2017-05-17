@@ -4,54 +4,18 @@
 /***** carrousel ******/
 
 var slider = document.querySelectorAll('.slider-bar');
-var actus = document.querySelectorAll('.carrousel-actu div');
+var actus = document.querySelectorAll('.carrousel-actu [class*="-actu"]');
 var fullImg = document.querySelector('.full-img');
-
-for (var i = 0; i < slider.length; i++) {
-    slider[0].addEventListener('click', function () {
-        actus[0].style.display = 'block';
-        actus[1].style.display = 'none';
-        actus[2].style.display = 'none';
-        actus[3].style.display = 'none';
-        slider[0].style.background = '#15D1E7';
-        slider[1].style.background = '#fff';
-        slider[2].style.background = '#fff';
-        slider[3].style.background = '#fff';
-        fullImg.style.background = "url('assets/img-content/actu-1.png')";
-    });
-    slider[1].addEventListener('click', function () {
-        actus[0].style.display = 'none';
-        actus[1].style.display = 'block';
-        actus[2].style.display = 'none';
-        actus[3].style.display = 'none';
-        slider[1].style.background = '#15D1E7';
-        slider[2].style.background = '#fff';
-        slider[3].style.background = '#fff';
-        slider[0].style.background = '#fff';
-        fullImg.style.background = "url('assets/img-content/actu-2.png')";
-    });
-    slider[2].addEventListener('click', function () {
-        actus[2].style.display = 'block';
-        actus[1].style.display = 'none';
-        actus[0].style.display = 'none';
-        actus[3].style.display = 'none';
-        slider[2].style.background = '#15D1E7';
-        slider[3].style.background = '#fff';
-        slider[1].style.background = '#fff';
-        slider[0].style.background = '#fff';
-        fullImg.style.background = "url('assets/img-content/actu-3.png')";
-    });
-    slider[3].addEventListener('click', function () {
-        actus[3].style.display = 'block';
-        actus[2].style.display = 'none';
-        actus[1].style.display = 'none';
-        actus[0].style.display = 'none';
-        slider[3].style.background = '#15D1E7';
-        slider[2].style.background = '#fff';
-        slider[0].style.background = '#fff';
-        slider[1].style.background = '#fff';
-        fullImg.style.background = "url('assets/img-content/actu-4.png')";
-
+var index_nav_slider = 0;
+var index_carousel_actu = 0;
+for (let i = 0; i < slider.length; i++) {
+    slider[i].addEventListener('click', function() {
+        var index_previous = index_carousel_actu;
+        index_carousel_actu = i;
+        console.log(i);
+        renderCover(actus, index_carousel_actu, index_previous);
+        slider[index_previous].style.background = '#fff';
+        slider[i].style.background = '#15D1E7';
     });
 }
 

@@ -57,6 +57,9 @@ main {
   transition: 0.5s; }
 
 /*----- HEADER---------------*/
+.home .main-nav {
+  position: fixed; }
+
 header {
   max-width: 100%; }
   header .main-nav {
@@ -89,14 +92,16 @@ header {
       display: flex;
       justify-content: space-around;
       list-style-type: none; }
-      @media only screen and (max-width: 750px) {
-        header .main-nav ul img {
-          width: 90%;
-          padding-left: 20%; } }
-      @media only screen and (max-width: 450px) {
-        header .main-nav ul img {
-          width: 70%;
-          padding-left: 30%; } }
+      header .main-nav ul img {
+        width: 90%; }
+        @media only screen and (max-width: 750px) {
+          header .main-nav ul img {
+            width: 90%;
+            padding-left: 20%; } }
+        @media only screen and (max-width: 450px) {
+          header .main-nav ul img {
+            width: 70%;
+            padding-left: 30%; } }
       header .main-nav ul .li-active {
         text-transform: uppercase; }
         @media only screen and (max-width: 750px) {
@@ -107,7 +112,7 @@ header {
     @media only screen and (max-width: 750px) {
       header .burger {
         display: block;
-        margin-top: -50px; } }
+        transform: translateY(80%); } }
     header .burger .burger-slice {
       width: 35px;
       height: 3px;
@@ -147,17 +152,131 @@ header {
   display: none; }
 
 /*----- SECTION CARROUSEL ---------------*/
+@font-face {
+  font-family: 'icomoon';
+  src: url("/assets/fonts/icomoon.eot?40hhjl");
+  src: url("/assets/fonts/icomoon.eot?40hhjl#iefix") format("embedded-opentype"), url("/assets/fonts/icomoon.ttf?40hhjl") format("truetype"), url("/assets/fonts/icomoon.woff?40hhjl") format("woff"), url("/assets/fonts/icomoon.svg?40hhjl#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change /assets/fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-rond:before {
+  content: "\e900"; }
+
+.icon-down-arrow:before {
+  content: "\e901"; }
+
+.icon-icon:before {
+  content: "\e902"; }
+
+.icon-wifi:before {
+  content: "\e903"; }
+
+.icon-swimming-silhouette:before {
+  content: "\e904"; }
+
+.icon-parking-sign:before {
+  content: "\e905"; }
+
+.icon-plate-fork-and-knife:before {
+  content: "\e906"; }
+
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.recent-parution .visible {
+  display: block; }
+
+[class*="cover-"] {
+  display: none; }
+
+.cover-infos {
+  display: none; }
+
+.prev {
+  float: left; }
+
+.next {
+  float: right; }
+
+.buttons_carousel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  padding: 25% 20%; }
+  @media only screen and (max-width: 750px) {
+    .buttons_carousel {
+      padding: 35% 5% 0; } }
+  @media only screen and (max-width: 450px) {
+    .buttons_carousel {
+      padding: 55% 0 0; } }
+
+.buttons_carousel i {
+  font-size: 50px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  margin-bottom: 15%;
+  color: #000; }
+  @media only screen and (max-width: 750px) {
+    .buttons_carousel i {
+      font-size: 55px; } }
+
+.buttons_carousel .right {
+  transform: rotate(-90deg); }
+
+[class*="cover-"] img {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  min-height: 261px; }
+
 /*image de fond*/
 .full-img {
   position: relative;
-  background: url("../../img-content/actu-1.png");
-  background-size: cover;
-  height: 700px;
   width: 100%;
   transition: 0.4s; }
   @media only screen and (max-width: 750px) {
     .full-img {
       height: auto; } }
+  .full-img img {
+    display: block;
+    width: 100%;
+    max-height: 100vh; }
+  .full-img div.test_a {
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.carrousel-actu [class*='-actu'] {
+  display: none; }
+.carrousel-actu .visible {
+  display: block; }
+
+.test-a {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+.carrousel-actu > div {
+  position: relative; }
 
 @media only screen and (max-width: 450px) {
   section.carrousel-actu {
@@ -187,7 +306,8 @@ section.carrousel-actu .slider-bars {
     display: inline-block;
     width: 70px;
     transition: 0.4s;
-    height: 4px;
+    height: 8px;
+    cursor: pointer;
     background: #fff;
     border-radius: 10px;
     margin-right: 10px; }
@@ -201,129 +321,46 @@ section.carrousel-actu .slider-bars {
 
 /*----- SECTION PARUTIONS ---------------*/
 section.recent-parution {
+  height: 450px;
   padding: 3%;
   position: relative;
-  margin-bottom: 450px; }
-  @media only screen and (max-width: 750px) {
-    section.recent-parution {
-      margin-bottom: 150px; } }
-  @media only screen and (max-width: 450px) {
-    section.recent-parution {
-      margin-bottom: 20px; } }
+  margin-bottom: 300px; }
   section.recent-parution h2 {
     text-align: center;
     margin-bottom: 50px; }
-  @media only screen and (max-width: 750px) {
-    section.recent-parution .couvertures img {
-      width: 70%; } }
-  @media only screen and (max-width: 450px) {
-    section.recent-parution .couvertures img {
-      width: 70%; } }
-  section.recent-parution .couvertures .cover-one,
-  section.recent-parution .couvertures .cover-two,
-  section.recent-parution .couvertures .cover-three,
-  section.recent-parution .couvertures .cover-four,
-  section.recent-parution .couvertures .cover-five,
-  section.recent-parution .couvertures .cover-six,
-  section.recent-parution .couvertures .cover-seven,
-  section.recent-parution .couvertures .cover-eight,
-  section.recent-parution .couvertures .cover-nine {
-    position: absolute; }
-    @media only screen and (min-width: 750px) {
-      section.recent-parution .couvertures .cover-one:hover,
-      section.recent-parution .couvertures .cover-two:hover,
-      section.recent-parution .couvertures .cover-three:hover,
-      section.recent-parution .couvertures .cover-four:hover,
-      section.recent-parution .couvertures .cover-five:hover,
-      section.recent-parution .couvertures .cover-six:hover,
-      section.recent-parution .couvertures .cover-seven:hover,
-      section.recent-parution .couvertures .cover-eight:hover,
-      section.recent-parution .couvertures .cover-nine:hover {
-        transform: scale(1.2);
-        z-index: 45; } }
-    @media only screen and (max-width: 450px) {
-      section.recent-parution .couvertures .cover-one,
-      section.recent-parution .couvertures .cover-two,
-      section.recent-parution .couvertures .cover-three,
-      section.recent-parution .couvertures .cover-four,
-      section.recent-parution .couvertures .cover-five,
-      section.recent-parution .couvertures .cover-six,
-      section.recent-parution .couvertures .cover-seven,
-      section.recent-parution .couvertures .cover-eight,
-      section.recent-parution .couvertures .cover-nine {
-        position: inherit;
-        text-align: center; } }
-    section.recent-parution .couvertures .cover-one:first-child:hover,
-    section.recent-parution .couvertures .cover-two:first-child:hover,
-    section.recent-parution .couvertures .cover-three:first-child:hover,
-    section.recent-parution .couvertures .cover-four:first-child:hover,
-    section.recent-parution .couvertures .cover-five:first-child:hover,
-    section.recent-parution .couvertures .cover-six:first-child:hover,
-    section.recent-parution .couvertures .cover-seven:first-child:hover,
-    section.recent-parution .couvertures .cover-eight:first-child:hover,
-    section.recent-parution .couvertures .cover-nine:first-child:hover {
-      transform: none; }
-  section.recent-parution .couvertures .cover-one {
-    left: 40%;
-    z-index: 40;
-    top: 50%; }
-  section.recent-parution .couvertures .cover-two {
-    left: 54%;
-    z-index: 39;
-    top: 60%; }
-  section.recent-parution .couvertures .cover-three {
-    left: 66%;
-    z-index: 38;
-    top: 70%; }
-  section.recent-parution .couvertures .cover-four {
-    left: 76%;
-    z-index: 37;
-    top: 80%; }
-  section.recent-parution .couvertures .cover-five {
-    left: 85%;
-    z-index: 36;
-    top: 90%; }
-  section.recent-parution .couvertures .cover-six {
-    left: 26%;
-    z-index: 36;
-    top: 60%; }
-  section.recent-parution .couvertures .cover-seven {
-    left: 18%;
-    z-index: 35;
-    top: 70%; }
-  section.recent-parution .couvertures .cover-eight {
-    left: 10%;
-    z-index: 34;
-    top: 80%; }
-  section.recent-parution .couvertures .cover-nine {
-    left: 5%;
-    z-index: 32;
-    top: 90%; }
   section.recent-parution .cover-infos {
-    position: absolute;
-    top: 310px;
-    z-index: 3;
-    left: 20%;
     background: #fff;
-    padding: 3%; }
+    padding: 3%;
+    max-width: 600px;
+    margin: -10px auto 0; }
     @media only screen and (max-width: 750px) {
       section.recent-parution .cover-infos {
-        display: none; } }
+        margin: 10px auto 0; } }
     section.recent-parution .cover-infos .infos-left {
       float: left;
-      margin-right: 70px; }
+      margin-left: 10%; }
       section.recent-parution .cover-infos .infos-left p:first-child {
         font-weight: bold;
         font-size: 30px; }
+      @media only screen and (max-width: 450px) {
+        section.recent-parution .cover-infos .infos-left {
+          float: none;
+          margin-left: 10px; } }
     section.recent-parution .cover-infos .infos-right {
-      float: left; }
+      float: right;
+      margin-right: 10%; }
       section.recent-parution .cover-infos .infos-right p:first-child {
         font-size: 24px; }
       section.recent-parution .cover-infos .infos-right p:nth-child(2n) {
         font-weight: bold; }
+      @media only screen and (max-width: 750px) {
+        section.recent-parution .cover-infos .infos-right {
+          float: none;
+          margin: 40px 10px; } }
     section.recent-parution .cover-infos .button-command {
-      float: left;
-      margin: 30px 70px; }
+      clear: both;
+      max-width: 200px;
+      margin: 30px auto; }
       section.recent-parution .cover-infos .button-command a {
         width: 150px;
         float: left;
@@ -335,8 +372,14 @@ section.recent-parution {
         border-radius: 20px; }
 
 /*----- À PROPOS ---------------*/
+section.about > div {
+  margin-bottom: 100px; }
+section.about img {
+  margin-bottom: 40px; }
 section.about p {
-  margin-top: 15px; }
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 150%; }
 section.about h2 {
   position: absolute;
   padding-left: 2%;
@@ -368,6 +411,15 @@ section.about div.introduction {
     top: 155px;
     border-left: 6px solid #15D1E7;
     height: 170px; }
+    @media only screen and (max-width: 450px) {
+      section.about div.introduction h2 {
+        width: 70%;
+        position: static;
+        margin: 10px 0 0;
+        transform: translate(20%, 360%);
+        border-left: none;
+        height: auto;
+        border-bottom: 2px solid #15D1E7; } }
 section.about div.approach {
   display: flex;
   justify-content: space-between;
@@ -380,7 +432,12 @@ section.about div.approach {
     height: 170px; }
     @media only screen and (max-width: 750px) {
       section.about div.approach h2 {
-        width: 38%; } }
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #15D1E7;
+        transform: translateY(-300%); } }
   @media only screen and (max-width: 750px) {
     section.about div.approach {
       display: block;
@@ -399,6 +456,103 @@ div.presence {
     left: 0;
     border-left: 6px solid #15D1E7;
     height: 350px; }
+    @media only screen and (max-width: 450px) {
+      div.presence h2 {
+        position: static;
+        height: auto;
+        width: 100%;
+        transform: translateY(-330%);
+        border-left: none;
+        border-bottom: 2px solid #15D1E7; } }
+
+.view_all {
+  max-width: 550px; }
+
+.parutions_title {
+  font-size: 80px;
+  text-align: left;
+  padding-left: 50px;
+  border-left: 6px solid #15D1E7;
+  margin-left: 200px; }
+
+.view_all a {
+  float: right;
+  font-size: 22px;
+  position: relative; }
+  .view_all a:before {
+    content: '>';
+    margin-right: 10px; }
+  .view_all a:after {
+    content: '';
+    width: 80px;
+    height: 2px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    background: #15D1E7;
+    transition: all .5s ease; }
+  .view_all a:hover:after {
+    width: 200px; }
+
+.listing_mags {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-top: 100px; }
+
+.listing_mags article {
+  width: 18%;
+  margin: 20px 0; }
+  @media only screen and (max-width: 750px) {
+    .listing_mags article {
+      width: 30%; } }
+  @media only screen and (max-width: 450px) {
+    .listing_mags article {
+      width: 100%; } }
+
+article figure {
+  position: relative; }
+  article figure:hover .hover {
+    opacity: 1; }
+
+.listing_mags img {
+  display: block;
+  width: 100%; }
+
+.hover {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  background: rgba(21, 209, 231, 0.9);
+  height: 100%;
+  padding-top: 50%;
+  top: 0;
+  left: 0;
+  transition: all .5s ease; }
+  .hover img {
+    max-width: 80px;
+    margin: 0 auto; }
+  @media only screen and (max-width: 750px) {
+    .hover {
+      display: none; } }
+
+.listing_mags .button-command {
+  display: none;
+  width: 120px;
+  text-align: center;
+  color: #fff;
+  background: #15D1E7;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 20px; }
+  @media only screen and (max-width: 750px) {
+    .listing_mags .button-command {
+      display: block; } }
+  @media only screen and (max-width: 450px) {
+    .listing_mags .button-command {
+      width: 160px; } }
+  .listing_mags .button-command a {
+    color: #fff; }
 
 /******** SECTION COMMANDER *******/
 .title-abonnement {

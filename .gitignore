@@ -24,6 +24,8 @@
 vendor/
 .idea/
 
+config.php
+
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
 
