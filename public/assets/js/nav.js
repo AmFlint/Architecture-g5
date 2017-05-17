@@ -23,3 +23,43 @@ document.addEventListener('scroll', function (event) {
 
     }
 });
+
+/**** barre bleue au hover ******/
+var tab = document.querySelector('.bar');
+var lis = document.querySelectorAll('.li-active');
+
+for (let i = 0; i < lis.length; i++) {
+
+    lis[0].addEventListener('mouseover', function () {
+        tab.style.left = '2%';
+    });
+    lis[1].addEventListener('mouseover', function () {
+        tab.style.left = '12%';
+    });
+    lis[2].addEventListener('mouseover', function () {
+        tab.style.left = '23%';
+    });
+    lis[3].addEventListener('mouseover', function () {
+        tab.style.left = '67%';
+    });
+    lis[4].addEventListener('mouseover', function () {
+        tab.style.left = '80%';
+    });
+    lis[5].addEventListener('mouseover', function () {
+        tab.style.left = '91%';
+    });
+}
+
+/****burger ****/
+
+var burger = document.querySelector('.burger');
+var menu = document.querySelector('.menu-burger');
+var cross = document.querySelector('.cross');
+
+burger.addEventListener('click', function() {
+    menu.classList.toggle('active');
+});
+
+cross.addEventListener('click', function() {
+    menu.classList.add('active');
+});
