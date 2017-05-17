@@ -24,10 +24,12 @@
         }
         .prev {
             float: left;
+            width: 10%;
         }
 
         .next {
             float: right;
+            width:10%;
         }
 
     </style>
@@ -99,8 +101,9 @@
             {% set i = i + 1 %}
         {% endfor %}
         <div class="buttons_carousel">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
+            <img src="../public/assets/img-layout/previous.svg" class="prev">
+            <img src="../public/assets/img-layout/next.svg" class="next">
+            
         </div>
     </section>
     <section class="about clearfix">
