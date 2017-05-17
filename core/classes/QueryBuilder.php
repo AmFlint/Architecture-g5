@@ -233,7 +233,7 @@ final class QueryBuilder
     private function setQuery($crud = "select")
     {
         if ($crud == "select") {
-            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition . $this->limit . $this->offset . $this->order;
+            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition .  $this->order . $this->limit . $this->offset;
         } else if ($crud == "add") {
             $this->query =  'INSERT INTO ' . $this->table . $this->columns;
         } else if ($crud == 'update') {

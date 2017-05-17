@@ -112,6 +112,12 @@
     "action": "home",
     "method": "GET"
   },
+  "dernieres_parutions": {
+    "path": "/nos-dernieres-parutions",
+    "controller": "Default",
+    "action": "showNewMagazines",
+    "method": "GET"
+  },
   "contact": {
     "path": "/contact",
     "controller": "Default",

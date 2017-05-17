@@ -1,53 +1,35 @@
 {% extends "layout_front.html.twig" %}
-{% block style %}
-    <style>
-        .recent-parution .visible {
-            display: block;
-        }
-
-        [class*="cover-"] {
-            display: none;
-        }
-
-        .couvertures div {
-            position: relative;
-            transition: opacity .5s;
-        }
-        .cover-infos {
-            display: none;
-        }
-
-        .buttons_carousel {
-            position: absolute;
-            width: 100%;
-            padding: 150px 20px;
-        }
-        .prev {
-            float: left;
-        }
-
-        .next {
-            float: right;
-        }
-
-    </style>
+{% block body_nav %}
+<body class="home">
 {% endblock %}
 {% block full_img %}
     <div class="full-img">
 {% endblock %}
  {% block post_header %}
             <section class="carrousel-actu">
-                <div class="first-actu">
-                    <h2><a href="#">Aren’Ice, le temple des loisirs de glace conçu par Chabanne et Partenaires</a></h2>
+                <div class="first-actu visible">
+                    <img src="assets/img-content/actu-1.png" alt="">
+                    <div class="test_a">
+                        <h2><a href="#">Aren’Ice, le temple des loisirs de glace conçu par Chabanne et Partenaires</a></h2>
+                    </div>
                 </div>
                 <div class="second-actu">
-                    <h2><a href="#">Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles</a></h2>
+                    <img src="assets/img-content/actu-2.png" alt="">
+                    <div class="test_a">
+                        <h2><a href="#">Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles</a></h2>
+                    </div>
                 </div>
                 <div class="third-actu">
-                    <h2><a href="#">Schaudepot, un nouveau bâtiment sur la campus Vitra</a></h2>
+                    <img src="assets/img-content/actu-3.png" alt="">
+                    <div class="test_a">
+                        <h2><a href="#">Schaudepot, un nouveau bâtiment sur la campus Vitra</a></h2>
+                    </div>
                 </div>
                 <div class="fourth-actu">
-                    <h2><a href="#">Cavrois et Noailles, deux villas résistantes</a></h2>
+                    <img src="assets/img-content/actu-4.png" alt="">
+                    <div class="test_a">
+                        <h2><a href="#">Cavrois et Noailles, deux villas résistantes</a></h2>
+                    </div>
                 </div>
                 <div class="slider-bars">
                     <div class="slider-bar"></div>
@@ -77,30 +59,32 @@
         {% set i = 0 %}
         {% for magazine in magazines %}
             {% if i == 0 %}
-            <div class="cover-infos visible">
+            <div class="cover-infos visible clearfix">
             {% else %}
-            <div class="cover-infos">
+            <div class="cover-infos clearfix">
             {% endif %}
-                <div class="infos-left">
-                    <p>{{ magazine.location }}</p>
-                    <p>ÉDITION <span class="edition">{{ magazine.date }}</span></p>
-                </div>
-                <div class="infos-right">
-                    <p>Rencontre avec...</p>
-                    <p>Fabien Doré</p>
-                    <p>DORÉ & MARTON</p>
-                    <p>Périne Huguet</p>
-                    <p>ATELIER 13</p>
-                </div>
+                <article class="clearfix">
+                    <div class="infos-left">
+                        <p>{{ magazine.location }}</p>
+                        <p>ÉDITION <span class="edition">{{ magazine.date }}</span></p>
+                    </div>
+                    <div class="infos-right">
+                        <p>Rencontre avec...</p>
+                        <p>Fabien Doré</p>
+                        <p>DORÉ & MARTON</p>
+                        <p>Périne Huguet</p>
+                        <p>ATELIER 13</p>
+                    </div>
+                </article>
                 <div class="button-command">
                     <a href="#" title="">Commander</a>
                 </div>
             </div>
             {% set i = i + 1 %}
         {% endfor %}
-        <div class="buttons_carousel">
-            <button class="prev">prev</button>
-            <button class="next">next</button>
+        <div class="buttons_carousel clearfix">
+            <i class="icon-down-arrow left_arrow prev"></i>
+            <i class="icon-down-arrow right next"></i>
         </div>
     </section>
     <section class="about clearfix">
@@ -144,6 +128,6 @@
     </section>
     {% endblock %}
 {% block scripts %}
-    <script src="/assets/js/index.js"></script>
+    <script src="assets/js/index.js"></script>
     <script src="assets/js/nav.js"></script>
 {% endblock %}

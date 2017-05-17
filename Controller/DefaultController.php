@@ -88,7 +88,7 @@ class DefaultController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             echo  self::$twig[0]->render(
-                "form_commande.html.twig",
+                "front_commande.html.twig",
                 [
                 ]
             );
@@ -108,6 +108,17 @@ class DefaultController extends Controller
             [
                 'magazines' => $magazines,
                 'classes'   => $classes
+            ]
+        );
+    }
+
+    public function showNewMagazinesAction()
+    {
+        $magazines = $this->model->getNewMagazines();
+        echo  self::$twig[0]->render(
+            "front_dernieres_parutions.html.twig",
+            [
+                'magazines' => $magazines
             ]
         );
     }

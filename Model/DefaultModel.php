@@ -106,4 +106,30 @@ class DefaultModel extends Model
             ->get();
         return $row;
     }
+
+    public function getNewMagazines()
+    {
+        $row = $this->qb
+            ->table('magazines')
+            ->select(array(
+                'magazines.id',
+                'magazines.title',
+                'magazines.synopsis',
+                'magazines.image',
+                'magazines.secondary_image',
+                'magazines.link',
+                'magazines.date',
+                'magazines.location_id',
+                'magazines.secondary_location',
+                'l1.location as location',
+                'l2.location as secondary_location'))
+            ->join('location as l1', 'inner')
+            ->on('magazines.location_id', 'l1.id')
+            ->join('location as l2', 'inner')
+            ->on('magazines.secondary_location', 'l2.id')
+            ->limit(20)
+            ->orderBy('date', 'DESC')
+            ->get();
+        return $row;
+    }
 }
