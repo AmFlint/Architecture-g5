@@ -57,7 +57,7 @@ class Router
             echo "The controller and/or action to call are not defined in routing.json";
             return;
         }
-
+        
         $controllerName = "Controller\\" . $currentRoute->controller . "Controller";
 
         $controllerAction = $currentRoute->action . "Action";

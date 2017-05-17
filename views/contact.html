@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Larchitecture</title>
+    <link rel="stylesheet" href="assets/styles/css/index.css">
+    <link rel="stylesheet" href="assets/styles/css/jquery.fullpage.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav page">
+            <span class="bar"></span>
+            <ul>
+                <li class="li-active"><a href="#" class="black">Accueil</a></li>
+                <li class="li-active"><a href="#" class="black">Revues</a></li>
+                <li class="li-active"><a href="#" class="black">Commandes</a></li>
+                <li>
+                    <a href="#"><img src="assets/img-layout/black-logo.svg" class="logo"></a>
+                </li>
+                <li class="li-active"><a href="#" class="black">Appel d'offre</a></li>
+                <li class="li-active"><a href="#" class="black">Actualités</a></li>
+                <li class="li-active"><a href="#" class="black">Contact</a></li>
+            </ul>
+
+            <h1>Toute l’actualité de l’architecture et de la construction</h1>
+        </nav>
+        <div class="burger">
+            <div class="burger-slice black"></div>
+            <div class="burger-slice black"></div>
+            <div class="burger-slice black"></div>
+        </div>
+
+        <div class="menu-burger active">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Revues</a></li>
+                <li><a href="#">Commandes</a></li>
+                <li><a href="#">Appel d'offre</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><img src="assets/img-layout/multiply.svg" class="cross">
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="title-contact"><h2>Nous contacter</h2></div>
+        <section class="contact-form">
+            <form action="commande_submit" method="get" accept-charset="utf-8">
+                <label>Raison sociale
+                    <input type="text" name="raison" value="">
+                </label>
+                <label>Nom
+                    <input type="text" name="nom" value="">
+                </label>
+                <label>Prénom
+                    <input type="text" name="prenom" value="">
+                </label>
+                <label>Téléphone
+                    <input type="text" name="tel" value="">
+                </label>
+                <label>Adresse e-mail
+                    <input type="text" name="e-mail" value="">
+                </label>
+        
+                <label>Service
+                    <input type="text" name="service" value="">
+                </label>
+                <label>Message
+                    <input type="text" name="choix" value="">
+                </label>
+            </form>
+            <div class="button-form">
+                <a href="#" class="button-send">Envoyer</a>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="mentions">
+            <h3>Mentions légales</h3>
+            <p>Groupe SOFRE&COM</p>
+            <p>Société Française d’Édition et de Communication</p>
+            <p>9/11 rue Jacquard</p>
+            <p>93315 Le Pré Saint Gervais cedex</p>
+            <p>France</p>
+        </div>
+        <div class="footer-logo">
+            <img src="assets/img-layout/logo.svg">
+
+        </div>
+    </footer>
+
+
+</body>
+<script src="assets/js/script.js"></script>
+
+</html>
