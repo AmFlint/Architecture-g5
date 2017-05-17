@@ -1,0 +1,71 @@
+section.command-form,
+.price {
+    margin-top: 5%;
+    padding: 2%;
+    background: $white;
+    box-shadow: 2px 0 rgba(0, 0, 0, 0.11);
+    border-bottom: 4px solid #15D1E7;
+}
+
+section.command-form {
+    float: left;
+    width: 55%;
+    @media only screen and (max-width: $max-tab) {
+        width: 100%;
+        margin-top: 8%;
+    }
+    label {
+        display: block;
+        margin-top: 5%;
+        input {
+            float: right;
+            width: 63%;
+            height: 18px;
+            background: #D8D8D8;
+            border: none;
+        }
+    }
+}
+
+section.price {
+    float: right;
+    width: 40%;
+    @media only screen and (max-width: $max-tab) {
+        width: 50%;
+        margin: 6% 0;
+    }
+    @media only screen and (max-width: $max-mob) {
+        width: 100%;
+        margin: 8% 0;
+    }
+    td {
+        padding: 2%;
+        &:first-child {
+            font-weight: bold;
+        }
+    }
+    .tab {
+        margin-bottom: 45px;
+        a {
+            font-weight: bold;
+            color: #000;
+            margin: 0 40px 30px;
+        }
+    }
+}
+
+.img-commande {
+    img {
+        float: right;
+        margin: 2% 0;
+        width: 35%;
+        @media only screen and (max-width: $max-tab) {
+            width: 50%;
+            margin: 6% 0;
+        }
+        @media only screen and (max-width: $max-mob) {
+            width: 100%;
+            margin: 4% 0;
+        }
+    }
+}

@@ -6,9 +6,13 @@ $font-size: 12px;
 
 $max-tab: 750px;
 $max-mob:450px;
+
+$white:#fff;
+$black:#000;
 @import 'partials/_reset.scss';
 @import 'partials/_clearfix.scss';
 @import 'partials/_common.scss';
 @import 'partials/header.scss';
 @import 'partials/_accueil.scss';
-@import 'partials/footer.scss';
+@import 'partials/_footer.scss';
+@import 'partials/_commande.scss'

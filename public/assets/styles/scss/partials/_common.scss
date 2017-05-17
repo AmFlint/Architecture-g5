@@ -18,7 +18,6 @@
 /*----- COMMON -------- */
 
 h1 {
-    color: #fff;
     text-align: center;
     font-size: 13px;
     margin-top: 5px;
@@ -36,14 +35,33 @@ a {
     text-decoration: none;
 }
 
+
 main {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
+.black {
+    color:$black;
+}
+
+.white {
+    color:$white;
+}
+
 .colornav {
     background: #fff;
     -webkit-transition: 0.3s;
     transition: 0.5s;
+}
+
+.button-send {
+    margin:4% 0;
+    text-align:center;
+    padding:3px;
+    background:#15D1E7;
+    width:370px;
+    color:#fff;
+    border-radius:30px;
 }
