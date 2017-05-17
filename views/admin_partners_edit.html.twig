@@ -1,0 +1,24 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+    <a href="/admin/partenaires">Revenir aux Partenaires</a>
+<h1>Ceci est le form edit de {{ partner.name }}</h1>
+
+<form action="" method="post"  enctype="multipart/form-data">
+    <label for="title">
+        <p>Nom</p>
+        <input type="text" value="{{ partner.name }}" name="nom">
+    </label>
+    <label for="link">
+        <p>Lien Iframe</p>
+        <input type="text" value="{{ partner.link }}" name="link">
+    </label>
+    <label for="">
+        <p>Localisation</p>
+        <input type="text" value="{{ partner.location }}" name="localisation">
+    </label>
+    <input type="hidden" name="id" value="{{ partner.id }}">
+    <input type="submit">
+</form>
+
+{% endblock %}

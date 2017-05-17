@@ -11,6 +11,8 @@ final class QueryBuilder
      * @var
      */
     public $parameters;
+
+    public $order;
     /**
      * @var
      */
@@ -26,7 +28,7 @@ final class QueryBuilder
     /**
      * @var PDO
      */
-    private $db;
+    public $db;
     /**
      * @var
      */
@@ -114,13 +116,16 @@ final class QueryBuilder
      * @param string $operation
      * @return $this
      */
-    public function where($param, $value, $operation = "=")
+    public function where($param, $value, $operator = " AND ", $operation = "=")
     {
         if (empty($this->condition)){
             $this->condition = " WHERE 1";
         }
         $to_bind = implode('', explode('.', $param));
-        $this->condition .= ' AND ' . $param . ''. ' ' . $operation . ' ' . ':' . $to_bind;
+        if (in_array($to_bind, $this->array_parameters)) {
+            $to_bind .= 'secret';
+        }
+        $this->condition .= $operator . $param . ''. ' ' . $operation . ' ' . ':' . $to_bind;
         array_push($this->values, $value);
         array_push($this->array_parameters, $to_bind);
         return $this;
@@ -129,18 +134,21 @@ final class QueryBuilder
     public function join($table, $type)
     {
         if (trim($this->joint) != '') { // if function "on()" called before join
-            $transfer = $this->joint; // save content in $transfer
+            $this->joint .= ' ';
         }
-        $this->joint = ' ' . strtoupper($type) . ' JOIN `' . $table . '` ';
-        if (isset($transfer) && $transfer != '') {
-            $this->joint .= $transfer;
-        }
+        $this->joint .= ' ' . strtoupper($type) . ' JOIN ' . $table . ' ';
         return $this;
     }
 
     public function on(string $parameter1, string $parameter2)
     {
         $this->joint .= 'ON ' . $parameter1 . ' = ' . $parameter2;
+        return $this;
+    }
+
+    public function andOr($parameter1, $parameter2, $condition)
+    {
+        $this->joint .= ' ' . $condition . ' ' . $parameter1 . ' = ' . $parameter2;
         return $this;
     }
 
@@ -225,7 +233,7 @@ final class QueryBuilder
     private function setQuery($crud = "select")
     {
         if ($crud == "select") {
-            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition . $this->limit . $this->offset;
+            $this->query = 'SELECT ' . $this->parameters .' FROM ' . $this->table . $this->joint . $this->condition . $this->limit . $this->offset . $this->order;
         } else if ($crud == "add") {
             $this->query =  'INSERT INTO ' . $this->table . $this->columns;
         } else if ($crud == 'update') {
@@ -251,8 +259,14 @@ final class QueryBuilder
     {
         $count = count($this->values);
         for ($i = 0; $i < $count; $i++) {
-            $this->stmt->bindValue(':'.$this->array_parameters[$i], $this->values[$i]);
+            $this->stmt->bindValue(':'.$this->array_parameters[$i], htmlentities($this->values[$i]));
         }
+    }
+
+    public function orderBy($attribut, $sens)
+    {
+        $this->order = ' ORDER BY ' . $attribut . ' ' . $sens;
+        return $this;
     }
 
     /**

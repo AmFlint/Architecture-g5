@@ -1,0 +1,9 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+{% for actu in actualites %}
+    <div>
+        <a href="/admin/actualites/{{ actu.id }}">{{ actu.title }}</a>
+    </div>
+{% endfor %}
+{% endblock %}

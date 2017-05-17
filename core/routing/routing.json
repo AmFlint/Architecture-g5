@@ -5,11 +5,89 @@
     "method": "GET",
     "action": "listing"
   },
+  "admin_listing_commandes" : {
+    "path": "/admin/commandes",
+    "controller": "Admin",
+    "method": "GET",
+    "action": "showCommandes"
+  },
+  "admin_contact": {
+    "path": "/admin/contact",
+    "controller": "Admin",
+    "action": "showMessages",
+    "method": "GET"
+  },
+  "admin_partenaires": {
+    "path": "/admin/partenaires",
+    "controller": "Admin",
+    "action": "showPartners",
+    "method": "GET"
+  },
+  "admin_actualies": {
+    "path": "/admin/actualites",
+    "controller": "Admin",
+    "action": "showActualites",
+    "method": "GET"
+  },
+  "admin_actualite_single": {
+    "path": "/admin/actualites/:id",
+    "controller": "Admin",
+    "action": "showActualiteSingle",
+    "method": "GET"
+  },
+  "admin_single_contact": {
+    "path": "/admin/contact/:id",
+    "controller": "Admin",
+    "action": "showSingleMessage",
+    "method": "GET"
+  },
+  "formulaire_add": {
+    "path": "/admin/add",
+    "controller": "Admin",
+    "action": "showAddMagazine",
+    "method": "GET"
+  },
   "magazine": {
     "path": "/admin/:id",
     "method": "GET",
     "controller": "Admin",
     "action": "showMagazine"
+  },
+  "edit_magazine_form": {
+    "path": "/admin/:id/edit",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "showForm"
+  },
+  "edit_magazine": {
+    "path": "/admin/:id/edit",
+    "method": "POST",
+    "controller": "Admin",
+    "action": "editMagazine"
+  },
+  "partenaire_set_visible": {
+    "path": "/admin/partenaires/:id/visible",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "setVisible"
+  },
+  "partenaires_delete": {
+    "path": "/admin/partenaires/:id/delete",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "deletePartner"
+  },
+  "partenaires_edit_form": {
+    "path": "/admin/partenaires/:id",
+    "method": "GET",
+    "controller": "Admin",
+    "action": "editFormPartner"
+  },
+  "partenaires_edit": {
+    "path": "/admin/partenaires/:id",
+    "method": "POST",
+    "controller": "Admin",
+    "action": "editPartner"
   },
   "check": {
     "path": "/articles/:id/:test",
@@ -24,6 +102,54 @@
   "contact": {
     "path": "/contact",
     "controller": "Default",
-    "action": "contact"
+    "action": "contact",
+    "method": "GET"
+  },
+  "add_contact": {
+    "path": "/contact",
+    "controller": "Default",
+    "action": "addContact",
+    "method": "POST"
+  },
+  "delete": {
+    "path": "/admin/:id/delete",
+    "controller": "Admin",
+    "action": "deleteMagazine"
+  },
+  "add": {
+    "path": "/admin/add",
+    "controller": "Admin",
+    "action": "addMagazine",
+    "method": "POST"
+  },
+  "abonnementGET": {
+    "path": "/abonnement",
+    "controller": "Default",
+    "action": "subscribeForm",
+    "method": "GET"
+  },
+  "abonnementPOST": {
+    "path": "/abonnement",
+    "controller": "Default",
+    "action": "subscribeForm",
+    "method": "POST"
+  },
+  "appel_d_offre": {
+    "path": "/appel-d-offre",
+    "controller": "Default",
+    "action": "showOffer",
+    "method": "GET"
+  },
+  "commandeGET": {
+    "path": "/commande",
+    "controller": "Default",
+    "action": "commandeForm",
+    "method": "GET"
+  },
+  "commandePOST": {
+    "path": "/commande",
+    "controller": "Default",
+    "action": "commandeForm",
+    "method": "POST"
   }
 }

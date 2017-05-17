@@ -1,0 +1,71 @@
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+<h1>Ceci est le form edit de {{ magazine.title }}</h1>
+
+<form action="" method="post"  enctype="multipart/form-data">
+    <label for="title">
+    	<p>Titre</p>
+    	<input type="text" value="{{ magazine.title }}" name="title">
+	</label>
+    <label for="synopsis">
+    	<p>Description</p>
+    	<input type="text" value="{{ magazine.synopsis }}" name="synopsis">
+	</label>
+    <label for="image">
+    	<p>Image</p>
+    	<input type="file" value="" name="image">
+        <input type="hidden" value="{{ magazine.image }}" name="lastimage">
+	</label>
+    <label for="">
+        <p>Image Secondaire</p>
+        <input type="file" name="secondary_image">
+        <input type="hidden" value="{{ magazine.secondary_image }}" name="lastimage_secondary">
+    </label>
+    <label for="date">
+    	<p>Date</p>
+    	<input type="text" value="{{ magazine.date }}" name="date">
+	</label>
+    <label for="link">
+    	<p>URL</p>
+    	<input type="text" value="{{ magazine.link }}" name="link">
+	</label>
+    <label for="">
+        <p>Localisation</p>
+        <input type="text" value="{{ magazine.location }}" name="localisation">
+    </label>
+    <label for="">
+        <p>Localisation Secondaire</p>
+        {% if magazine.secondary_location == 'empty' %}
+            <input type="text" value="" name="localisation_secondaire">
+        {% else %}
+            <input type="text" name="localisation_secondaire" value="{{ magazine.secondary_location }}">
+        {% endif %}
+    </label>
+    <input type="hidden" name="id" value="{{ magazine.id }}">
+	<input type="submit">
+</form>
+
+<div>
+    <img src="/assets/img-content/{{ magazine.image }}" alt="">
+    {% if magazine.secondary_image %}
+        <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+    {% endif %}
+</div>
+
+<p>Partenaires actuels</p>
+<ul>
+	{% for partenaires in actual_partenaires %}
+		<li>{{ partenaires.partner_name }}</li>
+	{% endfor %}
+</ul>
+
+
+<p>Partenaires disponibles</p>
+<ul>
+    {% for partner in list_partenaires %}
+        <li>{{ partner.name }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Coves";
+    url('font/Coves_Bold.otf');
+}
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: ' '; }
+
+.cf:after {
+  clear: both; }
+
+body {
+    font-family: Coves, 'sans-serif';
+}
+.table {
+    display:table;
+    width: 100%;
+    text-align: center;
+}
+
+.table-row:nth-child(even) {
+    background: lightgray;
+}
+
+.table img {
+    display: block;
+    max-width:100%;
+}
+
+.table-head {
+    font-weight: 700;
+}
+.table-row { display:table-row; }
+.table-cell { display:table-cell; }
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+header a {
+    color: black;
+}
+
+body {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header {
+    width: 100%;
+}
+
+.is_child {
+    padding-left: 15%;
+}
+
+.is_child:before {
+
+}
+
+aside {
+    background: #1a1a1a;
+    width: 15%;
+}
+
+nav a {
+    padding: 10px 0 10px 5%;
+    display: block;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-danger {
+    background: #c9302c;
+    color: #fff;
+    border-color: #c12e2a;
+}
+
+.btn-default {
+    color: #fff;
+    background: #025aa5;
+    border-color: #01549b;
+}
+
+main {
+    width: 83%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/*----- MAIN---------------*/
+/*----- FOOTER---------------*/
+/*----- BREAKPOINT Tablettes---------------*/
+@media screen and (max-width: 768px) {
+  body {
+    background: #444; } }
+/*----- BREAKPOINT Smartphones---------------*/
+@media screen and (max-width: 400px) {
+  body {
+    background: #888; } }
+
+/*# sourceMappingURL=style.css.map */

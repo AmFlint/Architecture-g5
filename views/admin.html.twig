@@ -1,9 +1,29 @@
-<head>
-    <link rel="stylesheet" href="assets/styles/style.css">
-</head>
-<h1>Tu es sur le panel admin</h1>
-<ul>
-{% for magazine in magazines  %}
-    <li><a href="/admin/{{ magazine.id }}" >{{ magazine.title }}</a></li>
-{% endfor %}
-</ul>
+{% extends "layout_admin.html.twig" %}
+
+{% block body %}
+
+<h1>Magazines Publiés</h1>
+
+    <div class="table">
+        <div class="table-row table-head">
+            <div class="table-cell">Titre</div>
+            <div class="table-cell">Synopsis</div>
+            <div class="table-cell">Image</div>
+            <div class="table-cell">Année</div>
+            <div class="table-cell">Lien du PDF</div>
+            <div class="table-cell">Localisation Primaire</div>
+        </div>
+        {% for magazine in magazines %}
+            <a href="/admin/{{ magazine.id }}" class="table-row">
+                <div class="table-cell">{{ magazine.title }}</div>
+                <div class="table-cell">{{ magazine.synopsis }}</div>
+                <div class="table-cell">
+                    <img src="assets/img-content/{{ magazine.image }}" alt="">
+                </div>
+                <div class="table-cell">{{ magazine.date }}</div>
+                <div class="table-cell">{{ magazine.link }}</div>
+                <div class="table-cell">{{ magazine.location }}</div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
