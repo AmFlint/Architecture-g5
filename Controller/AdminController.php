@@ -129,7 +129,7 @@ class AdminController extends Controller
 
     public function showSingleMessageAction($id)
     {
-        $message = $this->model->getMessage();
+        $message = $this->model->getMessage($id);
         echo  self::$twig[0]->render(
             "admin_single_message.html.twig",
             [
@@ -209,6 +209,17 @@ class AdminController extends Controller
             "list_commande.html.twig",
             [
                 "commandes" => $totalcommandes
+            ]
+        );
+    }
+
+    public function showSingleCommandeAction($id)
+    {
+        $commande = $this->model->getCommande($id);
+        echo  self::$twig[0]->render(
+            "admin_single_commande.html.twig",
+            [
+                "commande" => $commande[0]
             ]
         );
     }

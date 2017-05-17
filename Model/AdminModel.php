@@ -227,13 +227,16 @@ class AdminModel extends Model
                 'telephone',
                 'mail',
                 'service',
-                'message'))
+                'message',
+                'object',
+                'date'))
             ->table('contact')
+            ->orderBy('date', 'DESC')
             ->getAll();
         return $row;
     }
 
-    public function getMessage()
+    public function getMessage($id)
     {
         $row = $this->qb
             ->select(array(
@@ -243,8 +246,11 @@ class AdminModel extends Model
                 'telephone',
                 'mail',
                 'service',
-                'message'))
+                'message',
+                'object',
+                'date'))
             ->table('contact')
+            ->where('id', $id)
             ->get();
         return $row;
     }
@@ -391,6 +397,35 @@ class AdminModel extends Model
             ->on('type_commande.id', 'commande.commande_id')
             ->orderBy('commande.date_add', 'DESC')
             ->getAll();
+        return $row;
+    }
+
+    public function getCommande($id)
+    {
+        $row = $this->qb
+            ->select([
+                'id',
+                'raison_sociale',
+                'activite',
+                'nom',
+                'prenom',
+                'fonction',
+                'adresse',
+                'code_postal',
+                'ville',
+                'pays',
+                'telephone',
+                'fax',
+                'mail',
+                'zone_geographique',
+                'revue',
+                'quantite',
+                'commande_id',
+                'date_add'
+            ])
+            ->table('commande')
+            ->where('id', $id)
+            ->get();
         return $row;
     }
 }
