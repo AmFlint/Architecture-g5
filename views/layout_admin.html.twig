@@ -105,7 +105,8 @@
             width: 50%;
         }
 
-        input[type="submit"] {
+        input[type="submit"],
+        .submit {
             display: block;
             width: 200px;
             text-transform: uppercase;
@@ -125,6 +126,9 @@
 
         .informations {
             font-size: 18px;
+        }
+
+        .main {
             padding-left: 20px;
         }
 
@@ -149,20 +153,50 @@
         h1 span {
             border-bottom: 2px solid black;
         }
+
+
+        .location p {
+            float: left;
+            width: 50%;
+            margin: 20px 0;
+        }
+
+        .link_date p {
+            margin: 20px 0;
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+
+
+        .synopsis {
+            margin-bottom: 40px;
+        }
+
+        .synopsis p:first-child {
+            margin-bottom: 10px;
+        }
+
+        .image_mag p {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
 <aside>
     <nav>
-        <a href="/" class="home">Retour au site</a>
-        <a href="/admin/">Home</a>
-        <a href="/admin/">Liste des Magazines</a>
-        <a href="/admin/add" class="is_child">Ajouter un Magazine</a>
-        <a href="/admin/actualites">Liste des Actualités</a>
-        <a href="/admin/actualites/add" class="is_child">Ajouter une Actualité</a>
-        <a href="/admin/contact">Messages</a>
-        <a href="/admin/partenaires">Partenaires</a>
-        <a href="/admin/commandes">Commandes</a>
+        <a href="{{ constant('ROOT_URL') }}" class="home">Retour au site</a>
+        <a href="{{ constant('ROOT_URL') }}admin/">Home</a>
+        <a href="{{ constant('ROOT_URL') }}admin/">Magazines</a>
+        <a href="{{ constant('ROOT_URL') }}admin/add" class="is_child">Ajouter un Magazine</a>
+        <a href="{{ constant('ROOT_URL') }}admin/actualites">Actualités</a>
+        <a href="{{ constant('ROOT_URL') }}admin/actualites/add" class="is_child">Nouvelle Actualité</a>
+        <a href="{{ constant('ROOT_URL') }}admin/contact">Messages</a>
+        <a href="{{ constant('ROOT_URL') }}admin/partenaires">Partenaires</a>
+        <a href="{{ constant('ROOT_URL') }}admin/commandes">Commandes</a>
     </nav>
 </aside>
 <main>

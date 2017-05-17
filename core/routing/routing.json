@@ -109,7 +109,8 @@
   "home": {
     "path": "/",
     "controller": "Default",
-    "action": "chick"
+    "action": "home",
+    "method": "GET"
   },
   "contact": {
     "path": "/contact",

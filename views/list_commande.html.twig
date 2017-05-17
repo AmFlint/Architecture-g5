@@ -15,17 +15,17 @@
             <div class="table-cell">Date</div>
         </div>
         {% for commande in commandes %}
-        <a href="/admin/commandes/{{ commande.id }}" class="table-row">
-            <div class="table-cell">{{ commande.nom }}</div>
-            <div class="table-cell">{{ commande.ville }}</div>
-            <div class="table-cell">{{ commande.pays }}</div>
-            <div class="table-cell">{{ commande.mail }}</div>
-            <div class="table-cell">{{ commande.zone_geographique }}</div>
-            <div class="table-cell">{{ commande.revue }}</div>
-            <div class="table-cell">{{ commande.quantite }}</div>
-            <div class="table-cell">{{ commande.type }}</div>
-            <div class="table-cell">{{ commande.date }}</div>
-        </a>
+            <a href="{{ constant('ROOT_URL') }}admin/commandes/{{ commande.id }}" class="table-row">
+                <div class="table-cell">{{ commande.nom }}</div>
+                <div class="table-cell">{{ commande.ville }}</div>
+                <div class="table-cell">{{ commande.pays }}</div>
+                <div class="table-cell">{{ commande.mail }}</div>
+                <div class="table-cell">{{ commande.zone_geographique }}</div>
+                <div class="table-cell">{{ commande.revue }}</div>
+                <div class="table-cell">{{ commande.quantite }}</div>
+                <div class="table-cell">{{ commande.type }}</div>
+                <div class="table-cell">{{ commande.date }}</div>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}
