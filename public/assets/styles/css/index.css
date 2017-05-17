@@ -27,13 +27,12 @@
   font-style: normal; }
 /*----- COMMON -------- */
 h1 {
-  color: #fff;
   text-align: center;
   font-size: 13px;
-  margin-top: 5px; }
+  margin-top: 15px; }
   @media only screen and (max-width: 450px) {
     h1 {
-      text-align: right; } }
+      text-align: center; } }
 
 body {
   font-family: "coves";
@@ -42,10 +41,20 @@ body {
 a {
   text-decoration: none; }
 
+h2 {
+  text-align: center;
+  padding-top: 3%; }
+
 main {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto; }
+
+.black {
+  color: #000; }
+
+.white {
+  color: #fff; }
 
 .colornav {
   background: #fff;
@@ -54,11 +63,9 @@ main {
 
 /*----- HEADER---------------*/
 header {
-  max-width: 90%;
-  width: 1440px; }
+  max-width: 100%; }
   header .main-nav {
     padding-top: 2%;
-    position: fixed;
     width: 100%;
     z-index: 99999; }
     @media only screen and (max-width: 750px) {
@@ -66,6 +73,7 @@ header {
         position: inherit; } }
     header .main-nav .colornav {
       background: #fff;
+      width: 100%;
       -webkit-transition: 0.3s;
       transition: 0.5s; }
       @media only screen and (max-width: 750px) {
@@ -99,26 +107,22 @@ header {
         @media only screen and (max-width: 750px) {
           header .main-nav ul .li-active {
             display: none; } }
-        header .main-nav ul .li-active a {
-          color: #fff; }
   header .burger {
-    display: none;
-    margin-top: -35px; }
+    display: none; }
     @media only screen and (max-width: 750px) {
       header .burger {
-        display: block; } }
+        display: block;
+        margin-top: -50px; } }
     header .burger .burger-slice {
       width: 35px;
       height: 3px;
-      background: #fff;
+      background: #15D1E7;
       border-radius: 10px;
       margin: 8px 30px 0; }
       @media only screen and (max-width: 450px) {
         header .burger .burger-slice {
           width: 28px;
           height: 2px; } }
-      header .burger .burger-slice:nth-child(2) {
-        background: #15D1E7; }
       header .burger .burger-slice:first-child {
         margin-top: 0; }
 
@@ -128,10 +132,10 @@ header {
   position: absolute;
   text-align: center;
   top: 0;
-  height: 100%;
+  height: auto;
   border-bottom: 3px solid #15D1E7; }
   .menu-burger ul li {
-    margin-top: 10%; }
+    margin-top: 5%; }
     .menu-burger ul li:first-child {
       margin-top: 30px; }
     .menu-burger ul li a {
@@ -408,7 +412,9 @@ footer {
   margin-top: 50px;
   display: flex;
   padding: 5% 5%;
-  justify-content: space-around; }
+  justify-content: space-around;
+  bottom: 0;
+  width: 100%; }
   footer h3,
   footer p {
     color: #fff; }
@@ -420,5 +426,87 @@ footer {
       margin: 5px; }
   footer .footer-logo img {
     width: 100%; }
+
+/******** SECTION COMMANDER *******/
+section.command-form,
+.price {
+  margin: 5% 0;
+  padding: 2%;
+  background: #fff;
+  box-shadow: 2px 0 rgba(0, 0, 0, 0.11);
+  border-bottom: 4px solid #15D1E7; }
+
+section.command-form {
+  float: left;
+  width: 65%;
+  padding-bottom: 7%; }
+  @media only screen and (max-width: 900px) {
+    section.command-form {
+      width: 100%;
+      margin-top: 8%; } }
+  @media only screen and (max-width: 750px) {
+    section.command-form {
+      margin-top: 18%; } }
+  section.command-form label {
+    display: block;
+    margin-top: 5%; }
+    section.command-form label input {
+      float: right;
+      width: 63%;
+      height: 18px;
+      background: #D8D8D8;
+      border: none; }
+  section.command-form div.button-form {
+    text-align: center;
+    margin-top: 10%; }
+    section.command-form div.button-form .button-send {
+      text-align: center;
+      padding: 10px 100px;
+      background: #15D1E7;
+      clear: both;
+      color: #fff;
+      border-radius: 30px; }
+
+section.price {
+  clear: both;
+  width: 100%; }
+  section.price table {
+    width: 100%; }
+    section.price table td {
+      padding: 2%;
+      width: 22%;
+      border: 1px solid #000; }
+      @media only screen and (max-width: 450px) {
+        section.price table td {
+          padding: 1%; } }
+      section.price table td:first-child {
+        font-weight: bold;
+        width: 15%; }
+    section.price table th {
+      border: 1px solid black; }
+    @media only screen and (max-width: 450px) {
+      section.price table {
+        width: 0; } }
+  section.price .tab span {
+    font-weight: bold;
+    margin-right: 5%;
+    color: #000; }
+  section.price .swiss {
+    display: none; }
+
+@media only screen and (max-width: 900px) {
+  .img-commande {
+    text-align: center; } }
+.img-commande img {
+  float: left;
+  margin: 4% 0;
+  width: 35%; }
+  @media only screen and (max-width: 900px) {
+    .img-commande img {
+      width: 50%;
+      float: none; } }
+  @media only screen and (max-width: 450px) {
+    .img-commande img {
+      width: 100%; } }
 
 /*# sourceMappingURL=index.css.map */

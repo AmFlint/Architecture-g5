@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Larchitecture</title>
+    <link rel="stylesheet" href="assets/styles/css/index.css">
+    <link rel="stylesheet" href="assets/styles/css/jquery.fullpage.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav page">
+            <span class="bar"></span>
+            <ul>
+                <li class="li-active"><a href="#" class="black">Accueil</a></li>
+                <li class="li-active"><a href="#" class="black">Revues</a></li>
+                <li class="li-active"><a href="#" class="black">Commandes</a></li>
+                <li>
+                    <a href="#"><img src="assets/img-layout/black-logo.svg" class="logo"></a>
+                </li>
+                <li class="li-active"><a href="#" class="black">Appel d'offre</a></li>
+                <li class="li-active"><a href="#" class="black">Actualités</a></li>
+                <li class="li-active"><a href="#" class="black">Contact</a></li>
+            </ul>
+
+            <h1>Toute l’actualité de l’architecture et de la construction</h1>
+        </nav>
+        <div class="burger">
+            <div class="burger-slice black"></div>
+            <div class="burger-slice black"></div>
+            <div class="burger-slice black"></div>
+        </div>
+
+        <div class="menu-burger active">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Revues</a></li>
+                <li><a href="#">Commandes</a></li>
+                <li><a href="#">Appel d'offre</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><img src="assets/img-layout/multiply.svg" class="cross">
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <h2>Formulaire d'abonnement</h2>
+        <section class="command-form">
+            <form action="commande_submit" method="get" accept-charset="utf-8">
+                <label>Raison sociale
+                    <input type="text" name="raison" value="">
+                </label>
+                <label>Activité
+                    <input type="text" name="activite" value="">
+                </label>
+                <label>Nom
+                    <input type="text" name="nom" value="">
+                </label>
+                <label>Prénom
+                    <input type="text" name="prenom" value="">
+                </label>
+                <label>Fonction
+                    <input type="text" name="fonction" value="">
+                </label>
+                <label>Adresse
+                    <input type="text" name="adresse" value="">
+                </label>
+                <label>Code postal
+                    <input type="text" name="CP" value="">
+                </label>
+                <label>Ville
+                    <input type="text" name="ville" value="">
+                </label>
+                <label>Pays
+                    <input type="text" name="pays" value="">
+                </label>
+                <label>Téléphone
+                    <input type="text" name="tel" value="">
+                </label>
+                <label>Fax
+                    <input type="text" name="fax" value="">
+                </label>
+                <label>Adresse e-mail
+                    <input type="text" name="e-mail" value="">
+                </label>
+                <label>Confirmez l'e-mail
+                    <input type="text" name="e-mail" value="">
+                </label>
+                <label>Zone géographique
+                    <input type="text" name="zone" value="">
+                </label>
+                <label>Choix de la revue
+                    <input type="text" name="choix" value="">
+                </label>
+                <label>Quantité
+                    <input type="text" name="quantite" value="">
+                </label>
+            </form>
+            <div class="button-form">
+                <a href="#" class="button-send">Envoyer</a>
+            </div>
+        </section>
+        <div class="img-commande">
+            <img src="assets/img-content/revue-commande.png">
+        </div>
+        <section class="price">
+            <div class="tab">
+                <span>Tarifs en euros</span>
+                <span>Taris en francs suisses</span>
+            </div>
+
+            <table class="euro">
+                <tr>
+                    <th class="test">Quantité</th>
+                    <th>5</th>
+                    <th>10</th>
+                    <th>20</th>
+                </tr>
+                <tr>
+                    <td class="test">France</td>
+                    <td>75 € + 30 € (frais de port)</td>
+                    <td>155 € + 30 € (frais de port)</td>
+                    <td>240 € + 60 € (frais de port)</td>
+                </tr>
+                <tr>
+                    <td class="test">DOM</td>
+                    <td>75 € + 30 € (frais de port)</td>
+                    <td>155 € + 30 € (frais de port)</td>
+                    <td>240 € + 60 € (frais de port)</td>
+                </tr>
+                <tr>
+                    <td class="test">TOM</td>
+                    <td>75 € + 30 € (frais de port)</td>
+                    <td>155 € + 30 € (frais de port)</td>
+                    <td>240 € + 60 € (frais de port)</td>
+                </tr>
+                <tr>
+                    <td class="test">Étranger</td>
+                    <td>75 € + 30 € (frais de port)</td>
+                    <td>155 € + 30 € (frais de port)</td>
+                    <td>240 € + 60 € (frais de port)</td>
+                </tr>
+            </table>
+
+            <table class="swiss">
+                <tr>
+                    <th class="test">Quantité</th>
+                    <th>5</th>
+                    <th>10</th>
+                    <th>20</th>
+                </tr>
+                <tr>
+                    <td class="test">France</td>
+                    <td>90.75 CHF + 18.15 CHF (frais de port)</td>
+                    <td>187.55 CHF + 36.30 CHF (frais de port)</td>
+                    <td>290.40 CHF + 72.60 CHF (frais de port)</td>
+                </tr>
+                <tr>
+                    <td class="test">DOM</td>
+                    <td>90.75 CHF + 36.3 CHF *</td>
+                    <td>187.55 CHF + 72.6 CHF *</td>
+                    <td>290.4 CHF + 96.8 CHF *</td>
+                </tr>
+                <tr>
+                    <td class="test">TOM</td>
+                    <td>90.75 CHF + 54.45 CHF *</td>
+                    <td>187.55 CHF + 102.85 CHF *</td>
+                    <td>290.40 CHF + 157.30 CHF *</td>
+                </tr>
+                <tr>
+                    <td class="test">Étranger</td>
+                    <td>90.75 CHF + 15 CHF *</td>
+                    <td>87.55 CHF + 36.3 CHF *</td>
+                    <td>290.4 CHF + 72.6 CHF *</td>
+                </tr>
+            </table>
+        </section>
+
+
+    </main>
+    <footer>
+        <div class="mentions">
+            <h3>Mentions légales</h3>
+            <p>Groupe SOFRE&COM</p>
+            <p>Société Française d’Édition et de Communication</p>
+            <p>9/11 rue Jacquard</p>
+            <p>93315 Le Pré Saint Gervais cedex</p>
+            <p>France</p>
+        </div>
+        <div class="footer-logo">
+            <img src="assets/img-layout/logo.svg">
+
+        </div>
+    </footer>
+
+
+</body>
+<script src="assets/js/script.js"></script>
+
+</html>

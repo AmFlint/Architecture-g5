@@ -25,32 +25,6 @@ for (let i = 0; i < lis.length; i++) {
 }
 
 
-/**** changement nav ******/
-var nav = document.querySelector('.main-nav');
-var logo = document.querySelector('.logo');
-var lesa = document.querySelectorAll('nav a');
-
-document.addEventListener('scroll', function (event) {
-    if (document.body.scrollTop > 80 || event.pageY > 80) {
-        nav.classList.add('colornav');
-        tab.style.background = '#fff';
-        logo.src = "assets/img-layout/black-logo.svg";
-        for (var i = 0; i < lesa.length; i++) {
-            lesa[i].style.color = "#000";
-
-        }
-
-    } else if (document.body.scrollTop < 80 || event.pageY < 80) {
-        nav.classList.remove('colornav');
-        tab.style.background = '#15D1E7';
-        logo.src = "assets/img-layout/logo.svg";
-        for (var i = 0; i < lesa.length; i++) {
-            lesa[i].style.color = "#fff";
-        }
-
-    }
-});
-
 /**** changement infos sur les parutions ******/
 
 var mag = document.querySelectorAll('.couvertures div');
@@ -84,10 +58,10 @@ for (var i = 0; i < mag.length; i++) {
         info.innerHTML = "Île-de-France";
         edition.innerHTML = "2016";
     });
-    // mag[8].addEventListener('mouseover', function () {
-    //     info.innerHTML = "Martinique";
-    //     edition.innerHTML = "2017";
-    // });
+    mag[8].addEventListener('mouseover', function () {
+        info.innerHTML = "Martinique";
+        edition.innerHTML = "2017";
+    });
 
 }
 
@@ -95,16 +69,32 @@ for (var i = 0; i < mag.length; i++) {
 
 var burger = document.querySelector('.burger');
 var menu = document.querySelector('.menu-burger');
-var ul = document.querySelector('.menu-burger ul');
 var cross = document.querySelector('.cross');
 
 burger.addEventListener('click', function() {
     menu.classList.toggle('active');
-    ul.style.transform = 'translateX(0)';
 });
 
 cross.addEventListener('click', function() {
     menu.classList.add('active');
+});
+
+
+/**** filtres page commande ****/
+
+var euros = document.querySelector('.euro');
+var swiss = document.querySelector('.swiss');
+var filtre = document.querySelectorAll('.tab span');
+
+filtre[0].addEventListener('click', function() {
+    euros.style.display = 'block';
+    swiss.style.display = 'none';
+
+});
+filtre[1].addEventListener('click', function() {
+    euros.style.display = 'none';
+    swiss.style.display = 'block';
+
 });
 
 /***** carrousel ******/
@@ -157,44 +147,6 @@ for (var i = 0; i < slider.length; i++) {
         slider[0].style.background = '#fff';
         slider[1].style.background = '#fff';
         fullImg.style.background = "url('assets/img-content/actu-4.png')";
+
     });
  }
-
- // Carousel revues / Magazines
-setTimeout(init, 500);
-var next = document.querySelector('.next');
-var prev = document.querySelector('.prev');
-var index_revues = 0;
-
-prev.addEventListener('click', function() {
-    var index_previous = index_revues;
-    index_revues--;
-    if (index_revues < 0) {
-        index_revues = 7;
-    }
-    renderCover(revues_couverture, index_revues, index_previous);
-    renderCover(revues_infos, index_revues, index_previous);
-});
-
-next.addEventListener('click', function() {
-    var index_previous = index_revues;
-    index_revues++;
-    if (index_revues > 7) {
-        index_revues = 0;
-    }
-    renderCover(revues_couverture, index_revues, index_previous);
-    renderCover(revues_infos, index_revues, index_previous);
-});
-
-
-function init()
-{
-    window.revues_couverture = document.querySelectorAll('.couvertures div');
-    window.revues_infos = document.querySelectorAll('.cover-infos');
-}
-
-function renderCover(array_revue, index_new, index_previous)
-{
-    array_revue[index_previous].classList.remove('visible');
-    array_revue[index_new].classList.add('visible');
-}

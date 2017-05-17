@@ -18,12 +18,11 @@
 /*----- COMMON -------- */
 
 h1 {
-    color: #fff;
     text-align: center;
     font-size: 13px;
-    margin-top: 5px;
+    margin-top: 15px;
     @media only screen and (max-width: $max-mob) {
-        text-align: right;
+        text-align: center;
     }
 }
 
@@ -36,10 +35,24 @@ a {
     text-decoration: none;
 }
 
+h2 {
+    text-align:center;
+    padding-top:3%;
+}
+
+
 main {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.black {
+    color:$black;
+}
+
+.white {
+    color:$white;
 }
 
 .colornav {
@@ -47,3 +60,4 @@ main {
     -webkit-transition: 0.3s;
     transition: 0.5s;
 }
+
