@@ -1,0 +1,284 @@
+/*----- SECTION CARROUSEL ---------------*/
+
+
+/*image de fond*/
+
+.full-img {
+    position: relative;
+    background: url('../../img-content/actu-1.png');
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    transition: 0.4s;
+    @media only screen and (max-width: $max-tab) {
+        height: auto;
+    }
+}
+
+section.carrousel-actu {
+    @media only screen and (max-width: $max-mob) {
+        padding-bottom: 45px;
+    }
+    h2 {
+        text-align: center;
+        padding-top: 22%;
+        margin: 0 10%;
+        font-size: 64px;
+        @media only screen and (max-width: $max-tab) {
+            font-size: 45px;
+            padding: 15%;
+        }
+        @media only screen and (max-width: $max-mob) {
+            font-size: 35px;
+        }
+        a {
+            color: #fff;
+        }
+    }
+    .slider-bars {
+        position: absolute;
+        left: 35%;
+        bottom: 2%;
+        @media only screen and (max-width: $max-tab) {
+            display: none;
+        }
+        .slider-bar {
+            display: inline-block;
+            width: 70px;
+            transition: 0.4s;
+            height: 4px;
+            background: #fff;
+            border-radius: 10px;
+            margin-right: 10px;
+            &:first-child {
+                background: #15D1E7;
+            }
+        }
+    }
+}
+
+.second-actu,
+.third-actu,
+.fourth-actu {
+    display: none;
+}
+
+
+/*----- SECTION PARUTIONS ---------------*/
+
+section.recent-parution {
+    padding: 3%;
+    position: relative;
+    margin-bottom: 450px;
+    @media only screen and (max-width: $max-tab) {
+        margin-bottom: 150px;
+    }
+    @media only screen and (max-width: $max-mob) {
+        margin-bottom: 20px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .couvertures {
+        img {
+            @media only screen and (max-width: $max-tab) {
+                width: 70%;
+            }
+            @media only screen and (max-width: $max-mob) {
+                width: 70%;
+            }
+        }
+        .cover-one,
+        .cover-two,
+        .cover-three,
+        .cover-four,
+        .cover-five,
+        .cover-six,
+        .cover-seven,
+        .cover-eight,
+        .cover-nine {
+            position: absolute;
+            @media only screen and (min-width: $max-tab) {
+                &:hover {
+                    transform: scale(1.2);
+                    z-index: 45;
+                }
+            }
+            @media only screen and (max-width: $max-mob) {
+                position: inherit;
+                text-align: center;
+            }
+            &:first-child:hover {
+                transform: none;
+            }
+        }
+        .cover-one {
+            left: 40%;
+            z-index: 40;
+            top: 50%;
+        }
+        .cover-two {
+            left: 54%;
+            z-index: 39;
+            top: 60%;
+        }
+        .cover-three {
+            left: 66%;
+            z-index: 38;
+            top: 70%;
+        }
+        .cover-four {
+            left: 76%;
+            z-index: 37;
+            top: 80%;
+        }
+        .cover-five {
+            left: 85%;
+            z-index: 36;
+            top: 90%;
+        }
+        .cover-six {
+            left: 26%;
+            z-index: 36;
+            top: 60%;
+        }
+        .cover-seven {
+            left: 18%;
+            z-index: 35;
+            top: 70%;
+        }
+        .cover-eight {
+            left: 10%;
+            z-index: 34;
+            top: 80%;
+        }
+        .cover-nine {
+            left: 5%;
+            z-index: 32;
+            top: 90%;
+        }
+    }
+    .cover-infos {
+        position: absolute;
+        top: 310px;
+        z-index: 3;
+        left: 20%;
+        background: #fff;
+        padding: 3%;
+        @media only screen and (max-width: $max-tab) {
+            display: none;
+        }
+        .infos-left {
+            float: left;
+            margin-right: 70px;
+            p:first-child {
+                font-weight: bold;
+                font-size: 30px;
+            }
+        }
+        .infos-right {
+            float: left;
+            p:first-child {
+                font-size: 24px;
+            }
+            p:nth-child(2n) {
+                font-weight: bold;
+            }
+        }
+        .button-command {
+            float: left;
+            margin: 30px 70px;
+            a {
+                width: 150px;
+                float: left;
+                text-align: center;
+                color: #fff;
+                background: #15D1E7;
+                font-weight: bold;
+                padding: 7%;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+
+/*----- À PROPOS ---------------*/
+
+section.about {
+    p {
+        margin-top: 15px;
+    }
+    h2 {
+        position: absolute;
+        padding-left: 2%;
+        font-size: 50px;
+        width: 30%;
+        @media only screen and (max-width: $max-mob) {
+            font-size: 30px;
+        }
+    }
+    img {
+        display: block;
+        max-width: 100%;
+    }
+    .text {
+        width: 50%;
+        padding-top: 10%;
+        @media only screen and (max-width: $max-tab) {
+            width: 100%;
+            padding-top: 0;
+        }
+    }
+    div.introduction {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width: $max-tab) {
+            display: block;
+            width: 100%;
+        }
+        h2 {
+            left: 250px;
+            top: 155px;
+            border-left: 6px solid #15D1E7;
+            height: 170px;
+        }
+    }
+    div.approach {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        position: relative;
+        h2 {
+            top: 100px;
+            right: 40px;
+            border-right: 6px solid #15D1E7;
+            height: 170px;
+            @media only screen and (max-width: $max-tab) {
+                width: 38%;
+            }
+        }
+        @media only screen and (max-width: $max-tab) {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+div.presence {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    @media only screen and (max-width: $max-tab) {
+        display: block;
+        width: 100%;
+    }
+    h2 {
+        top: 20%;
+        left: 0;
+        border-left: 6px solid #15D1E7;
+        height: 350px
+    }
+}

@@ -1,0 +1,26 @@
+/*----- FOOTER---------------*/
+
+footer {
+    clear: both;
+    background: #000;
+    margin-top: 50px;
+    display: flex;
+    padding: 5% 5%;
+    justify-content: space-around;
+    h3,
+    p {
+        color: #fff;
+    }
+    .mentions {
+        width: 50%;
+        h3 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 5px;
+        }
+    }
+    .footer-logo img {
+        width: 100%;
+    }
+}
