@@ -1,11 +1,21 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
-<p>{{ message.id }}</p>
-<p>{{ message.raison_sociale }}</p>
-<p>{{ message.nom }}</p>
-<p>{{ message.telephone }}</p>
-<p>{{ message.mail }}</p>
-<p>{{ message.service }}</p>
-<p>{{ message.message }}</p>
+
+    <div class="informations">
+        <div class="contact_infos">
+            <p><span>Nom :</span> {{ message.nom }}</p>
+            <p><span>e-mail :</span> <a href="mailto:{{ message.mail }}">{{ message.mail }}</a></p>
+            <p><span>telephone : </span><a href="tel:{{ message.telephone }}">{{ message.telephone }}</a></p>
+        </div>
+        <div class="contact_job">
+            <p><span>Raison Sociale :</span> {{ message.raison_sociale }}</p>
+            <p><span>Service :</span> {{ message.service }}</p>
+        </div>
+        <h1><span>Objet :</span> {{ message.object }}</h1>
+        <p>Reçu le {{ message.date|date('d/m/Y') }}</p>
+        <p class="label_message"><span>Message :</span></p>
+        <p class="contact_content">{{ message.message }}</p>
+
+    </div>
 {% endblock %}

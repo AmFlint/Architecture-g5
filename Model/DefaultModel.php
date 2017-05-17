@@ -15,14 +15,18 @@ class DefaultModel extends Model
                 'telephone',
                 'mail',
                 'service',
-                'message'))
+                'message',
+                'object',
+                'date'))
             ->values(array(
                 $_POST['raison_sociale'],
                 $_POST['nom'],
                 $_POST['telephone'],
                 $_POST['mail'],
                 $_POST['service'],
-                $_POST['message']))
+                $_POST['message'],
+                $_POST['object'],
+                date('Y-m-d')))
             ->table('contact')
             ->add();
         header('Location: /');

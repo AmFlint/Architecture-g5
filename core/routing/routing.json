@@ -123,10 +123,16 @@
     "action": "addContact",
     "method": "POST"
   },
-  "delete": {
+  "admin_single_commande": {
     "path": "/admin/:id/delete",
     "controller": "Admin",
     "action": "deleteMagazine"
+  },
+  "delete": {
+    "path": "/admin/commandes/:id",
+    "controller": "Admin",
+    "action": "showSingleCommande",
+    "method": "GET"
   },
   "add": {
     "path": "/admin/add",

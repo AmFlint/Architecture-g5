@@ -1,20 +1,22 @@
 {% extends "layout_admin.html.twig" %}
 {% block body %}
-<section>
-{% for message in messages %}
-    <div>
-        <article class="article">
-            <a href="/admin/contact/{{ message.id }}">
-                <p>{{ message.id }}</p>
+    <h1>Messages reçus</h1>
+    <div class="table">
+        <div class="table-row table-head">
+            <div class="table-cell">Nom</div>
+            <div class="table-cell">Mail</div>
+            <div class="table-cell">Service</div>
+            <div class="table-cell">Objet</div>
+            <div class="table-cell">Date</div>
+        </div>
+        {% for message in messages %}
+            <a href="/admin/contact/{{ message.id }}" class="table-row">
+                <div class="table-cell">{{ message.nom }}</div>
+                <div class="table-cell">{{ message.mail }}</div>
+                <div class="table-cell">{{ message.service }}</div>
+                <div class="table-cell">{{ message.object }}</div>
+                <div class="table-cell">{{ message.date }}</div>
             </a>
-            <p>{{ message.raison_sociale }}</p>
-            <h2>{{ message.nom }}</h2>
-            <p>{{ message.telephone }}</p>
-            <p>{{ message.mail }}</p>
-            <p>{{ message.service }}</p>
-            <p>{{ message.message }}</p>
-        </article>
+        {% endfor %}
     </div>
-{% endfor %}
-</section>
 {% endblock %}

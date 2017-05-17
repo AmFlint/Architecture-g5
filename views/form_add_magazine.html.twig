@@ -2,41 +2,46 @@
 
 
 {% block body %}
-<h1>Ceci est le form d'ajout d'un Magazine</h1>
-
-<form action="" method="post" enctype="multipart/form-data">
-    <label for="title">
-        <p>Titre</p>
-        <input type="text" value="" name="title">
-    </label>
-    <label for="synopsis">
-        <p>Description</p>
-        <input type="text" value="" name="synopsis">
-    </label>
-    <label for="image">
-        <p>Image</p>
-        <input type="file" value="" name="image">
-    </label>
-    <label for="">
-        <p>Image Secondaire (si nécessaire)</p>
-        <input type="file" name="image_secondaire">
-    </label>
-    <label for="date">
-        <p>Date</p>
-        <input type="text" value="" name="date">
-    </label>
-    <label for="link">
-        <p>URL</p>
-        <input type="text" value="" name="link">
-    </label>
-    <label for="">
-        <p>Localisation</p>
-        <input type="text" name="localisation">
-    </label>
-    <label for="">
-        <p>Localisation secondaire</p>
-        <input type="text" name="localisation_secondaire">
-    </label>
-    <input type="submit">
-</form>
+<h1>Ajouter un Magazine</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        <div class="title">
+            <label for="">Titre</label>
+            <input type="text" name="title">
+        </div>
+        <div class="synopsis">
+            <label for="">Synopsis</label>
+            <textarea type="text" name="synopsis"></textarea>
+        </div>
+        <div class="images">
+            <div class="image_primary">
+                <label for="">Image Primaire</label>
+                <input type="file" name="image">
+            </div>
+            <div class="image_secondary">
+                <label for="">Image Secondaire (si nécessaire)</label>
+                <input type="file" name="image_secondaire">
+            </div>
+        </div>
+        <div class="test">
+        <div class="date">
+            <label for="">Année de parution</label>
+            <input type="text" name="date">
+        </div>
+        <div class="link">
+            <label for="">Lien PDF</label>
+            <input type="text" name="link">
+        </div>
+        </div>
+        <div class="location">
+            <div class="localisation_primaire">
+                <label for="">Localisation</label>
+                <input type="text" name="localisation">
+            </div>
+            <div class="localisation_secondaire">
+                <label for="">Localisation Secondaire (si nécessaire)</label>
+                <input type="text" name="localisation_secondaire">
+            </div>
+        </div>
+        <input type="submit" value="Ajouter" class="btn btn-default">
+    </form>
 {% endblock %}
