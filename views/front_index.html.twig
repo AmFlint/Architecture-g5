@@ -1,5 +1,5 @@
 {% extends "layout_front.html.twig" %}
-{% block title %}Architecture.com, {% endblock %}
+{% block title %}Larchitecture.com - Le site de la revue L'Architecture de votre Region{% endblock %}
 {% block body_nav %}
 <body class="home">
 {% endblock %}
@@ -43,7 +43,7 @@
                     {% endif %}
                     <img src="assets/img-content/{{ actualite.image }}" alt="{{ actualite.alt }}">
                     <div class="test_a">
-                        <h2><a href="#">{{ actualite.title }}</a></h2>
+                        <h2><a href="{{ constant('ROOT_URL') }}actualites/{{ actualite.slug }}">{{ actualite.title }}</a></h2>
                     </div>
                 </div>
                     {% set j = 1 %}
@@ -69,7 +69,7 @@
                 {% else %}
                 <div class="cover-{{ classes[i] }}">
                 {% endif %}
-                    <a href="#"><img src="/assets/img-content/{{ magazine.image }}"></a>
+                    <a href="#"><img src="/assets/img-content/{{ magazine.image }}" alt="{{ magazine.alt }}"></a>
                 </div>
                 {% set i = i + 1 %}
             {% endfor %}
@@ -87,7 +87,7 @@
                         <p>ÉDITION <span class="edition">{{ magazine.date }}</span></p>
                     </div>
                     <div class="infos-right">
-                        <p>Rencontre avec...</p>
+                        <p>En partenariat avec...</p>
                         <p>Fabien Doré</p>
                         <p>DORÉ & MARTON</p>
                         <p>Périne Huguet</p>

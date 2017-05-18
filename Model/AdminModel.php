@@ -61,6 +61,8 @@ class AdminModel extends Model
                 'magazines.image',
                 'magazines.link',
                 'magazines.date',
+                'magazines.alt',
+                'magazines.secondary_alt',
                 'location.location'
             ])
             ->join('location', 'inner')
@@ -83,6 +85,9 @@ class AdminModel extends Model
                 'magazines.date',
                 'magazines.location_id',
                 'magazines.secondary_location',
+                'magazines.alt',
+                'magazines.secondary_alt',
+                'magazines.number',
                 'l1.location as location',
                 'l2.location as secondary_location'))
             ->join('location as l1', 'inner')
@@ -117,7 +122,10 @@ class AdminModel extends Model
                 'link',
                 'date',
                 'location_id',
-                'secondary_location'))
+                'secondary_location',
+                'alt',
+                'number',
+                'secondary_alt'))
             ->values(array(
                 $_POST['title'],
                 $_POST['synopsis'],
@@ -126,7 +134,10 @@ class AdminModel extends Model
                 $_POST['link'],
                 $_POST['date'],
                 $localisation,
-                $localisation_secondaire))
+                $localisation_secondaire,
+                $_POST['alt'],
+                $_POST['number'],
+                $_POST['secondary_alt']))
             ->where('id', $_POST['id'])
             ->table('magazines')
             ->update();
@@ -164,7 +175,11 @@ class AdminModel extends Model
 
     public function addMagazine($localisation, $localisation_secondaire)
     {
-        $fichier = $this->upload('image'); // Upload first image, returns path (example.jpg)
+        if ($_FILES['image']['tmp_name'] != '') {
+            $fichier = $this->upload('image'); // Upload first image, returns path (example.jpg)
+        } else {
+            $fichier = '';
+        }
 
         if ($_FILES['image_secondaire']['tmp_name'] != '') {
             $secondary_image = $this->upload('image_secondaire');
@@ -181,7 +196,10 @@ class AdminModel extends Model
                 'link',
                 'date',
                 'location_id',
-                'secondary_location'
+                'secondary_location',
+                'alt',
+                'secondary_alt',
+                'number'
                 ))
             ->values(array(
                 $_POST['title'],
@@ -191,7 +209,10 @@ class AdminModel extends Model
                 $_POST['link'],
                 $_POST['date'],
                 $localisation,
-                $localisation_secondaire))
+                $localisation_secondaire,
+                $_POST['alt'],
+                $_POST['secondary_alt'],
+                $_POST['number']))
             ->table('magazines')
             ->add();
         header('Location: ' . ROOT_URL . 'admin/'.$this->qb->db->lastInsertId().'/edit');

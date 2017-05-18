@@ -1,4 +1,6 @@
 {% extends 'layout_front.html.twig' %}
+{% block title %}larchitecture.com revue n°{{ magazine.number }}{% endblock %}
+{% block meta_description %}{{ magazine.synopsis }}{% endblock %}
 
 {% block body_nav %}
     <body class="single_parution">
@@ -6,7 +8,7 @@
 
 {% block body %}
     <div class="view_all clearfix">
-        <h1 class="parutions_title">Revue n° 280</h1>
+        <h1 class="parutions_title">Revue n° {{ magazine.number }}</h1>
     </div>
 
     <section class="infos_revue price">
@@ -42,14 +44,14 @@
             <div>
                 <a href="{{ magazine.link }}">
                     <figure>
-                        <img src="/assets/img-content/{{ magazine.image }}" alt="">
+                        <img src="/assets/img-content/{{ magazine.image }}" alt="{{ magazine.alt }}">
                         <div class="hover_picture">
                             <img src="/assets/img-layout/view.svg" alt="">
                         </div>
                     </figure>
                     {% if magazine.secondary_image %}
                         <figure>
-                            <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+                            <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="{{ magazine.secondary_alt }}">
                             <div class="hover_picture">
                                 <img src="/assets/img-layout/view.svg" alt="">
                             </div>

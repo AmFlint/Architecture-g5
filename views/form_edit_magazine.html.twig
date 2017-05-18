@@ -11,6 +11,8 @@
     <div class="synopsis">
     	<p>Synopsis</p>
     	<textarea type="text" name="synopsis">{{ magazine.synopsis }}</textarea>
+        <label for="">Numéro du magazine</label>
+        <input type="int" name="number" value="{{ magazine.number }}">
 	</div>
     <div class="images">
         <div class="image_primary">
@@ -22,6 +24,16 @@
             <label for="">Image Secondaire</label>
             <input type="file" name="secondary_image">
             <input type="hidden" value="{{ magazine.secondary_image }}" name="lastimage_secondary">
+        </div>
+    </div>
+    <div class="images">
+        <div class="image_primary">
+            <label for="">Alternative Première image</label>
+            <input type="text" value="{{ magazine.alt }}" name="alt">
+        </div>
+        <div class="image_secondary">
+            <label for="">Alternative Seconde image</label>
+            <input type="text" name="secondary_alt" value="{{ magazine.secondary_alt }}">
         </div>
     </div>
     <div class="test">
@@ -69,10 +81,10 @@
 
 
 <p>Partenaires disponibles</p>
-<ul>
+<ul class="partner_available">
     {% for partner in list_partenaires %}
-        <li>{{ partner.name }}</li>
+        <li data-id="{{ partner.id }}" data-mag="{{ magazine.id }}">{{ partner.name }}</li>
     {% endfor %}
 </ul>
-
+    <script src="/assets/js/partnership_api.js"></script>
 {% endblock %}

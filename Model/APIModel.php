@@ -36,4 +36,19 @@ class APIModel extends Model
             ->get();
         return $row;
     }
+
+    public function addPartnership($mag_id, $partner_id)
+    {
+        $this->qb
+            ->addColumns([
+                'partenaire_id',
+                'magazine_id'
+            ])
+            ->values([
+                $partner_id,
+                $mag_id
+            ])
+            ->table('partenariat')
+            ->add();
+    }
 }

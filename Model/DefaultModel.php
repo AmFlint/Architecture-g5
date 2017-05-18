@@ -98,6 +98,7 @@ class DefaultModel extends Model
                 'magazines.id',
                 'magazines.title',
                 'magazines.image',
+                'magazines.alt',
                 'location.location',
                 'magazines.date'
             ])
@@ -122,6 +123,9 @@ class DefaultModel extends Model
                 'magazines.link',
                 'magazines.date',
                 'magazines.location_id',
+                'magazines.alt',
+                'magazines.secondary_alt',
+                'magazines.number',
                 'magazines.secondary_location',
                 'l1.location as location',
                 'l2.location as secondary_location'))
@@ -148,6 +152,9 @@ class DefaultModel extends Model
                 'magazines.link',
                 'magazines.date',
                 'magazines.location_id',
+                'magazines.alt',
+                'magazines.secondary_alt',
+                'magazines.number',
                 'magazines.secondary_location',
                 'l1.location as location',
                 'l2.location as secondary_location'))
@@ -188,6 +195,9 @@ class DefaultModel extends Model
                     'magazines.date',
                     'magazines.location_id',
                     'magazines.secondary_location',
+                    'magazines.alt',
+                    'magazines.secondary_alt',
+                    'magazines.number',
                     'l1.location as location',
                     'l2.location as secondary_location'))
                 ->join('location as l1', 'inner')
