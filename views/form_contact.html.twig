@@ -1,41 +1,45 @@
 {% extends 'layout_front.html.twig' %}
-
+{% block body_nav  %}
+    <body class="julie">
+{% endblock %}
 {% block body %}
 <div class="title-contact"><h2>Nous contacter</h2></div>
 <section class="contact-form">
     <form action="" method="post" accept-charset="utf-8">
         <label>Raison sociale
-            <input type="text" name="raison_sociale" value="">
+            <input type="text" name="raison_sociale" value="" class="clearfix">
         </label>
         <label>Nom
-            <input type="text" name="nom" value="">
+            <input type="text" name="nom" value="" class="clearfix">
         </label>
         <label>Objet du Message
-            <input type="text" name="object" value="">
+            <input type="text" name="object" value="" class="clearfix">
         </label>
         <label>Téléphone
-            <input type="text" name="telephone" value="">
+            <input type="text" name="telephone" value="" class="clearfix">
         </label>
         <label>Adresse e-mail
-            <input type="text" name="mail" value="">
+            <input type="text" name="mail" value="" class="clearfix">
         </label>
 
         <label>Service
-            <select id=""  name="service">
+            <div class="selectRevue">
+                <select id=""  name="service" class="revueSelect clearfix">
                 <option value="commerciale">commerciale</option>
                 <option value="redactionnel/publicite">redactionnel/publicite</option>
                 <option value="administratif/comptabilite">administratif/comptabilite</option>
                 <option value="direction">direction</option>
             </select>
+            </div>
         </label>
         <label>Message
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <span class="selectRevue textarea">
+                <textarea name="message" id="" cols="20" rows="5" class="revueSelect clearfix"></textarea>
+            </span>
         </label>
         <div class="button-form">
-            <input type="submit" value="Envoyer" class="button-send">
+            <input type="submit" value="Envoyer" class="button-send submitSend clearfix">
         </div>
-    </form>
-</section>
 {% endblock %}
 
 {% block scripts %}
