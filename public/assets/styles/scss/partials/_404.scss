@@ -1,0 +1,36 @@
+/**** PAGE 404 ******/
+
+div.error404 {
+    text-align: center;
+    margin-top: 2%;
+    @media only screen and (max-width: $max-tab) {
+        margin-top: 10%;
+    }
+    @media only screen and (max-width: $max-mob) {
+        margin-top: 25%;
+    }
+    h2 {
+        font-size: 55px;
+    }
+    img {
+        max-width: 40%;
+        @media only screen and (max-width: $max-tab) {
+            max-width: 60%;
+        @media only screen and (max-width: $max-tab) {
+                max-width: 90%;
+            }
+        }
+    }
+    p {
+        font-size: 20px;
+        width: 90%;
+        margin: 20px auto;
+    }
+    a {
+        color: #fff;
+        background: #15D1E7;
+        padding: 10px 100px;
+        border-radius: 20px;
+        text-transform: uppercase;
+    }
+}
