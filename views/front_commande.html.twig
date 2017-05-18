@@ -1,5 +1,7 @@
 {% extends "layout_front.html.twig" %}
-
+{% block body_nav  %}
+<body class="julie">
+{% endblock %}
     {% block body %}
         <section class="command-form">
             <form action="commande_submit" method="get" accept-charset="utf-8">
@@ -43,35 +45,41 @@
                     <input type="text" name="e-mail" value="">
                 </label>
                 <label>Zone Géographique
-                <select id=""  name="zone_geographique">
+                <span class="selectRevue">
+                    <select id=""  name="zone_geographique" class="revueSelect">
                     <option value="france_metropolitaine">France Métropolitaine</option>
                     <option value="europe">Europe</option>
                     <option value="dom">DOM</option>
                     <option value="tom">TOM</option>
                 </select>
+                </span>
                 </label>
-                <label>Chooix de la revue
-                <select id=""  name="revue">
-                    <option value="280">280</option>
-                    <option value="281">281</option>
-                    <option value="282">282</option>
-                    <option value="283">283</option>
-                    <option value="284">284</option>
-                    <option value="285">285</option>
-                    <option value="275">275</option>
-                    <option value="276">276</option>
-                    <option value="277">277</option>
-                    <option value="278">278</option>
-                </select>
+                <label>Choix de la revue
+                <div class="selectRevue">
+                    <select class="revueSelect"  name="revue">
+                        <option value="280">280</option>
+                        <option value="281">281</option>
+                        <option value="282">282</option>
+                        <option value="283">283</option>
+                        <option value="284">284</option>
+                        <option value="285">285</option>
+                        <option value="275">275</option>
+                        <option value="276">276</option>
+                        <option value="277">277</option>
+                        <option value="278">278</option>
+                    </select>
+                </div>
                 </label>
                 <label>Quantité
-                <select id=""  name="quantite">
+                <span class="selectRevue">
+                    <select id=""  name="quantite" class="revueSelect">
                     <option value="1">1</option>
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="25">25</option>
                     <option value="30">30</option>
                 </select>
+                </span>
                 </label>
                 <div class="button-form">
                     <input type="submit" class="button-send" value="Envoyer">
@@ -79,7 +87,6 @@
             </form>
         </section>
         <div class="img-commande">
-            <img src="/assets/img-content/couv-3-right.png">
         </div>
         <section class="price">
             <div class="tab">

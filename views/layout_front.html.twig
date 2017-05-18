@@ -15,19 +15,19 @@
     <nav class="main-nav">
         <span class="bar"></span>
         <ul>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}">Accueil</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions">Revues</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}commander">Commandes</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}" class="white">Accueil</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions" class="white">Revues</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}commander" class="white">Commandes</a></li>
             <li>
                 <a href="#">
                     {% block img_header %}
-                    <img src="/assets/img-layout/black-logo.svg" class="logo">
+                    <img src="/assets/img-layout/logo.svg" class="logo">
                     {% endblock %}
                 </a>
             </li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}appel-d-offre">Appel d'offre</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}actualites">Actualités</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}contactez-nous">Contact</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}appel-d-offre" class="white">Appel d'offre</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}actualites" class="white">Actualités</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}contactez-nous" class="white">Contact</a></li>
         </ul>
 
         <h1>Toute l’actualité de l’architecture et de la construction</h1>
@@ -71,9 +71,6 @@
 
     </div>
 </footer>
-{% block script_nav %}
-<script src="/assets/js/nav-globale.js"></script>
-{% endblock %}
 {% block scripts %}{% endblock %}
 </body>
 </html>
