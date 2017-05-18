@@ -2,4 +2,23 @@
 
 {% block body %}
 <h1>{{ actualite.title }}</h1>
+<article>
+    <div class="contentCommande">
+        <div class="profilCommande">
+            <p>{{ actualite.content_short }}</p>
+        </div>
+        <p>Actualité affichée le {{ actualite.date }}</p>
+    </div>
+    <div class="headerContentCommande">
+        <div class="localCommande">
+            <p class="title">Description :</p>
+            <p>{{ actualite.content_full }}</p>
+        </div>
+        <div class="contactCommande">
+            <p class="title">Chemin (URL) :</p>
+            <p>{{ actualite.slug }}</p>
+        </div>
+    </div>
+    <a href="{{ constant('ROOT_URL') }}admin/actualites/{{ actualite.id }}/edit" class="btn btn-default">Modifier l'actualité</a>
+</article>
 {% endblock %}

@@ -1,0 +1,92 @@
+/**** PAGE D'UNE SEULE ACTU ******/
+
+div.actu-title {
+    position: relative;
+    margin-top: 3%;
+    img {
+        width: 100%;
+        border-bottom: 3px solid #15D1E7;
+        max-height: 500px;
+        @media only screen and (max-width: $max-tab) {
+            height: 400px;
+        }
+        @media only screen and (max-width: $max-mob) {
+            height: 300px;
+        }
+    }
+    h2 {
+        position: absolute;
+        bottom: 30%;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        font-size: 55px;
+        color: $white;
+        @media only screen and (max-width: $max-tab) {
+            font-size: 40px;
+        }
+        @media only screen and (max-width: $max-mob) {
+            position:inherit;
+            color:$black;
+            width:100%;
+            margin:0;
+            font-size:25px;
+            left:0;
+        }
+    }
+}
+
+div.actu-content {
+    padding: 2%;
+    .actu-date {
+        text-transform: uppercase;
+        float: left;
+        @media only screen and (max-width: $max-mob) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .socials {
+        float: right;
+        margin-bottom: 3%;
+        @media only screen and (max-width: $max-mob) {
+            width: 100%;
+            text-align: center;
+            margin-top: 3%;
+        }
+        p {
+            text-transform: uppercase;
+            float: left;
+        }
+        img {
+            margin: 0 10px;
+            @media only screen and (max-width: $max-mob) {
+                float: right;
+            }
+        }
+    }
+    .actu-text {
+        clear: both;
+        margin-bottom: 3%;
+        @media only screen and (max-width: $max-mob) {
+            margin-bottom: 8%;
+        }
+        p {
+            text-align: justify;
+            line-height: 24px;
+            font-size: 18px;
+        }
+    }
+    .actu-button {
+        text-align: center;
+        a {
+            color: $white;
+            padding: 10px 100px;
+            background: #15D1E7;
+            border-radius: 30px;
+            @media only screen and (max-width: $max-mob) {
+                padding: 10px 50px;
+            }
+        }
+    }
+}
