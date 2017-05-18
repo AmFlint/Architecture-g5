@@ -239,4 +239,25 @@ class AdminController extends Controller
 
     }
 
+    public function showActualiteAction($id)
+    {
+        $actualite = $this->model->getActuSingle($id);
+        echo  self::$twig[0]->render(
+            "admin_actualites_edit.html.twig",
+            [
+                'actualite' => $actualite[0]
+            ]
+        );
+    }
+
+    public function editActualiteAction($id)
+    {
+        $this->model->updateActu($id);
+        echo  self::$twig[0]->render(
+            "admin_actualites_edit.html.twig",
+            [
+            ]
+        );
+    }
+
 }

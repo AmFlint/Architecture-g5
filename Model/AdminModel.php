@@ -449,4 +449,25 @@ class AdminModel extends Model
             ->add();
         header('Location: ' . ROOT_URL . 'admin/actualites');
     }
+
+    public function updateActu($id)
+    {
+        $this->qb
+            ->updateColumns(array(
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date'))
+            ->values(array(
+                $_POST['title'],
+                $_POST['slug'],
+                $_POST['content_short'],
+                $_POST['content_full'],
+                date('Y_m_d')))
+            ->where('id', $id)
+            ->table('actualites')
+            ->update();
+        header('Location: ' . ROOT_URL . 'admin/actualites/'.$_POST['id']);
+    }
 }
