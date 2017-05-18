@@ -1,5 +1,6 @@
 {% extends 'layout_front.html.twig' %}
-
+{% block title %}Architecture.com, Actualités{% endblock %}
+{% block meta_description %}Liste des Actualités du site Architecture.com{% endblock %}
 {% block style %}
     <style>
         section.container-actu {
@@ -112,28 +113,13 @@
 
 {% block body %}
     <section class="container-actu">
+        {% for actualite in actualites %}
         <article class="row">
-            <a href="#">
-                <img src="assets/img-content/actu-1.png" alt="Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires" class="img-actu">
-                <h2>Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires</h2>
+            <a href="{{ constant('ROOT_URL') }}actualites/{{ actualite.slug }}">
+                <img src="assets/img-content/{{ actualite.image }}" alt="{{ actualite.alt }}" class="img-actu">
+                <h2>{{ actualite.title }}</h2>
             </a>
         </article>
-        <article class="row">
-            <a href="#">
-                <img src="assets/img-content/actu-2.png" alt="Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles" class="img-actu">
-                <h2>Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles</h2>
-            </a>
-        </article>
-        <article class="row">
-            <a href="#">
-                <img src="assets/img-content/actu-3.png" alt="Schaudepot, un nouveau bâtiment sur la campus Vitra" class="img-actu">
-                <h2>Schaudepot, un nouveau bâtiment sur la campus Vitra</h2>
-            </a>
-        </article>
-        <article class="row">
-            <a href="#">
-                <img src="assets/img-content/actu-4.png" alt="Cavrois et Noailles, deux villas résistantes" class="img-actu">
-                <h2>Cavrois et Noailles, deux villas résistantes</h2>
-            </a>
-        </article>
+        {% endfor %}
+
 {% endblock %}

@@ -266,6 +266,7 @@ class AdminModel extends Model
                 'content_full',
                 'date'))
             ->table('actualites')
+            ->orderBy('date', 'DESC')
             ->getAll();
         return $row;
     }
@@ -279,7 +280,9 @@ class AdminModel extends Model
                 'slug',
                 'content_short',
                 'content_full',
-                'date'))
+                'date',
+                'image',
+                'alt'))
             ->table('actualites')
             ->where('id', $id)
             ->get();
@@ -431,20 +434,26 @@ class AdminModel extends Model
 
     public function addActualites()
     {
+        $fichier = $this->upload('image');
+
         $this->qb
             ->addColumns(array(
                 'title',
                 'slug',
                 'content_short',
                 'content_full',
-                'date'))
+                'date',
+                'image',
+                'alt'))
             ->table('actualites')
             ->values(array(
                 $_POST['title'],
                 $_POST['slug'],
                 $_POST['content_short'],
                 $_POST['content_full'],
-                date('Y_m_d')
+                date('Y_m_d'),
+                $fichier,
+                $_POST['alt']
             ))
             ->add();
         header('Location: ' . ROOT_URL . 'admin/actualites');
@@ -452,22 +461,52 @@ class AdminModel extends Model
 
     public function updateActu($id)
     {
+        if ($_FILE['image']['tmp_name'] != '') {
+            $fichier = $this->upload('image');
+        } else {
+            $fichier = $_POST['lastimage'];
+        }
         $this->qb
             ->updateColumns(array(
                 'title',
                 'slug',
                 'content_short',
                 'content_full',
-                'date'))
+                'date',
+                'image',
+                'alt'))
             ->values(array(
                 $_POST['title'],
                 $_POST['slug'],
                 $_POST['content_short'],
                 $_POST['content_full'],
-                date('Y_m_d')))
+                date('Y_m_d'),
+                $fichier,
+                $_POST['alt']))
             ->where('id', $id)
             ->table('actualites')
             ->update();
         header('Location: ' . ROOT_URL . 'admin/actualites/'.$_POST['id']);
+    }
+
+    public function addMessageView($id)
+    {
+        $this->qb
+            ->updateColumns([
+                'vu'
+            ])
+            ->values([1])
+            ->table('contact')
+            ->where('id', $id)
+            ->update();
+    }
+
+    public function getMessageViews()
+    {
+        $row = $this->qb
+            ->table('contact')
+            ->where('vu', 0)
+            ->count();
+        return $row;
     }
 }

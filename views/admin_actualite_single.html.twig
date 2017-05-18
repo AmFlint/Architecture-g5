@@ -19,6 +19,13 @@
             <p>{{ actualite.slug }}</p>
         </div>
     </div>
+    <div class="contentCommande">
+        <div class="profilCommande">
+            <p class="title">Alternatif de l'image (SEO)</p>
+            <p>{{ actualite.alt }}</p>
+        </div>
+    </div>
+    <img src="/assets/img-content/{{ actualite.image }}" alt="" width="300px" style="display: block; margin-bottom: 20px;">
     <a href="{{ constant('ROOT_URL') }}admin/actualites/{{ actualite.id }}/edit" class="btn btn-default">Modifier l'actualité</a>
 </article>
 {% endblock %}
