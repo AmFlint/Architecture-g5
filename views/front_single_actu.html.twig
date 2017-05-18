@@ -1,0 +1,26 @@
+{% extends 'layout_front.html.twig' %}
+
+{% block body %}
+    <section class="actu">
+        <div class="actu-title">
+            <img src="/assets/img-content/actu-1.png">
+            <h2>Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires</h2>
+        </div>
+        <div class="actu-content">
+            <div class="actu-date">
+                Le {{ actualite.date|date('d-m-Y') }}
+            </div>
+            <div class="socials">
+                <p>Partager sur</p>
+                <span><img src="/assets/img-layout/facebook.svg">
+                        <img src="/assets/img-layout/twitter.svg"></span>
+            </div>
+            <div class="actu-text clearfix">
+                <p>{{ actualite.content_full|nl2br }}</p>
+            </div>
+            <div class="actu-button">
+                <a href="#">S'abonner à la newsletter</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -466,8 +466,7 @@ div.presence {
         border-left: none;
         border-bottom: 2px solid #15D1E7; } }
 
-<<<<<<< HEAD
-=======
+/****PAGE DES PARUTIONS*****/
 .view_all {
   max-width: 550px; }
   @media only screen and (max-width: 750px) {
@@ -805,7 +804,6 @@ aside ul li {
       order: 1;
       display: block; } }
 
->>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /******** SECTION COMMANDER *******/
 .title-abonnement {
   text-align: center;
@@ -935,7 +933,6 @@ section.contact-form {
       color: #fff;
       border-radius: 30px; }
 
-<<<<<<< HEAD
 /**** PAGE D'UNE SEULE ACTU ******/
 div.actu-title {
   position: relative;
@@ -1016,8 +1013,6 @@ div.actu-content {
         div.actu-content .actu-button a {
           padding: 10px 50px; } }
 
-=======
->>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /**** PAGE 404 ******/
 div.error404 {
   text-align: center;
@@ -1050,7 +1045,6 @@ div.error404 {
     border-radius: 20px;
     text-transform: uppercase; }
 
-<<<<<<< HEAD
 /***** IFRAME DU PARTENAIRE *****/
 div.appel-offre {
   margin-top: 20px; }
@@ -1058,8 +1052,6 @@ div.appel-offre {
     width: 100%;
     height: 1000px; }
 
-=======
->>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /*----- FOOTER---------------*/
 footer {
   clear: both;

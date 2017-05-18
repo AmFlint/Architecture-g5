@@ -152,4 +152,19 @@ class DefaultController extends Controller
             ]
         );
     }
+
+    public function loadSingleActuAction($slug)
+    {
+        $actualite = $this->model->getSingleActu($slug);
+        if (!$actualite) {
+            header('Location: ' + ROOT_URL + 'actualites');
+            exit;
+        }
+        echo  self::$twig[0]->render(
+            "front_single_actu.html.twig",
+            [
+                'actualite' => $actualite[0]
+            ]
+        );
+    }
 }

@@ -1,4 +1,10 @@
 {
+  "single_actu_front": {
+    "path": "/actualites/:slug",
+    "controller": "Default",
+    "action": "loadSingleActu",
+    "method": "GET"
+  },
   "admin" : {
     "path": "/admin/",
     "controller": "Admin",

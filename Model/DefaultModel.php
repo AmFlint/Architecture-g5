@@ -210,4 +210,20 @@ class DefaultModel extends Model
             ->get();
         return $row;
     }
+
+    public function getSingleActu($slug)
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date'))
+            ->table('actualites')
+            ->where('slug', $slug)
+            ->get();
+        return $row;
+    }
 }
