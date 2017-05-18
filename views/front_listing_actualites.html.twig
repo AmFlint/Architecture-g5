@@ -1,0 +1,139 @@
+{% extends 'layout_front.html.twig' %}
+
+{% block style %}
+    <style>
+        section.container-actu {
+            width: 95%;
+            height: 100%;
+            background: white;
+            margin: 0 auto;
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        @media only screen and (max-width: 750px) {
+            section.container-actu {
+                flex-flow: column wrap;
+            }
+        }
+
+        @media only screen and (max-width: 450px) {
+            section.container-actu {
+                flex-flow: column wrap;
+            }
+        }
+
+        img.img-actu {
+            width: 90%;
+        }
+
+        @media only screen and (max-width: 750px) {
+            img.img-actu {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 450px) {
+            img.img-actu {
+                width: 100%;
+            }
+        }
+
+        img.img-actu:hover {
+            border: 10px #FFF solid;
+            transition: 0.2s;
+            opacity: 0.9;
+        }
+
+        .row {
+            width: 45%;
+            order: 1;
+            flex-grow: 1;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .row {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            .row {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (max-width: 450px) {
+            .row {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            color: #FFF;
+            text-align: center;
+            transform: translateY(-170px);
+            font-size: 1.5rem;
+            font-weight: 100;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            h2 {
+                transform: translateY(-240px);
+                font-size: 2rem;
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width: 750px) {
+            h2 {
+                transform: translateY(-170px);
+                font-size: 1.5rem;
+                width: 60%;
+            }
+        }
+
+        @media only screen and (max-width: 450px) {
+            h2 {
+                transform: translateY(-120px);
+                font-size: 1.2rem;
+                width: 80%;
+            }
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <section class="container-actu">
+        <article class="row">
+            <a href="#">
+                <img src="assets/img-content/actu-1.png" alt="Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires" class="img-actu">
+                <h2>Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires</h2>
+            </a>
+        </article>
+        <article class="row">
+            <a href="#">
+                <img src="assets/img-content/actu-2.png" alt="Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles" class="img-actu">
+                <h2>Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles</h2>
+            </a>
+        </article>
+        <article class="row">
+            <a href="#">
+                <img src="assets/img-content/actu-3.png" alt="Schaudepot, un nouveau bâtiment sur la campus Vitra" class="img-actu">
+                <h2>Schaudepot, un nouveau bâtiment sur la campus Vitra</h2>
+            </a>
+        </article>
+        <article class="row">
+            <a href="#">
+                <img src="assets/img-content/actu-4.png" alt="Cavrois et Noailles, deux villas résistantes" class="img-actu">
+                <h2>Cavrois et Noailles, deux villas résistantes</h2>
+            </a>
+        </article>
+{% endblock %}
