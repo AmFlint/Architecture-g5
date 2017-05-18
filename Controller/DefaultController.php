@@ -135,4 +135,21 @@ class DefaultController extends Controller
             ]
         );
     }
+
+    public function loadSingleMagazineAction($id)
+    {
+        $magazine = $this->model->getSingleMag($id);
+        $partners = $this->model->getActualPartners($id);
+        if(!$magazine) {
+            header('Location: ' . ROOT_URL . 'toutes-les-revues');
+            exit;
+        }
+        echo  self::$twig[0]->render(
+            "front_single_parution.html.twig",
+            [
+                'magazine' => $magazine[0],
+                'partners' => $partners
+            ]
+        );
+    }
 }
