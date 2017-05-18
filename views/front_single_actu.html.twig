@@ -2,11 +2,13 @@
 {% block body_nav  %}
 <body class="julie">
 {% endblock %}
+{% block title %}Architecture.com, Actualités{% endblock %}
+{% block meta_description %} {{ actualite.content_short }} {% endblock %}
 {% block body %}
     <section class="actu">
         <div class="actu-title">
-            <img src="/assets/img-content/actu-1.png">
-            <h2>Aren’Ice, le temple des loisirs de glace conçu par Chabanne & Partenaires</h2>
+            <img src="/assets/img-content/{{ actualite.image }}" alt="{{ actualite.alt }}">
+            <h2>{{ actualite.title }}</h2>
         </div>
         <div class="actu-content">
             <div class="actu-date">
