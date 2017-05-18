@@ -133,6 +133,7 @@ header {
   text-align: center;
   top: 0;
   height: auto;
+  z-index: 99999;
   border-bottom: 3px solid #15D1E7; }
   .menu-burger ul li {
     margin-top: 5%; }
@@ -465,6 +466,8 @@ div.presence {
         border-left: none;
         border-bottom: 2px solid #15D1E7; } }
 
+<<<<<<< HEAD
+=======
 .view_all {
   max-width: 550px; }
   @media only screen and (max-width: 750px) {
@@ -802,6 +805,7 @@ aside ul li {
       order: 1;
       display: block; } }
 
+>>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /******** SECTION COMMANDER *******/
 .title-abonnement {
   text-align: center;
@@ -931,6 +935,89 @@ section.contact-form {
       color: #fff;
       border-radius: 30px; }
 
+<<<<<<< HEAD
+/**** PAGE D'UNE SEULE ACTU ******/
+div.actu-title {
+  position: relative;
+  margin-top: 3%; }
+  div.actu-title img {
+    width: 100%;
+    border-bottom: 3px solid #15D1E7;
+    max-height: 500px; }
+    @media only screen and (max-width: 750px) {
+      div.actu-title img {
+        height: 400px; } }
+    @media only screen and (max-width: 450px) {
+      div.actu-title img {
+        height: 300px; } }
+  div.actu-title h2 {
+    position: absolute;
+    bottom: 30%;
+    left: 10%;
+    width: 80%;
+    text-align: center;
+    font-size: 55px;
+    color: #fff; }
+    @media only screen and (max-width: 750px) {
+      div.actu-title h2 {
+        font-size: 40px; } }
+    @media only screen and (max-width: 450px) {
+      div.actu-title h2 {
+        position: inherit;
+        color: #000;
+        width: 100%;
+        margin: 0;
+        font-size: 25px;
+        left: 0; } }
+
+div.actu-content {
+  padding: 2%; }
+  div.actu-content .actu-date {
+    text-transform: uppercase;
+    float: left; }
+    @media only screen and (max-width: 450px) {
+      div.actu-content .actu-date {
+        width: 100%;
+        text-align: center; } }
+  div.actu-content .socials {
+    float: right;
+    margin-bottom: 3%; }
+    @media only screen and (max-width: 450px) {
+      div.actu-content .socials {
+        width: 100%;
+        text-align: center;
+        margin-top: 3%; } }
+    div.actu-content .socials p {
+      text-transform: uppercase;
+      float: left; }
+    div.actu-content .socials img {
+      margin: 0 10px; }
+      @media only screen and (max-width: 450px) {
+        div.actu-content .socials img {
+          float: right; } }
+  div.actu-content .actu-text {
+    clear: both;
+    margin-bottom: 3%; }
+    @media only screen and (max-width: 450px) {
+      div.actu-content .actu-text {
+        margin-bottom: 8%; } }
+    div.actu-content .actu-text p {
+      text-align: justify;
+      line-height: 24px;
+      font-size: 18px; }
+  div.actu-content .actu-button {
+    text-align: center; }
+    div.actu-content .actu-button a {
+      color: #fff;
+      padding: 10px 100px;
+      background: #15D1E7;
+      border-radius: 30px; }
+      @media only screen and (max-width: 450px) {
+        div.actu-content .actu-button a {
+          padding: 10px 50px; } }
+
+=======
+>>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /**** PAGE 404 ******/
 div.error404 {
   text-align: center;
@@ -963,6 +1050,16 @@ div.error404 {
     border-radius: 20px;
     text-transform: uppercase; }
 
+<<<<<<< HEAD
+/***** IFRAME DU PARTENAIRE *****/
+div.appel-offre {
+  margin-top: 20px; }
+  div.appel-offre iframe {
+    width: 100%;
+    height: 1000px; }
+
+=======
+>>>>>>> e251344c82e22b17e472108c0e0566a2bf3ab466
 /*----- FOOTER---------------*/
 footer {
   clear: both;
