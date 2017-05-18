@@ -8,8 +8,8 @@
 
 .clearfix:before,
 .clearfix:after {
-  content: '';
-  display: table; }
+  display: table;
+  content: ' '; }
 
 .clearfix:after {
   clear: both; }
@@ -17,12 +17,12 @@
 /*----- FONTS---------------*/
 @font-face {
   font-family: 'covesbold';
-  src: url("../fonts/coves_bold-webfont.woff2") format("woff2"), url("../fonts/coves_bold-webfont.woff") format("woff");
+  src: url("../../font/Coves_Bold.otf") format("otf"), url("../../font/Coves_Bold.otf") format("otf");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'coveslight';
-  src: url("../fonts/coves_light-webfont.woff2") format("woff2"), url("../fonts/coves_light-webfont.woff") format("woff");
+  src: url("../../font/Coves_Light.otf") format("otf"), url("../../font/Coves_Light.otf") format("otf");
   font-weight: normal;
   font-style: normal; }
 /*----- COMMON -------- */
@@ -35,10 +35,18 @@ h1 {
       text-align: center; } }
 
 body {
-  font-family: "coves"; }
+  font-family: "coveslight";
+  overflow-x: hidden; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
+
+a:visited {
+  color: #fff; }
+
+.julie a {
+  color: #000; }
 
 main {
   width: 90%;
@@ -51,11 +59,6 @@ main {
 .white {
   color: #fff; }
 
-.colornav {
-  background: #fff;
-  -webkit-transition: 0.3s;
-  transition: 0.5s; }
-
 /*----- HEADER---------------*/
 .home .main-nav {
   position: fixed; }
@@ -65,18 +68,10 @@ header {
   header .main-nav {
     padding-top: 2%;
     width: 100%;
-    z-index: 99999; }
+    z-index: 9; }
     @media only screen and (max-width: 750px) {
       header .main-nav {
         position: inherit; } }
-    header .main-nav .colornav {
-      background: #fff;
-      width: 100%;
-      -webkit-transition: 0.3s;
-      transition: 0.5s; }
-      @media only screen and (max-width: 750px) {
-        header .main-nav .colornav {
-          display: none; } }
     header .main-nav .bar {
       width: 80px;
       background: #15D1E7;
@@ -107,11 +102,15 @@ header {
         @media only screen and (max-width: 750px) {
           header .main-nav ul .li-active {
             display: none; } }
+  header .home .burger {
+    position: fixed; }
   header .burger {
     display: none; }
     @media only screen and (max-width: 750px) {
       header .burger {
+        z-index: 10;
         display: block;
+        position: absolute;
         transform: translateY(80%); } }
     header .burger .burger-slice {
       width: 35px;
@@ -129,11 +128,11 @@ header {
 .menu-burger ul {
   background: #fff;
   width: 100%;
-  position: absolute;
+  position: fixed;
   text-align: center;
   top: 0;
   height: auto;
-  z-index: 99999;
+  z-index: 9;
   border-bottom: 3px solid #15D1E7; }
   .menu-burger ul li {
     margin-top: 5%; }
@@ -150,18 +149,18 @@ header {
     right: 30px; }
 
 .active {
-  display: none; }
+  visibility: hidden; }
 
 /*----- SECTION CARROUSEL ---------------*/
 @font-face {
   font-family: 'icomoon';
-  src: url("/assets/fonts/icomoon.eot?40hhjl");
-  src: url("/assets/fonts/icomoon.eot?40hhjl#iefix") format("embedded-opentype"), url("/assets/fonts/icomoon.ttf?40hhjl") format("truetype"), url("/assets/fonts/icomoon.woff?40hhjl") format("woff"), url("/assets/fonts/icomoon.svg?40hhjl#icomoon") format("svg");
+  src: url("../../../fonts/icomoon.eot");
+  src: url("../../../fonts/icomoon.eot") format("embedded-opentype"), url("../../../fonts/icomoon.ttf") format("truetype"), url("../../../fonts/icomoon.woff") format("woff"), url("../../../fonts/icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change /assets/fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'icomoon';
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -263,14 +262,16 @@ header {
     max-height: 100vh; }
   .full-img div.test_a {
     position: absolute;
-    bottom: 0;
+    bottom: 60%;
+    transform: translateY(50%);
     left: 0; }
     @media only screen and (max-width: 750px) {
       .full-img div.test_a {
         font-size: 20px;
-        position: static; }
+        position: static;
+        transform: none; }
         .full-img div.test_a h2 {
-          margin: 0;
+          margin: 10px 0 0 0;
           padding: 0; }
           .full-img div.test_a h2 a {
             color: #000; } }
@@ -290,7 +291,7 @@ section.carrousel-actu h2 {
   text-align: center;
   padding-top: 22%;
   margin: 0 10%;
-  font-size: 64px; }
+  font-size: 3rem; }
   @media only screen and (max-width: 750px) {
     section.carrousel-actu h2 {
       font-size: 45px;
@@ -302,7 +303,8 @@ section.carrousel-actu h2 {
     color: #fff; }
 section.carrousel-actu .slider-bars {
   position: absolute;
-  left: 35%;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 2%; }
   @media only screen and (max-width: 750px) {
     section.carrousel-actu .slider-bars {
@@ -828,8 +830,7 @@ section.command-form,
   border-bottom: 4px solid #15D1E7; }
 
 section.command-form {
-  float: left;
-  width: 65%;
+  width: 100%;
   padding-bottom: 7%; }
   @media only screen and (max-width: 900px) {
     section.command-form {
@@ -847,6 +848,15 @@ section.command-form {
       height: 25px;
       background: #D8D8D8;
       border: none; }
+      @media only screen and (max-width: 750px) {
+        section.command-form label input {
+          width: 100%;
+          margin: 10% 0; } }
+  section.command-form .selectRevue {
+    width: 100%; }
+  section.command-form .selectRevue select {
+    width: 63%;
+    float: right; }
   section.command-form div.button-form {
     text-align: center;
     margin-top: 10%; }
@@ -916,26 +926,51 @@ section.contact-form {
   margin: 0 auto;
   padding: 2%;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11); }
+  @media only screen and (max-width: 750px) {
+    section.contact-form {
+      padding-top: 10%;
+      height: 70vh; } }
   section.contact-form label {
     display: block;
     margin-top: 5%; }
-    section.contact-form label input {
-      float: right;
+    @media only screen and (max-width: 750px) {
+      section.contact-form label {
+        width: 100%; }
+        section.contact-form label .selectRevue {
+          width: 100%; }
+          section.contact-form label .selectRevue .revueSelect {
+            width: 100%;
+            float: right; } }
+  section.contact-form .selectRevue {
+    width: 100%; }
+    section.contact-form .selectRevue .revueSelect {
       width: 63%;
-      height: 25px;
-      background: #D8D8D8;
-      border: none; }
+      float: right; }
+  section.contact-form input {
+    float: right;
+    width: 63%;
+    height: 25px;
+    background: #D8D8D8;
+    border: none; }
+    @media only screen and (max-width: 750px) {
+      section.contact-form input {
+        width: 100%; } }
   section.contact-form div.button-form {
     text-align: center;
     margin-top: 8%;
     padding-bottom: 3%; }
+    @media only screen and (max-width: 750px) {
+      section.contact-form div.button-form {
+        margin: 15% 0; } }
     section.contact-form div.button-form .button-send {
       text-align: center;
-      padding: 10px 100px;
       background: #15D1E7;
       clear: both;
       color: #fff;
       border-radius: 30px; }
+    section.contact-form div.button-form input.submitSend {
+      margin-top: 5%;
+      float: none; }
 
 /**** PAGE D'UNE SEULE ACTU ******/
 div.actu-title {

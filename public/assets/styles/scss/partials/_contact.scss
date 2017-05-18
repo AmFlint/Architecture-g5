@@ -14,10 +14,32 @@ section.contact-form {
     width:90%;
     margin:0 auto;
     padding:2%;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11);  
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.11);
+    @media only screen and (max-width: $max-tab) {
+        padding-top:10%;
+        height: 70vh;
+    }
     label {
         display: block;
         margin-top: 5%;
+        @media only screen and (max-width: $max-tab) {
+            width: 100%;
+            .selectRevue {
+                width: 100%;
+                .revueSelect {
+                    width: 100%;
+                    float: right;
+                }
+            }
+        }
+    }
+        .selectRevue {
+            width: 100%;
+            .revueSelect {
+                width: 63%;
+                float: right;
+            }
+        }
         input {
 
             float: right;
@@ -25,19 +47,29 @@ section.contact-form {
             height: 25px;
             background: #D8D8D8;
             border: none;
+            @media only screen and (max-width: $max-tab) {
+                width:100%;
         }
     }
+
     div.button-form {
         text-align: center;
         margin-top: 8%;
         padding-bottom:3%;
+        @media only screen and (max-width: $max-tab) {
+            margin:15% 0;
+        }
         .button-send {
             text-align: center;
-            padding: 10px 100px;
             background: #15D1E7;
             clear: both;
             color: #fff;
             border-radius: 30px;
+
+        }
+        input.submitSend {
+            margin-top: 5%;
+            float: none;
         }
     }
 }
