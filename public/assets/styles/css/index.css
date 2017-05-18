@@ -275,6 +275,15 @@ header {
   position: absolute;
   bottom: 0;
   left: 0; }
+  @media only screen and (max-width: 750px) {
+    .test-a {
+      font-size: 20px;
+      position: static; }
+      .test-a h2 {
+        margin: 0;
+        padding: 0; }
+        .test-a h2 a {
+          color: #000; } }
 
 .carrousel-actu > div {
   position: relative; }

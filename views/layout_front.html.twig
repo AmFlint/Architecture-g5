@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}Page Admin{% endblock %}</title>
-    <link rel="stylesheet" href="/assets/styles/css/index.css" type="text/css">
-    <link rel="stylesheet" href="/assets/styles/css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="assets/styles/css/index.css" type="text/css">
     {% block style %}{% endblock %}
 </head>
 {% block body_nav %}
@@ -16,7 +15,7 @@
         <span class="bar"></span>
         <ul>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}">Accueil</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}admin">Revues</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions">Revues</a></li>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}commande">Commandes</a></li>
             <li>
                 <a href="#">
@@ -27,7 +26,7 @@
             </li>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}appel-d-offre">Appel d'offre</a></li>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}actualites">Actualités</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}contact">Contact</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}contactez-nous">Contact</a></li>
         </ul>
 
         <h1>Toute l’actualité de l’architecture et de la construction</h1>
@@ -40,12 +39,12 @@
 
     <div class="menu-burger active">
         <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="#">Revues</a></li>
-            <li><a href="#">Commandes</a></li>
-            <li><a href="#">Appel d'offre</a></li>
-            <li><a href="#">Actualités</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}">Accueil</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions">Revues</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}commander">Commandes</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}appel-d-offre">Appel d'offre</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}actualites">Actualités</a></li>
+            <li><a href="{{ constant('ROOT_URL') }}contactez-nous">Contact</a></li>
             <li><img src="/assets/img-layout/multiply.svg" class="cross">
         </ul>
     </div>
