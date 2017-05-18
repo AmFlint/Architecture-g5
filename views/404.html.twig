@@ -1,1 +1,11 @@
-Salut timal, y a erreur mamene.
+{% extends 'layout_front.html.twig' %}
+
+{% block body %}
+    <div class="error404">
+        <h2>Erreur 404</h2>
+        <img src="/assets/img-content/404.jpg">
+        <p>Vous vous êtes perdu ! La page que vous demandez n'existe pas ou plus.</p>
+        <p>Revenez vers la<p>
+            <a href="{{ constant('ROOT_URL') }}">lumière</a>
+    </div>
+{% endblock %}
