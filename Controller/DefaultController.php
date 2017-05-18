@@ -167,4 +167,15 @@ class DefaultController extends Controller
             ]
         );
     }
+
+    public function listingActuAction()
+    {
+        $actualites = $this->model->getAllActu();
+        echo  self::$twig[0]->render(
+            "front_listing_actualites.html.twig",
+            [
+                'actualites' => $actualites
+            ]
+        );
+    }
 }

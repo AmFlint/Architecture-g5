@@ -226,4 +226,20 @@ class DefaultModel extends Model
             ->get();
         return $row;
     }
+
+    public function getAllActu()
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date',
+                'image'))
+            ->table('actualites')
+            ->getAll();
+        return $row;
+    }
 }

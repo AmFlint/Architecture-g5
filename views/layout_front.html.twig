@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1">
     <title>{% block title %}Page Admin{% endblock %}</title>
-    <link rel="stylesheet" href="assets/styles/css/index.css" type="text/css">
+    <link rel="stylesheet" href="/assets/styles/css/index.css" type="text/css">
     {% block style %}{% endblock %}
 </head>
 {% block body_nav %}
@@ -16,7 +17,7 @@
         <ul>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}">Accueil</a></li>
             <li class="li-active"><a href="{{ constant('ROOT_URL') }}nos-dernieres-parutions">Revues</a></li>
-            <li class="li-active"><a href="{{ constant('ROOT_URL') }}commande">Commandes</a></li>
+            <li class="li-active"><a href="{{ constant('ROOT_URL') }}commander">Commandes</a></li>
             <li>
                 <a href="#">
                     {% block img_header %}
