@@ -29,16 +29,28 @@
     "action": "showActualites",
     "method": "GET"
   },
-  "admin_actualies_addGET": {
+  "admin_actualites_addGET": {
     "path": "/admin/actualites/add",
     "controller": "Admin",
     "action": "addActualites",
     "method": "GET"
   },
-  "admin_actualies_addPOST": {
+  "admin_actualites_addPOST": {
     "path": "/admin/actualites/add",
     "controller": "Admin",
     "action": "addActualites",
+    "method": "POST"
+  },
+  "admin_actualites_editGET": {
+    "path": "/admin/actualites/:id/edit",
+    "controller": "Admin",
+    "action": "showActualite",
+    "method": "GET"
+  },
+  "admin_actualites_editPOST": {
+    "path": "/admin/actualites/:id/edit",
+    "controller": "Admin",
+    "action": "editActualite",
     "method": "POST"
   },
   "admin_actualite_single": {
