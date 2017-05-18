@@ -1,4 +1,5 @@
 {% extends "layout_front.html.twig" %}
+{% block title %}Architecture.com, {% endblock %}
 {% block body_nav %}
 <body class="home">
 {% endblock %}
@@ -33,30 +34,21 @@
 {% endblock %}
  {% block post_header %}
             <section class="carrousel-actu">
+                {% set j = 0 %}
+                {% for actualite in actualites %}
+                    {% if j == 0 %}
                 <div class="first-actu visible">
-                    <img src="assets/img-content/actu-1.png" alt="">
+                    {% else %}
+                    <div class="first-actu">
+                    {% endif %}
+                    <img src="assets/img-content/{{ actualite.image }}" alt="{{ actualite.alt }}">
                     <div class="test_a">
-                        <h2><a href="#">Aren’Ice, le temple des loisirs de glace conçu par Chabanne et Partenaires</a></h2>
+                        <h2><a href="#">{{ actualite.title }}</a></h2>
                     </div>
                 </div>
-                <div class="second-actu">
-                    <img src="assets/img-content/actu-2.png" alt="">
-                    <div class="test_a">
-                        <h2><a href="#">Dominique Perrault et Gaëlle Lauriot-Prévost réhabilitent le pavillon Dufour au Château de Versailles</a></h2>
-                    </div>
-                </div>
-                <div class="third-actu">
-                    <img src="assets/img-content/actu-3.png" alt="">
-                    <div class="test_a">
-                        <h2><a href="#">Schaudepot, un nouveau bâtiment sur la campus Vitra</a></h2>
-                    </div>
-                </div>
-                <div class="fourth-actu">
-                    <img src="assets/img-content/actu-4.png" alt="">
-                    <div class="test_a">
-                        <h2><a href="#">Cavrois et Noailles, deux villas résistantes</a></h2>
-                    </div>
-                </div>
+                    {% set j = 1 %}
+                {% endfor %}
+
                 <div class="slider-bars">
                     <div class="slider-bar"></div>
                     <div class="slider-bar"></div>

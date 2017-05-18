@@ -220,7 +220,9 @@ class DefaultModel extends Model
                 'slug',
                 'content_short',
                 'content_full',
-                'date'))
+                'date',
+                'image',
+                'alt'))
             ->table('actualites')
             ->where('slug', $slug)
             ->get();
@@ -237,9 +239,28 @@ class DefaultModel extends Model
                 'content_short',
                 'content_full',
                 'date',
-                'image'))
+                'image',
+                'alt'))
             ->table('actualites')
             ->getAll();
+        return $row;
+    }
+
+    public function getLastActu()
+    {
+        $row = $this->qb
+            ->select(array(
+                'id',
+                'title',
+                'slug',
+                'content_short',
+                'content_full',
+                'date',
+                'image',
+                'alt'))
+            ->table('actualites')
+            ->limit(4)
+            ->get();
         return $row;
     }
 }

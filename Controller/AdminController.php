@@ -16,10 +16,13 @@ use PDO;
 
 class AdminController extends Controller
 {
+    public $messages_view;
+
     public function __construct()
     {
         parent::__construct();
         $this->model = new AdminModel();
+        $this->messages_view = $this->model->getMessageViews();
     }
 
     public function listingAction()
@@ -28,7 +31,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin.html.twig",
             [
-                "magazines" => $magazines
+                "magazines" => $magazines,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -39,7 +43,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "single_magazine.html.twig",
             [
-                "magazine" => $magazine[0]
+                "magazine" => $magazine[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -54,7 +59,8 @@ class AdminController extends Controller
             [
                 "magazine" => $magazine[0],
                 "list_partenaires" => $partenaires,
-                "actual_partenaires" => $partenaires_actuels
+                "actual_partenaires" => $partenaires_actuels,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -90,7 +96,7 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "form_add_magazine.html.twig",
             [
-
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -122,7 +128,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_contact.html.twig",
             [
-                "messages" => $messages
+                "messages" => $messages,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -130,10 +137,19 @@ class AdminController extends Controller
     public function showSingleMessageAction($id)
     {
         $message = $this->model->getMessage($id);
+        if (!$message) {
+             header('Location: ' . ROOT_URL . 'admin/contact');
+            exit;
+        }
+        if ($message['vu'] == 0) {
+            $this->model->addMessageView($id);
+        }
+
         echo  self::$twig[0]->render(
             "admin_single_message.html.twig",
             [
-                "message" => $message[0]
+                "message" => $message[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -144,7 +160,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_actualites_listing.html.twig",
             [
-                "actualites" => $actualites
+                "actualites" => $actualites,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -155,7 +172,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_actualite_single.html.twig",
             [
-                "actualite" => $actualite[0]
+                "actualite" => $actualite[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -166,7 +184,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_partners.html.twig",
             [
-                "partners" => $partners
+                "partners" => $partners,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -187,7 +206,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_partners_edit.html.twig",
             [
-                "partner" => $partner[0]
+                "partner" => $partner[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -208,7 +228,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "list_commande.html.twig",
             [
-                "commandes" => $totalcommandes
+                "commandes" => $totalcommandes,
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -219,7 +240,8 @@ class AdminController extends Controller
         echo self::$twig[0]->render(
             "admin_single_commande.html.twig",
             [
-                "commande" => $commande[0]
+                "commande" => $commande[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -230,6 +252,7 @@ class AdminController extends Controller
             echo  self::$twig[0]->render(
                 "admin_actualites_add.html.twig",
                 [
+                    'message_view' => $this->messages_view
                 ]
             );
         }
@@ -245,7 +268,8 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_actualites_edit.html.twig",
             [
-                'actualite' => $actualite[0]
+                'actualite' => $actualite[0],
+                'message_view' => $this->messages_view
             ]
         );
     }
@@ -256,6 +280,7 @@ class AdminController extends Controller
         echo  self::$twig[0]->render(
             "admin_actualites_edit.html.twig",
             [
+                'message_view' => $this->messages_view
             ]
         );
     }
