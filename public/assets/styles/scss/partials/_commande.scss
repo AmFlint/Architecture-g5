@@ -20,8 +20,7 @@ section.command-form,
 }
 
 section.command-form {
-    float: left;
-    width: 65%;
+    width: 100%;
     padding-bottom: 7%;
     @media only screen and (max-width: 900px) {
         width: 100%;
@@ -39,8 +38,22 @@ section.command-form {
             height: 25px;
             background: #D8D8D8;
             border: none;
+            @media only screen and (max-width: $max-tab) {
+                width:100%;
+                margin:10% 0;
+            }
         }
     }
+
+    .selectRevue {
+        width: 100%;
+    }
+
+    .selectRevue select {
+        width: 63%;
+        float: right;
+    }
+
     div.button-form {
         text-align: center;
         margin-top: 10%;
