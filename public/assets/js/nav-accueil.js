@@ -7,7 +7,7 @@ document.addEventListener('scroll', function (event) {
         nav.classList.add('colornav');
         nav.style.position = 'fixed';
         tab.style.background = '#fff';
-        logo.src = "assets/img-layout/black-logo.svg";
+        logo.src = "assets/img-layout/logo.svg";
         for (var i = 0; i < lesa.length; i++) {
             lesa[i].style.color = "#000";
 
@@ -24,28 +24,6 @@ document.addEventListener('scroll', function (event) {
     }
 });
 
-/**** barre bleue au hover ******/
-var tab = document.querySelector('.bar');
-var lis = document.querySelectorAll('.li-active');
 
-for (let i = 0; i < lis.length; i++) {
 
-    lis[i].addEventListener('mouseover', function () {
-        tab.style.left = this.offsetLeft - 4 + "px";
-        tab.style.width = lis[i].offsetWidth + 10 + "px";
-    });
-}
 
-/****burger ****/
-
-var burger = document.querySelector('.burger');
-var menu = document.querySelector('.menu-burger');
-var cross = document.querySelector('.cross');
-
-burger.addEventListener('click', function() {
-    menu.classList.toggle('active');
-});
-
-cross.addEventListener('click', function() {
-    menu.classList.add('active');
-});
