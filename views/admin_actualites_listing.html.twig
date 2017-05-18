@@ -1,9 +1,19 @@
 {% extends "layout_admin.html.twig" %}
 
 {% block body %}
-{% for actu in actualites %}
-    <div>
-        <a href="{{ constant('ROOT_URL') }}admin/actualites/{{ actu.id }}">{{ actu.title }}</a>
-    </div>
-{% endfor %}
+    <h1>Listes des Actualités</h1>
+        <div class="table">
+        <div class="table-row table-head">
+        <div class="table-cell">Titre</div>
+        <div class="table-cell">Description</div>
+        <div class="table-cell">Date</div>
+        </div>
+    {% for actu in actualites %}
+        <a href="{{ constant('ROOT_URL') }}admin/actualites/{{ actu.id }}" class="table-row">
+                <div class="table-cell">{{ actu.title }}</div>
+                <div class="table-cell">{{ actu.content_short }}</div>
+                <div class="table-cell">{{ actu.date }}</div>
+            </a>
+    {% endfor %}
+        </div>
 {% endblock %}

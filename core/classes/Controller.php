@@ -11,6 +11,7 @@ abstract class Controller
     public function __construct()
     {
         self::init();
+        header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
     }
 
     public static function error404()

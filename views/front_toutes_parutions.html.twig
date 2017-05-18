@@ -1,5 +1,31 @@
 {% extends 'layout_front.html.twig' %}
 
+{% block style %}
+    <style>
+        @media only screen and (max-width: $max-tab) {
+            aside ul li {
+                display: inline-block;
+                width: 120px;
+                padding: 10px;
+                margin: 10px;
+                text-align: center;
+                border-radius: 10px;
+                line-height: 130%;
+                border: 1px solid #15D1E7;
+            }
+
+            aside ul {
+                display: none;
+            }
+
+            aside ul.visible {
+                display: block;
+            }
+        }
+    </style>
+{% endblock %}
+
+
 {% block body_nav %}
     <body class="toutes_parutions_body">
 {% endblock %}
@@ -11,7 +37,7 @@
 </div>
 
     <aside>
-        <h2>Par Ville</h2>
+        <h2>Par Ville <span class="filtres">(voir tous les filtres)</span></h2>
         <ul>
             {% for location in locations %}
                 <li>{{ location.location }}</li>
