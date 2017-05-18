@@ -1,1 +1,7 @@
-{{ offer.name }}
+{% extends 'layout_front.html.twig' %}
+
+{% block body %}
+    <div class="appel-offre">
+        <iframe src="{{ offer.link }}" frameborder=0><iframe>
+    </div>
+{% endblock %}

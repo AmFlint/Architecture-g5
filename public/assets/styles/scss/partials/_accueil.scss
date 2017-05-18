@@ -153,12 +153,12 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  @media only screen and (max-width: $max-mob) {
+  @media only screen and (max-width: $max-tab) {
         font-size: 20px;
         position: static;
         h2 {
             margin:0;
-            padding:0:
+            padding:0;
             a {
                 color:$black;
             }

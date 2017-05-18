@@ -1,4 +1,10 @@
 {
+  "single_actu_front": {
+    "path": "/actualites/:slug",
+    "controller": "Default",
+    "action": "loadSingleActu",
+    "method": "GET"
+  },
   "admin" : {
     "path": "/admin/",
     "controller": "Admin",
@@ -131,7 +137,7 @@
     "method": "GET"
   },
   "contact": {
-    "path": "/contact",
+    "path": "/contactez-nous",
     "controller": "Default",
     "action": "contact",
     "method": "GET"
@@ -178,7 +184,7 @@
     "method": "GET"
   },
   "commandeGET": {
-    "path": "/commande",
+    "path": "/commander",
     "controller": "Default",
     "action": "commandeForm",
     "method": "GET"
