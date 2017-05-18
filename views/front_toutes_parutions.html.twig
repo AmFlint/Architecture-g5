@@ -1,4 +1,6 @@
 {% extends 'layout_front.html.twig' %}
+{% block title %}larchitecture.com, toutes nos parutions{% endblock %}
+{% block meta_description %}Liste de toutes les revues, magazines larchitecture.com{% endblock %}
 {% block body_nav  %}
 <body class="julie">
 {% endblock %}
@@ -52,7 +54,7 @@
         <article>
             <a href="{{ constant('ROOT_URL') }}revue/{{ magazine.id }}">
                 <figure>
-                    <img src="assets/img-content/{{ magazine.image }}" alt="">
+                    <img src="assets/img-content/{{ magazine.image }}" alt="{{ magazine.alt }}">
                     <div class="hover">
                         <img src="assets/img-layout/plus.svg" alt="">
                     </div>

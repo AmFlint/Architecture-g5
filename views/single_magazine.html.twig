@@ -8,6 +8,11 @@
         <p>{{ magazine.synopsis }}</p>
     </div>
 
+    <div class="synopsis">
+        <p class="label_message">Numéro du Magazine</p>
+        <p>{{ magazine.number }}</p>
+    </div>
+
     <div class="images">
         <div class="image_mag">
             <p>Image</p>
@@ -21,6 +26,12 @@
         </div>
 
     </div>
+    <div class="link_date" style="clear: both;margin-top: 20px;">
+        <p>Alternative Première image : {{ magazine.alt }}</p>
+        {% if magazine.secondary_alt %}
+            <p>Alternative Seconde Image : {{ magazine.secondary_alt }}</p>
+        {% endif %}
+    </div>
     <div class="location">
         <p><span>Localisation primaire :</span> {{ magazine.location }}</p>
         {% if magazine.secondary_location %}
@@ -33,7 +44,9 @@
         <span>Lien vers le PDF du magazine : </span>
         <a href="{{ magazine.link }}">{{ magazine.link }}</a>
     </div>
-
-    <a href="{{ constant('ROOT_URL') }}admin/{{ magazine.id }}/edit" class="submit btn btn-success">Editer l'article</a>
+    <div style="display: flex;justify-content: center;width: 60%;margin-bottom: 20px;">
+        <a href="{{ constant('ROOT_URL') }}admin/{{ magazine.id }}/edit" class="submit btn btn-success">Editer l'article</a>
+        <a href="{{ constant('ROOT_URL') }}admin/{{ magazine.id }}/delete" class="btn btn-danger submit">Supprimer</a>
+    </div>
 </div>
 {% endblock %}

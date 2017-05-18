@@ -26,4 +26,9 @@ class APIController extends Controller
         $magazines = $this->model->getMagazines($location);
         echo json_encode($magazines);
     }
+
+    public function addPartnershipAction($mag_id, $partner_id)
+    {
+        $this->model->addPartnership($mag_id, $partner_id);
+    }
 }

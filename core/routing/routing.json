@@ -218,5 +218,11 @@
     "controller": "Default",
     "action": "loadSingleMagazine",
     "method": "GET"
+  },
+  "add_partnership_api": {
+    "path": "/admin/magazines/:id/:partner",
+    "controller": "API",
+    "action": "addPartnership",
+    "method": "GET"
   }
 }
