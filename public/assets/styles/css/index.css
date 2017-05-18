@@ -472,7 +472,7 @@ div.presence {
       max-width: 100%; } }
 
 .parutions_title {
-  font-size: 80px;
+  font-size: 60px;
   text-align: left;
   padding-left: 50px;
   border-left: 6px solid #15D1E7;
@@ -506,28 +506,31 @@ div.presence {
   @media only screen and (max-width: 750px) {
     .view_all a {
       color: #1a1a1a;
-      margin-top: 40px;
+      margin: 40px 0;
       border: 1px solid black;
       border-radius: 10px;
       padding: 10px 20px; }
       .view_all a:after {
+        width: 0; }
+      .view_all a:hover:after {
         width: 0; } }
 
 .listing_mags {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
   margin-top: 75px; }
 
 .listing_mags article {
   width: 18%;
-  margin: 20px 0; }
+  display: inline-block;
+  margin: 0 0 10px 20px;
+  vertical-align: top; }
   @media only screen and (max-width: 750px) {
     .listing_mags article {
       width: 30%; } }
   @media only screen and (max-width: 450px) {
     .listing_mags article {
-      width: 100%; } }
+      width: 100%;
+      display: block;
+      margin: 40px auto; } }
 
 article figure {
   position: relative; }
@@ -575,6 +578,12 @@ article figure {
 
 .toutes_parutions_body h2 {
   text-align: right; }
+  @media only screen and (max-width: 750px) {
+    .toutes_parutions_body h2 {
+      cursor: pointer;
+      text-align: left;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #15D1E7; } }
 
 .toutes_parutions_body aside {
   float: right;
@@ -600,6 +609,14 @@ article figure {
       .toutes_parutions article {
         width: 100%; } }
 
+.filtres {
+  display: none; }
+  @media only screen and (max-width: 750px) {
+    .filtres {
+      display: inline-block; } }
+  .filtres:after {
+    content: '>'; }
+
 aside ul li {
   list-style: none;
   text-align: right;
@@ -608,7 +625,182 @@ aside ul li {
   cursor: pointer; }
   @media only screen and (max-width: 750px) {
     aside ul li {
-      display: inline-block; } }
+      display: inline-block;
+      width: 120px;
+      padding: 10px;
+      margin: 10px;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      line-height: 130%;
+      background: #15D1E7; } }
+  @media only screen and (max-width: 750px) {
+    aside ul li {
+      width: 150px; } }
+
+@media only screen and (max-width: 750px) {
+  aside ul {
+    display: none;
+    text-align: center; } }
+
+@media only screen and (max-width: 750px) {
+  aside ul.visible {
+    display: inline-block; } }
+
+.single_parution .parutions_title {
+  max-width: 200px; }
+  @media only screen and (max-width: 960px) {
+    .single_parution .parutions_title {
+      max-width: 100%; } }
+  @media only screen and (max-width: 750px) {
+    .single_parution .parutions_title {
+      font-size: 45px; } }
+
+.infos_revue.price {
+  position: relative;
+  padding: 40px 80px; }
+  @media only screen and (max-width: 750px) {
+    .infos_revue.price {
+      display: flex;
+      flex-direction: column;
+      padding: 40px 20px; } }
+
+.infos_location {
+  display: inline-block; }
+  .infos_location h2 {
+    font-size: 30px;
+    margin-bottom: 10px; }
+  .infos_location h3 {
+    font-size: 25px; }
+  @media only screen and (max-width: 750px) {
+    .infos_location {
+      order: 2; }
+      .infos_location h2 {
+        display: inline-block; }
+      .infos_location .price_hidden {
+        display: inline-block;
+        margin-left: 40px; } }
+
+.edition {
+  margin: 5px 0 0 60px;
+  font-size: 18px; }
+
+.revue_price {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 30%;
+  vertical-align: top; }
+  @media only screen and (max-width: 750px) {
+    .revue_price {
+      display: none; } }
+
+.rencontre {
+  margin-top: 50px; }
+  .rencontre h2 {
+    font-size: 30px;
+    font-weight: 300; }
+  .rencontre ul {
+    margin-top: 10px;
+    padding-left: 65px; }
+  .rencontre li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0; }
+  @media only screen and (max-width: 750px) {
+    .rencontre {
+      order: 2; } }
+
+.synopsis {
+  margin-top: 20px; }
+  .synopsis h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 10px; }
+  @media only screen and (max-width: 750px) {
+    .synopsis {
+      order: 4; }
+      .synopsis p {
+        line-height: 150%; } }
+  .synopsis p {
+    font-size: 18px; }
+
+.revue_image {
+  position: absolute;
+  top: -200px;
+  right: 150px;
+  display: block;
+  max-width: 50%; }
+  .revue_image figure {
+    position: relative; }
+    .revue_image figure:hover .hover_picture {
+      opacity: 1; }
+  .revue_image img {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 20px; }
+  .revue_image .button-command {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    text-align: center; }
+    .revue_image .button-command a {
+      text-align: center;
+      color: #fff;
+      background: #15D1E7;
+      font-weight: bold;
+      padding: 7%;
+      border-radius: 20px; }
+  @media only screen and (max-width: 960px) {
+    .revue_image {
+      order: 0;
+      position: static;
+      display: block;
+      max-width: 100%;
+      margin-top: 30px; }
+      .revue_image figure {
+        display: inline-block; }
+        .revue_image figure:first-child {
+          margin-right: 50px; }
+        .revue_image figure img {
+          margin: 0 auto; }
+      .revue_image .button-command {
+        margin: 20px 0;
+        text-align: center; } }
+  @media only screen and (max-width: 750px) {
+    .revue_image figure {
+      display: block;
+      margin: 0 auto; }
+      .revue_image figure:first-child {
+        margin: 0 0 10px; }
+    .revue_image .button-command {
+      margin: 25px auto; } }
+
+.hover_picture {
+  transition: all .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #FFF;
+  background: rgba(0, 0, 0, 0.6); }
+  .hover_picture img {
+    padding-top: 45%;
+    margin: 0 auto; }
+  @media only screen and (max-width: 750px) {
+    .hover_picture {
+      display: none; } }
+
+.price_hidden {
+  display: none;
+  font-size: 30px;
+  margin-top: 25px; }
+  @media only screen and (max-width: 750px) {
+    .price_hidden {
+      order: 1;
+      display: block; } }
 
 /******** SECTION COMMANDER *******/
 .title-abonnement {

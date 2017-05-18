@@ -3,12 +3,20 @@ setTimeout(function() {
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
-            console.log(this.innerHTML);
             var to_send = this.innerHTML.split(' ').join('_');
             loadFile('/api/revue/' + to_send);
         });
     }
 }, 500);
+
+var title = document.querySelector('h2');
+var list = document.querySelector('aside ul');
+
+title.addEventListener('click', function() {
+   if (window.innerWidth <= 750) {
+        list.classList.toggle('visible');
+   }
+});
 
 var app = document.querySelector('.listing_mags');
 

@@ -1,0 +1,65 @@
+{% extends 'layout_front.html.twig' %}
+
+{% block body_nav %}
+    <body class="single_parution">
+{% endblock %}
+
+{% block body %}
+    <div class="view_all clearfix">
+        <h1 class="parutions_title">Revue n° 280</h1>
+    </div>
+
+    <section class="infos_revue price">
+        <div class="infos_location">
+            <h2>{{ magazine.location }}</h2>
+            <div class="price_hidden">
+                <p>9.19€</p>
+            </div>
+            {% if magazine.secondary_location != 'empty' %}
+                <h3>{{ magazine.secondary_location }}</h3>
+            {% endif %}
+            <p class="edition">Edition {{ magazine.date }}</p>
+        </div>
+        <div class="revue_price">
+            <p>9.19€</p>
+        </div>
+        {% if partners %}
+        <div class="rencontre">
+            <h2>Partenariat avec</h2>
+            <ul>
+                {% for partner in partners %}
+                    <li>{{ partner.partner_name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="synopsis">
+            <h3>Synopsis de la revue</h3>
+            <p>{{ magazine.synopsis }}</p>
+        </div>
+        <div class="revue_image">
+            <div>
+                <a href="{{ magazine.link }}">
+                    <figure>
+                        <img src="/assets/img-content/{{ magazine.image }}" alt="">
+                        <div class="hover_picture">
+                            <img src="/assets/img-layout/view.svg" alt="">
+                        </div>
+                    </figure>
+                    {% if magazine.secondary_image %}
+                        <figure>
+                            <img src="/assets/img-content/{{ magazine.secondary_image }}" alt="">
+                            <div class="hover_picture">
+                                <img src="/assets/img-layout/view.svg" alt="">
+                            </div>
+                        </figure>
+                    {% endif %}
+                </a>
+            </div>
+            <div class="button-command">
+                <a href="{{ constant('ROOT_URL') }}/commande">Commander</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

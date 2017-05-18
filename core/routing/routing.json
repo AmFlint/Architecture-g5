@@ -188,5 +188,11 @@
     "controller": "API",
     "action": "GetMagazinesFromLocation",
     "method": "GET"
+  },
+  "single_revue_front": {
+    "path": "/revue/:id",
+    "controller": "Default",
+    "action": "loadSingleMagazine",
+    "method": "GET"
   }
 }

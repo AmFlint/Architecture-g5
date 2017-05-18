@@ -1,45 +1,43 @@
-<body>
-<h1>Ceci est le formulaire de Contact</h1>
+{% extends 'layout_front.html.twig' %}
 
-<form action="" method="post"  enctype="multipart/form-data">
-    <p>
-        <label for="raison_sociale">raison sociale</label>
-        <input type="text" value="" name="raison_sociale">
-    </p>
-    <p>
-        <label for="">Objet</label>
-        <input type="text" name="object">
-    </p>
-    <p>
-        <label for="nom">Nom</label>
-        <input type="text" value="" name="nom">
-    </p>
-    <p>
-        <label for="telephone">telephone</label>
-        <input type="text" value="" name="telephone">
-    </p>
-    <p>
-        <label for="mail">mail</label>
-        <input type="email" value="" name="mail">
-    </p>
-    <p>
-        <label>Service</label>
-        <select id=""  name="service">
-            <option value="commerciale">commerciale</option>
-            <option value="redactionnel/publicite">redactionnel/publicite</option>
-            <option value="administratif/comptabilite">administratif/comptabilite</option>
-            <option value="direction">direction</option>
-        </select>
-    </p>
-    <p for="message">
-        <label>message</label>
-        <textarea name="message" id="" cols="30" rows="10"></textarea>
-    </p>
-    <input type="reset" value="effacer">
-    <input type="submit" value="envoyer">
-</form>
-<footer>
+{% block body %}
+<div class="title-contact"><h2>Nous contacter</h2></div>
+<section class="contact-form">
+    <form action="" method="post" accept-charset="utf-8">
+        <label>Raison sociale
+            <input type="text" name="raison_sociale" value="">
+        </label>
+        <label>Nom
+            <input type="text" name="nom" value="">
+        </label>
+        <label>Objet du Message
+            <input type="text" name="object" value="">
+        </label>
+        <label>Téléphone
+            <input type="text" name="telephone" value="">
+        </label>
+        <label>Adresse e-mail
+            <input type="text" name="mail" value="">
+        </label>
 
-</footer>
-</body>
-<script src="/assets/js/app.js"></script>
+        <label>Service
+            <select id=""  name="service">
+                <option value="commerciale">commerciale</option>
+                <option value="redactionnel/publicite">redactionnel/publicite</option>
+                <option value="administratif/comptabilite">administratif/comptabilite</option>
+                <option value="direction">direction</option>
+            </select>
+        </label>
+        <label>Message
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+        </label>
+        <div class="button-form">
+            <input type="submit" value="Envoyer" class="button-send">
+        </div>
+    </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{#<script src="/assets/js/app.js"></script>#}
+{% endblock %}
