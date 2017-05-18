@@ -5,6 +5,12 @@
     "action": "loadSingleActu",
     "method": "GET"
   },
+  "listing_actualites": {
+    "path": "/actualites/",
+    "controller": "Default",
+    "method": "GET",
+    "action": "listingActu"
+  },
   "admin" : {
     "path": "/admin/",
     "controller": "Admin",
