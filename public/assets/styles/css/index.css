@@ -17,12 +17,12 @@
 /*----- FONTS---------------*/
 @font-face {
   font-family: 'covesbold';
-  src: url("../../font/Coves_Bold.otf") format("otf"), url("../../font/Coves_Bold.otf") format("otf");
+  src: url("../font/Coves_Bold.otf") format("otf"), url("../../font/Coves_Bold.otf") format("otf");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'coveslight';
-  src: url("../../font/Coves_Light.otf") format("otf"), url("../../font/Coves_Light.otf") format("otf");
+  src: url("../font/Coves_Light.otf") format("otf"), url("../../font/Coves_Light.otf") format("otf");
   font-weight: normal;
   font-style: normal; }
 /*----- COMMON -------- */
@@ -378,7 +378,7 @@ section.recent-parution {
         padding: 7%;
         border-radius: 20px; }
 
-/*----- ├Ç PROPOS ---------------*/
+/*----- À PROPOS ---------------*/
 section.about > div {
   margin-bottom: 100px; }
 section.about img {
